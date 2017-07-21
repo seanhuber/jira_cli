@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 #ruby=ruby-2.4.1
 #ruby-gemset=jira_cli
