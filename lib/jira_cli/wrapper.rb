@@ -96,6 +96,8 @@ module JiraCli
     def jira_cmd action, **jira_args
       cmd_args = {action: action}.merge(jira_args).map{|k,v| "--#{k.to_s.camelize(:lower)} \"#{v}\""}.join(' ')
       stdout, stderr, status = Open3.capture3 "jira #{cmd_args}"
+      # ap "jira #{cmd_args}"
+      # puts stdout
       raise stderr.strip if stderr != ''
       stdout.strip
     end

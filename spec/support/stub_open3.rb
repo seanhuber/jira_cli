@@ -1,5 +1,5 @@
 module StubOpen3
-  def expect_output request, cli_response, parsed_response
+  def expect_cli_request request, cli_response, parsed_response
     stdout = cli_response
     stderr = ''
     status = ''
