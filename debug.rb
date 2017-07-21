@@ -7,9 +7,28 @@ jira = JiraCli::Wrapper.new
 
 begin
 
-  ap jira.get_issue_type_scheme_list
-  ap jira.get_workflow_scheme_list
-  ap jira.get_workflow_list
+  ap jira.create_project(key: 'DELETEME', lead: 'shuber')
+  ap jira.delete_project(key: 'DELETEME')
+
+  issue_type_scheme_id = jira.get_issue_type_scheme_list(regex: 'DELETEME.*').keys[0]
+  ap jira.delete_issue_type_scheme(id: issue_type_scheme_id)
+
+  workflow_scheme_id = jira.get_workflow_scheme_list(regex: 'DELETEME.*').keys[0]
+  ap jira.delete_workflow_scheme(id: workflow_scheme_id)
+
+  workflow_name = jira.get_workflow_list(regex: 'Software Simplified Workflow for Project DELETEME.*').keys[0]
+  ap jira.delete_workflow(name: workflow_name)
+
+  issue_type_screen_scheme_id = jira.get_issue_type_screen_scheme_list(regex: 'DELETEME.*').keys[0]
+  ap jira.delete_issue_type_screen_scheme(id: issue_type_screen_scheme_id)
+
+  jira.get_screen_scheme_list(regex: 'DELETEME.*').keys.each do |screen_scheme_id|
+    ap jira.delete_screen_scheme(id: screen_scheme_id)
+  end
+
+  jira.get_screen_list(regex: 'DELETEME.*').keys.each do |screen_id|
+    ap jira.delete_screen(id: screen_id)
+  end
 
 rescue JiraCli::OutputError => e
   ap [e.actual_output, e.message]
