@@ -7,11 +7,19 @@ RSpec.describe JiraCli::Wrapper do
     end
   end
 
-  it 'deletes and issue type scheme' do
+  it 'deletes an issue type scheme' do
     jira = JiraCli::Wrapper.new
     output = "Issue type scheme with id 123 deleted."
     expect_cli_request("jira --action \"deleteIssueTypeScheme\" --id \"123\"", output, output) do
       jira.delete_issue_type_scheme id: 123
+    end
+  end
+
+  it 'deletes an issue type screen scheme' do
+    jira = JiraCli::Wrapper.new
+    output = "Issue type screen scheme with id 123 deleted."
+    expect_cli_request("jira --action \"deleteIssueTypeScreenScheme\" --id \"123\"", output, output) do
+      jira.delete_issue_type_screen_scheme id: 123
     end
   end
 
