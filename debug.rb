@@ -1,3 +1,5 @@
+# bundle exec ruby debug.rb
+
 require 'jira_cli'
 require 'ap'
 

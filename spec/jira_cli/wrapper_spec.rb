@@ -1,4 +1,12 @@
 RSpec.describe JiraCli::Wrapper do
+  it 'creates a new project' do
+    jira = JiraCli::Wrapper.new
+    output = "Project 'MYPROJ' created with key MYPROJ and id 12345."
+    expect_cli_request("jira --action \"createProject\" --project \"MYPROJ\" --lead \"shuber\"", output, output) do
+      jira.create_project key: 'MYPROJ', lead: 'shuber'
+    end
+  end
+
   it 'gets server info' do
     jira = JiraCli::Wrapper.new
     output = "JIRA version: 7.3.0, build: 73011, time: 1/3/17 12:00 AM, time zone: Central Standard Time, description: My Description, url: http://jira.<my_domain>.com"
