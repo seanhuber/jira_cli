@@ -1,65 +1,61 @@
 RSpec.describe JiraCli::Wrapper do
+  before(:all) do
+    @jira = JiraCli::Wrapper.new
+  end
+
   it 'creates a new project' do
-    jira = JiraCli::Wrapper.new
     output = "Project 'MYPROJ' created with key MYPROJ and id 12345."
     expect_cli_request("jira --action \"createProject\" --project \"MYPROJ\" --lead \"shuber\"", output, output) do
-      jira.create_project key: 'MYPROJ', lead: 'shuber'
+      @jira.create_project key: 'MYPROJ', lead: 'shuber'
     end
   end
 
   it 'deletes an issue type scheme' do
-    jira = JiraCli::Wrapper.new
     output = "Issue type scheme with id 123 deleted."
     expect_cli_request("jira --action \"deleteIssueTypeScheme\" --id \"123\"", output, output) do
-      jira.delete_issue_type_scheme id: 123
+      @jira.delete_issue_type_scheme id: 123
     end
   end
 
   it 'deletes an issue type screen scheme' do
-    jira = JiraCli::Wrapper.new
     output = "Issue type screen scheme with id 123 deleted."
     expect_cli_request("jira --action \"deleteIssueTypeScreenScheme\" --id \"123\"", output, output) do
-      jira.delete_issue_type_screen_scheme id: 123
+      @jira.delete_issue_type_screen_scheme id: 123
     end
   end
 
   it 'deletes a project' do
-    jira = JiraCli::Wrapper.new
     output = "Project MYPROJ deleted."
     expect_cli_request("jira --action \"deleteProject\" --project \"MYPROJ\"", output, output) do
-      jira.delete_project key: 'MYPROJ'
+      @jira.delete_project key: 'MYPROJ'
     end
   end
 
   it 'deletes a screen' do
-    jira = JiraCli::Wrapper.new
     output = "Screen with id 123 deleted."
     expect_cli_request("jira --action \"deleteScreen\" --id \"123\"", output, output) do
-      jira.delete_screen id: 123
+      @jira.delete_screen id: 123
     end
   end
 
   it 'deletes a screen scheme' do
-    jira = JiraCli::Wrapper.new
     output = "Screen scheme with id 123 deleted."
     expect_cli_request("jira --action \"deleteScreenScheme\" --id \"123\"", output, output) do
-      jira.delete_screen_scheme id: 123
+      @jira.delete_screen_scheme id: 123
     end
   end
 
   it 'deletes a workflow' do
-    jira = JiraCli::Wrapper.new
     output = "Workflow 'Software Simplified Workflow for Project MYPROJ' deleted."
     expect_cli_request("jira --action \"deleteWorkflow\" --workflow \"Software Simplified Workflow for Project MYPROJ\"", output, output) do
-      jira.delete_workflow name: 'Software Simplified Workflow for Project MYPROJ'
+      @jira.delete_workflow name: 'Software Simplified Workflow for Project MYPROJ'
     end
   end
 
   it 'gets server info' do
-    jira = JiraCli::Wrapper.new
     output = "JIRA version: 7.3.0, build: 73011, time: 1/3/17 12:00 AM, time zone: Central Standard Time, description: My Description, url: http://jira.<my_domain>.com"
     expect_cli_request("jira --action \"getServerInfo\"", output, output) do
-      jira.get_server_info
+      @jira.get_server_info
     end
   end
 
@@ -104,9 +100,8 @@ RSpec.describe JiraCli::Wrapper do
       }
     }
 
-    jira = JiraCli::Wrapper.new
     expect_cli_request("jira --action \"getWorkflowList\"", cli_response, expected_result) do
-      jira.get_workflow_list
+      @jira.get_workflow_list
     end
   end
 
@@ -160,11 +155,8 @@ RSpec.describe JiraCli::Wrapper do
                 :projects => "APPEALSETL"
       }
     }
-    jira = JiraCli::Wrapper.new
     expect_cli_request("jira --action \"getWorkflowSchemeList\"", cli_response, expected_result) do
-      results = jira.get_workflow_scheme_list
-      # ap results
-      results
+      @jira.get_workflow_scheme_list
     end
   end
 end
