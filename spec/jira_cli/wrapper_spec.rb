@@ -107,6 +107,46 @@ RSpec.describe JiraCli::Wrapper do
     end
   end
 
+  it 'gets issue type scheme list' do
+    cli_response = '4 issue type schemes in list
+"Id","Name","Description","Delete Enabled","Issue Types","Projects"
+"10000","Default Issue Type Scheme","Default issue type scheme is the list of global issue types. All newly created issue types will automatically be added to this scheme.","No","Bug,New Feature,Task,Improvement,Sub-task,Epic,Story,Spike",""
+"10100","Agile Scrum Issue Type Scheme","This issue type scheme is used by GreenHoppers Scrum project template. Projects associated with the Scrum template will be associated to this scheme. You can modify this scheme.","Yes","Epic,Story,Technical task,Bug,Improvement,Uncategorized","CEE,HRE,INFRAPR,OSI"
+"10200","IT Tech Support","","Yes","General Support,Hardware Issue,Select University,Select Education,Virus/Malware,Software Install,Email,Mobile Device,Printer,Hardware Request,Replacement","ITS"
+"10300","Facility Setup Issue Type Scheme","","Yes","New Facility,Contract Maintenance,NF - Request Office Supplies,NF - Hardware Setup,NF - Data Setup,NF - Request Start Up Kits,NF - Request Telecomm,NF - EMR Setup,NF - Request Payroll","NFSP,FMD"'
+
+    expected_result = {
+      10000 => {
+                    :name => "Default Issue Type Scheme",
+             :description => "Default issue type scheme is the list of global issue types. All newly created issue types will automatically be added to this scheme.",
+          :delete_enabled => "No",
+             :issue_types => "Bug,New Feature,Task,Improvement,Sub-task,Epic,Story,Spike"
+      },
+      10100 => {
+                    :name => "Agile Scrum Issue Type Scheme",
+             :description => "This issue type scheme is used by GreenHoppers Scrum project template. Projects associated with the Scrum template will be associated to this scheme. You can modify this scheme.",
+          :delete_enabled => "Yes",
+             :issue_types => "Epic,Story,Technical task,Bug,Improvement,Uncategorized",
+                :projects => "CEE,HRE,INFRAPR,OSI"
+      },
+      10200 => {
+                    :name => "IT Tech Support",
+          :delete_enabled => "Yes",
+             :issue_types => "General Support,Hardware Issue,Select University,Select Education,Virus/Malware,Software Install,Email,Mobile Device,Printer,Hardware Request,Replacement",
+                :projects => "ITS"
+      },
+      10300 => {
+                    :name => "Facility Setup Issue Type Scheme",
+          :delete_enabled => "Yes",
+             :issue_types => "New Facility,Contract Maintenance,NF - Request Office Supplies,NF - Hardware Setup,NF - Data Setup,NF - Request Start Up Kits,NF - Request Telecomm,NF - EMR Setup,NF - Request Payroll",
+                :projects => "NFSP,FMD"
+      }
+    }
+    expect_cli_request("jira --action \"getIssueTypeSchemeList\"", cli_response, expected_result) do
+      @jira.get_issue_type_scheme_list
+    end
+  end
+
   it 'gets workflow list' do
     cli_response = '5 workflows in list
 "Name","Description","Last Modified","Last Modifier","Step Count","Default"
