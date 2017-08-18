@@ -1,7 +1,15 @@
 module JiraCli
   class Wrapper
+    def create_issue key:, type:, **jira_args
+      jira_cmd 'createIssue', project: key, type: type, **jira_args
+    end
+
     def create_project key:, lead:
       jira_cmd 'createProject', project: key, lead: lead
+    end
+
+    def delete_issue issue:
+      jira_cmd 'deleteIssue', issue: issue
     end
 
     def delete_issue_type_scheme id:
@@ -36,6 +44,10 @@ module JiraCli
       jira_cmd 'getServerInfo'
     end
 
+    def get_issue_list **jira_args
+      get_csv_list cmd: 'getIssueList', resource_name: 'issues', **jira_args
+    end
+
     def get_issue_type_screen_scheme_list **jira_args
       get_csv_list cmd: 'getIssueTypeScreenSchemeList', resource_name: 'issue type screen schemes', **jira_args
     end
@@ -68,7 +80,7 @@ module JiraCli
 
     def get_csv_list cmd:, resource_name:, id_col: :id, **jira_args
       output = jira_cmd cmd, **jira_args
-      check_first_line output, '^\d* '+resource_name+' in list'
+      check_first_line output, '^\d* '+resource_name
       return {} unless output.index("\n")
       output = output[output.index("\n")+1..-1] # removing first line of output
       arr = parse_csv output
@@ -81,13 +93,7 @@ module JiraCli
           if v.blank?
             nil
           else
-            key = k.gsub(/\s/,'').underscore.to_sym
-            value = if v =~ /\A\d+\z/
-              v.to_i
-            else
-              v
-            end
-            [key, value]
+            [k.gsub(/\s/,'').underscore.to_sym, v =~ /\A\d+\z/ ? v.to_i : v]
           end
         end.compact.to_h
       end

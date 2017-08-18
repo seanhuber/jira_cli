@@ -10,6 +10,11 @@ ap jira.get_server_info
 begin
 
   ap jira.create_project(key: 'DELETEME', lead: 'shuber')
+
+  ap jira.create_issue(key: 'DELETEME', type: 'Bug', summary: 'This is a test issue')
+  issue_id = jira.get_issue_list(jql: 'project=DELETEME').keys[0]
+  ap jira.delete_issue(issue: issue_id)
+
   ap jira.delete_project(key: 'DELETEME')
 
   issue_type_scheme_id = jira.get_issue_type_scheme_list(regex: 'DELETEME.*').keys[0]

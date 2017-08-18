@@ -1,3 +1,12 @@
+:create_issue:
+  :desc: creates a new issue
+  :cmd: jira --action "createIssue" --project "MYPROJ" --type "bug"
+  :cmd_response: Issue DELETEME-1 created with id 123.
+  :gem_args:
+    :key: MYPROJ
+    :type: bug
+  :gem_response: Issue DELETEME-1 created with id 123.
+
 :create_project:
   :desc: creates a new project
   :cmd: jira --action "createProject" --project "MYPROJ" --lead "shuber"
@@ -6,6 +15,14 @@
     :key: MYPROJ
     :lead: shuber
   :gem_response: Project 'MYPROJ' created with key MYPROJ and id 12345.
+
+:delete_issue:
+  :desc: deletes an issue
+  :cmd: jira --action "deleteIssue" --issue "123"
+  :cmd_response: 123 deleted.
+  :gem_args:
+    :issue: 123
+  :gem_response: 123 deleted.
 
 :delete_issue_type_scheme:
   :desc: deletes an issue type scheme
@@ -71,6 +88,52 @@
     Central Standard Time, description: My Description, url: http://jira.<my_domain>.com'
   :gem_response: 'JIRA version: 7.3.0, build: 73011, time: 1/3/17 12:00 AM, time zone:
     Central Standard Time, description: My Description, url: http://jira.<my_domain>.com'
+
+:get_issue_list:
+  :desc: gets issue list
+  :cmd: jira --action "getIssueList" --jql "project=MYPROJ"
+  :cmd_response: |-
+    2 issues
+    "Key","Id","Project","Project Id","Parent","Parent Id","Type","Type Id","Status","Status Id","Priority","Priority Id","Resolution","Resolution Id","Assignee","Reporter","Created","Updated","Due","Resolution Date","Summary","Description","Environment","Components","Component Ids","Affects Versions","Affects Version Ids","Fix Versions","Fix Version Ids","Original Estimate","Current Estimate","Time Spent","Aggregate Original Estimate","Aggregate Current Estimate","Aggregate Time Spent","Vote Count","Watch Count","Labels","Subtasks"
+    "MYPROJ-37","159419","MYPROJ","12400","","","Task","3","To Do","10027","Medium","10000","","","","Huber","8/17/17 1:36 PM","8/17/17 1:39 PM","","","My Issue Summary","My Issue Description","","","","","","","","","","","","","","0","1","",""
+    "MYPROJ-54","159421","MYPROJ","12400","","","Task","3","To Do","10027","Medium","10000","","","","Huber","8/17/17 1:36 PM","8/17/17 1:39 PM","","","Another Issue Summary","Another Issue Description","","","","","","","","","","","","","","0","1","",""
+  :gem_args:
+    :jql: project=MYPROJ
+  :gem_response:
+    159419:
+      :key: MYPROJ-37
+      :project: MYPROJ
+      :project_id: 12400
+      :type: Task
+      :type_id: 3
+      :status: To Do
+      :status_id: 10027
+      :priority: Medium
+      :priority_id: 10000
+      :reporter: Huber
+      :created: 8/17/17 1:36 PM
+      :updated: 8/17/17 1:39 PM
+      :summary: My Issue Summary
+      :description: My Issue Description
+      :vote_count: 0
+      :watch_count: 1
+    159421:
+      :key: MYPROJ-54
+      :project: MYPROJ
+      :project_id: 12400
+      :type: Task
+      :type_id: 3
+      :status: To Do
+      :status_id: 10027
+      :priority: Medium
+      :priority_id: 10000
+      :reporter: Huber
+      :created: 8/17/17 1:36 PM
+      :updated: 8/17/17 1:39 PM
+      :summary: Another Issue Summary
+      :description: Another Issue Description
+      :vote_count: 0
+      :watch_count: 1
 
 :get_issue_type_screen_scheme_list:
   :desc: gets issue type screen scheme list
