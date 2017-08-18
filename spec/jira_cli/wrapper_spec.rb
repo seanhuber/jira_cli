@@ -66,6 +66,47 @@ RSpec.describe JiraCli::Wrapper do
     end
   end
 
+  it 'gets issue type screen scheme list' do
+    cli_response = '5 issue type screen schemes in list
+"Id","Name","Description","Delete Enabled","Projects"
+"11100","ADF: Scrum Issue Type Screen Scheme","","No","SSO,ADF,FMAP"
+"11201","BIT: Scrum Issue Type Screen Scheme","","No","BIT"
+"10905","BPCU: Software Development Issue Type Screen Scheme","","No","BPCU"
+"10908","Change Request","","No","OCM"
+"10300","Client Support","","No","TAS"'
+
+    expected_result = {
+      11100 => {
+                    :name => "ADF: Scrum Issue Type Screen Scheme",
+          :delete_enabled => "No",
+                :projects => "SSO,ADF,FMAP"
+      },
+      11201 => {
+                    :name => "BIT: Scrum Issue Type Screen Scheme",
+          :delete_enabled => "No",
+                :projects => "BIT"
+      },
+      10905 => {
+                    :name => "BPCU: Software Development Issue Type Screen Scheme",
+          :delete_enabled => "No",
+                :projects => "BPCU"
+      },
+      10908 => {
+                    :name => "Change Request",
+          :delete_enabled => "No",
+                :projects => "OCM"
+      },
+      10300 => {
+                    :name => "Client Support",
+          :delete_enabled => "No",
+                :projects => "TAS"
+      }
+    }
+    expect_cli_request("jira --action \"getIssueTypeScreenSchemeList\"", cli_response, expected_result) do
+      @jira.get_issue_type_screen_scheme_list
+    end
+  end
+
   it 'gets workflow list' do
     cli_response = '5 workflows in list
 "Name","Description","Last Modified","Last Modifier","Step Count","Default"
@@ -106,7 +147,6 @@ RSpec.describe JiraCli::Wrapper do
                 :default => "No"
       }
     }
-
     expect_cli_request("jira --action \"getWorkflowList\"", cli_response, expected_result) do
       @jira.get_workflow_list
     end

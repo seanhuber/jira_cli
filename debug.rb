@@ -5,7 +5,7 @@ require 'ap'
 
 jira = JiraCli::Wrapper.new
 
-# ap jira.get_server_info
+ap jira.get_server_info
 
 begin
 
