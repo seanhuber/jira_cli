@@ -1,8 +1,7 @@
 require 'bundler/setup'
 require 'jira_cli'
 require 'ap'
-
-Dir['./spec/support/**/*.rb'].each{ |f| require f }
+require 'yaml'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -14,6 +13,4 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-
-  config.include StubOpen3
 end
