@@ -1,5 +1,9 @@
 module JiraCli
   class Wrapper
+    def add_comment issue:, **jira_args
+      jira_cmd 'addComment', issue: issue, **jira_args
+    end
+
     def create_issue key:, type:, **jira_args
       jira_cmd 'createIssue', project: key, type: type, **jira_args
     end
@@ -40,8 +44,8 @@ module JiraCli
       jira_cmd 'deleteWorkflowScheme', id: id
     end
 
-    def get_server_info
-      jira_cmd 'getServerInfo'
+    def get_comment_list issue:, **jira_args
+      get_csv_list cmd: 'getCommentList', resource_name: 'comments', **{issue: issue}.merge(jira_args)
     end
 
     def get_issue_list **jira_args
@@ -64,12 +68,20 @@ module JiraCli
       get_csv_list cmd: 'getScreenSchemeList', resource_name: 'screen schemes', **jira_args
     end
 
+    def get_server_info
+      jira_cmd 'getServerInfo'
+    end
+
     def get_workflow_list **jira_args
       get_csv_list cmd: 'getWorkflowList', resource_name: 'workflows', id_col: :name, **jira_args
     end
 
     def get_workflow_scheme_list **jira_args
       get_csv_list cmd: 'getWorkflowSchemeList', resource_name: 'workflow schemes', **jira_args
+    end
+
+    def remove_comment issue:, id:
+      jira_cmd 'removeComment', issue: issue, id: id
     end
 
     private

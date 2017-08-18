@@ -12,7 +12,13 @@ begin
   ap jira.create_project(key: 'DELETEME', lead: 'shuber')
 
   ap jira.create_issue(key: 'DELETEME', type: 'Bug', summary: 'This is a test issue')
+
   issue_id = jira.get_issue_list(jql: 'project=DELETEME').keys[0]
+
+  ap jira.add_comment issue: issue_id, comment: 'testing an automated comment'
+  comment_id = jira.get_comment_list(issue: issue_id).keys[0]
+  ap jira.remove_comment(issue: issue_id, id: comment_id)
+
   ap jira.delete_issue(issue: issue_id)
 
   ap jira.delete_project(key: 'DELETEME')
