@@ -52,6 +52,13 @@ RSpec.describe JiraCli::Wrapper do
     end
   end
 
+  it 'deletes a workflow scheme' do
+    output = "Workflow scheme 123 deleted."
+    expect_cli_request("jira --action \"deleteWorkflowScheme\" --id \"123\"", output, output) do
+      @jira.delete_workflow_scheme id: 123
+    end
+  end
+
   it 'gets server info' do
     output = "JIRA version: 7.3.0, build: 73011, time: 1/3/17 12:00 AM, time zone: Central Standard Time, description: My Description, url: http://jira.<my_domain>.com"
     expect_cli_request("jira --action \"getServerInfo\"", output, output) do
