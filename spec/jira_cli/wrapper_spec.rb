@@ -211,6 +211,65 @@ RSpec.describe JiraCli::Wrapper do
     end
   end
 
+  it 'gets screen scheme list' do
+    cli_response = '8 screen schemes in list
+"Id","Name","Description","Delete Enabled","Issue Type Screen Schemes"
+"11401","ADF: Scrum Bug Screen Scheme","","No","ADF: Scrum Issue Type Screen Scheme"
+"11400","ADF: Scrum Default Screen Scheme","","No","ADF: Scrum Issue Type Screen Scheme"
+"11503","BIT: Scrum Bug Screen Scheme","","No","BIT: Scrum Issue Type Screen Scheme"
+"11502","BIT: Scrum Default Screen Scheme","","No","BIT: Scrum Issue Type Screen Scheme"
+"11209","BPCU: Software Development Bug Screen Scheme","","No","BPCU: Software Development Issue Type Screen Scheme"
+"11208","BPCU: Software Development Default Screen Scheme","","No","BPCU: Software Development Issue Type Screen Scheme"
+"11212","Change Request Scheme","","No","Change Request"
+"10701","Contract Maintenance","","No","New Facility Screen Scheme"'
+
+    expected_result = {
+      11401 => {
+                               :name => "ADF: Scrum Bug Screen Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "ADF: Scrum Issue Type Screen Scheme"
+      },
+      11400 => {
+                               :name => "ADF: Scrum Default Screen Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "ADF: Scrum Issue Type Screen Scheme"
+      },
+      11503 => {
+                               :name => "BIT: Scrum Bug Screen Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "BIT: Scrum Issue Type Screen Scheme"
+      },
+      11502 => {
+                               :name => "BIT: Scrum Default Screen Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "BIT: Scrum Issue Type Screen Scheme"
+      },
+      11209 => {
+                               :name => "BPCU: Software Development Bug Screen Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "BPCU: Software Development Issue Type Screen Scheme"
+      },
+      11208 => {
+                               :name => "BPCU: Software Development Default Screen Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "BPCU: Software Development Issue Type Screen Scheme"
+      },
+      11212 => {
+                               :name => "Change Request Scheme",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "Change Request"
+      },
+      10701 => {
+                               :name => "Contract Maintenance",
+                     :delete_enabled => "No",
+          :issue_type_screen_schemes => "New Facility Screen Scheme"
+      }
+    }
+    expect_cli_request("jira --action \"getScreenSchemeList\"", cli_response, expected_result) do
+      @jira.get_screen_scheme_list
+    end
+  end
+
   it 'gets workflow list' do
     cli_response = '5 workflows in list
 "Name","Description","Last Modified","Last Modifier","Step Count","Default"
