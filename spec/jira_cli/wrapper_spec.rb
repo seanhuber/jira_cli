@@ -147,6 +147,70 @@ RSpec.describe JiraCli::Wrapper do
     end
   end
 
+  it 'gets screen list' do
+    cli_response = '9 screens in list
+"Id","Name","Description","Delete Enabled","Screen Schemes","Workflows"
+"11601","ADF: Scrum Bug Screen","","No","ADF: Scrum Bug Screen Scheme",""
+"11600","ADF: Scrum Default Issue Screen","","No","ADF: Scrum Default Screen Scheme,Default Screen Scheme",""
+"10101","Add Technology","","Yes","",""
+"11703","BIT: Scrum Bug Screen","","No","BIT: Scrum Bug Screen Scheme",""
+"11702","BIT: Scrum Default Issue Screen","","No","BIT: Scrum Default Screen Scheme",""
+"11416","BPCU: Software Development Bug Screen","","No","BPCU: Software Development Bug Screen Scheme",""
+"11415","BPCU: Software Development Default Issue Screen","","No","BPCU: Software Development Default Screen Scheme",""
+"11417","BPCU: Software Development Resolve Issue Screen","","No","","BPCU: Software Development Workflow,BPCU: Software Development Workflow,BPCU: Software Development Workflow"
+"11422","Change Request Screen","","No","Change Request Scheme",""'
+
+    expected_result = {
+      11601 => {
+                    :name => "ADF: Scrum Bug Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "ADF: Scrum Bug Screen Scheme"
+      },
+      11600 => {
+                    :name => "ADF: Scrum Default Issue Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "ADF: Scrum Default Screen Scheme,Default Screen Scheme"
+      },
+      10101 => {
+                    :name => "Add Technology",
+          :delete_enabled => "Yes"
+      },
+      11703 => {
+                    :name => "BIT: Scrum Bug Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "BIT: Scrum Bug Screen Scheme"
+      },
+      11702 => {
+                    :name => "BIT: Scrum Default Issue Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "BIT: Scrum Default Screen Scheme"
+      },
+      11416 => {
+                    :name => "BPCU: Software Development Bug Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "BPCU: Software Development Bug Screen Scheme"
+      },
+      11415 => {
+                    :name => "BPCU: Software Development Default Issue Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "BPCU: Software Development Default Screen Scheme"
+      },
+      11417 => {
+                    :name => "BPCU: Software Development Resolve Issue Screen",
+          :delete_enabled => "No",
+               :workflows => "BPCU: Software Development Workflow,BPCU: Software Development Workflow,BPCU: Software Development Workflow"
+      },
+      11422 => {
+                    :name => "Change Request Screen",
+          :delete_enabled => "No",
+          :screen_schemes => "Change Request Scheme"
+      }
+    }
+    expect_cli_request("jira --action \"getScreenList\"", cli_response, expected_result) do
+      @jira.get_screen_list
+    end
+  end
+
   it 'gets workflow list' do
     cli_response = '5 workflows in list
 "Name","Description","Last Modified","Last Modifier","Step Count","Default"
