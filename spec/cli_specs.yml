@@ -546,3 +546,12 @@
     :issue: 123
     :id: 345
   :gem_response: Comment with id 345 removed from 123.
+
+:transition_issue:
+  :desc: transitions issue through workflow
+  :cmd: jira --action "transitionIssue" --issue "123" --transition "In Review"
+  :cmd_response: Successfully transitioned issue MYPROJ-1 with transition 'In Review'.
+  :gem_args:
+    :issue: 123
+    :transition: In Review
+  :gem_response: Successfully transitioned issue MYPROJ-1 with transition 'In Review'.

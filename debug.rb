@@ -20,6 +20,8 @@ begin
 
   issue_id = jira.get_issue_list(jql: 'project=DELETEME').keys[0]
 
+  ap jira.transition_issue(issue: issue_id, transition: 'In Review')
+
   ap jira.add_attachment(issue: issue_id, file: 'README.md')
   attachment_id = jira.get_attachment_list(issue: issue_id).keys[0]
   ap jira.remove_attachment(issue: issue_id, id: attachment_id)

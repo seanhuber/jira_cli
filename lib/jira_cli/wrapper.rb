@@ -116,6 +116,10 @@ module JiraCli
       jira_cmd 'removeComment', issue: issue, id: id
     end
 
+    def transition_issue issue:, transition:, **jira_args
+      jira_cmd 'transitionIssue', issue: issue, transition: transition, **jira_args
+    end
+
     private
 
     def check_first_line output, regex
