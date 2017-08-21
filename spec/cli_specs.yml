@@ -16,6 +16,18 @@
     :comment: this is a test comment
   :gem_response: Comment with id 345 added to DELETEME-1.
 
+:add_version:
+  :desc: adds a new version (release) to a project
+  :cmd: jira --action "addVersion" --project "MYPROJ" --name "myproj_v1.2.3" --description "this is a test release" --startDate "7/13/17" --date "8/21/17"
+  :cmd_response: Version 'myproj_v1.2.3' with id 123 added to project MYPROJ as the last version.
+  :gem_args:
+    :key: MYPROJ
+    :name: myproj_v1.2.3
+    :description: this is a test release
+    :start_date: 2017-07-13
+    :date: 2017-08-21
+  :gem_response: Version 'myproj_v1.2.3' with id 123 added to project MYPROJ as the last version.
+
 :create_issue:
   :desc: creates a new issue
   :cmd: jira --action "createIssue" --project "MYPROJ" --type "bug"
@@ -81,6 +93,15 @@
   :gem_args:
     :id: 123
   :gem_response: Screen scheme with id 123 deleted.
+
+:delete_version:
+  :desc: deletes project version (release)
+  :cmd: jira --action "deleteVersion" --project "MYPROJ" --version "123"
+  :cmd_response: Version '123' deleted from project MYPROJ.
+  :gem_args:
+    :key: MYPROJ
+    :version: 123
+  :gem_response: Version '123' deleted from project MYPROJ.
 
 :delete_workflow:
   :desc: deletes a workflow
@@ -414,6 +435,40 @@
   :gem_response: 'JIRA version: 7.3.0, build: 73011, time: 1/3/17 12:00 AM, time zone:
     Central Standard Time, description: My Description, url: http://jira.<my_domain>.com'
 
+:get_version_list:
+  :desc: gets version list for a project
+  :cmd: jira --action "getVersionList" --project "MYPROJ"
+  :cmd_response: |-
+    4 versions for project: MYPROJ
+    "Id","Name","Sequence","Released","Release Date"
+    "11","myproj_v1.2.3","1","Yes","2017-01-13"
+    "22","myproj_v2.3.4","2","Yes","2017-02-21"
+    "33","myproj_v3.4.5","3","Yes","2017-03-18"
+    "44","myproj_v4.5.6","4","No","2017-08-21"
+  :gem_args:
+    :key: MYPROJ
+  :gem_response:
+    11:
+      :name: myproj_v1.2.3
+      :sequence: 1
+      :released: 'Yes'
+      :release_date: '2017-01-13'
+    22:
+      :name: myproj_v2.3.4
+      :sequence: 2
+      :released: 'Yes'
+      :release_date: '2017-02-21'
+    33:
+      :name: myproj_v3.4.5
+      :sequence: 3
+      :released: 'Yes'
+      :release_date: '2017-03-18'
+    44:
+      :name: myproj_v4.5.6
+      :sequence: 4
+      :released: 'No'
+      :release_date: '2017-08-21'
+
 :get_workflow_scheme_list:
   :desc: gets workflow scheme list
   :cmd: jira --action "getWorkflowSchemeList"
@@ -464,6 +519,15 @@
       :name: 'PROJ7: Workflow Scheme'
       :delete_enabled: 'No'
       :projects: APPEALSETL
+
+:release_version:
+  :desc: releases a version for a project
+  :cmd: jira --action "releaseVersion" --project "MYPROJ" --version "123"
+  :cmd_response: 123 released. Release date is 8/21/17 12:00 AM.
+  :gem_args:
+    :key: MYPROJ
+    :version: 123
+  :gem_response: 123 released. Release date is 8/21/17 12:00 AM.
 
 :remove_attachment:
   :desc: removes an attachment from an issue

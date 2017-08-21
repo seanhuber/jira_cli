@@ -11,6 +11,11 @@ begin
 
   ap jira.create_project(key: 'DELETEME', lead: 'shuber')
 
+  ap jira.add_version(key: 'DELETEME', name: 'deleteme_v1.2.3', description: 'this is a test release', start_date: Date.new(2017, 7, 13), date: Date.new(2017, 8, 21))
+  version_id = jira.get_version_list(key: 'DELETEME').keys[0]
+  ap jira.release_version(key: 'DELETEME', version: version_id)
+  ap jira.delete_version(key: 'DELETEME', version: version_id)
+
   ap jira.create_issue(key: 'DELETEME', type: 'Bug', summary: 'This is a test issue')
 
   issue_id = jira.get_issue_list(jql: 'project=DELETEME').keys[0]

@@ -8,6 +8,14 @@ module JiraCli
       jira_cmd 'addComment', issue: issue, **jira_args
     end
 
+    def add_version key:, name:, **jira_args
+      formatted_args = jira_args.map do |k, v|
+        v = v.strftime('%-m/%d/%y') if [:start_date, :date].include?(k)
+        [k, v]
+      end.to_h
+      jira_cmd 'addVersion', project: key, name: name, **formatted_args
+    end
+
     def create_issue key:, type:, **jira_args
       jira_cmd 'createIssue', project: key, type: type, **jira_args
     end
@@ -38,6 +46,10 @@ module JiraCli
 
     def delete_screen_scheme id:
       jira_cmd 'deleteScreenScheme', id: id
+    end
+
+    def delete_version key:, version:, **jira_args
+      jira_cmd 'deleteVersion', project: key, version: version, **jira_args
     end
 
     def delete_workflow name:
@@ -80,12 +92,20 @@ module JiraCli
       jira_cmd 'getServerInfo'
     end
 
+    def get_version_list key:, **jira_args
+      get_csv_list cmd: 'getVersionList', resource_name: 'versions', **{project: key}.merge(jira_args)
+    end
+
     def get_workflow_list **jira_args
       get_csv_list cmd: 'getWorkflowList', resource_name: 'workflows', id_col: :name, **jira_args
     end
 
     def get_workflow_scheme_list **jira_args
       get_csv_list cmd: 'getWorkflowSchemeList', resource_name: 'workflow schemes', **jira_args
+    end
+
+    def release_version key:, version:, **jira_args
+      jira_cmd 'releaseVersion', project: key, version: version, **jira_args
     end
 
     def remove_attachment issue:, id:
