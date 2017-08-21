@@ -21,7 +21,7 @@
   :cmd: jira --action "addVersion" --project "MYPROJ" --name "myproj_v1.2.3" --description "this is a test release" --startDate "7/13/17" --date "8/21/17"
   :cmd_response: Version 'myproj_v1.2.3' with id 123 added to project MYPROJ as the last version.
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
     :name: myproj_v1.2.3
     :description: this is a test release
     :start_date: 2017-07-13
@@ -33,7 +33,7 @@
   :cmd: jira --action "createIssue" --project "MYPROJ" --type "bug"
   :cmd_response: Issue DELETEME-1 created with id 123.
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
     :type: bug
   :gem_response: Issue DELETEME-1 created with id 123.
 
@@ -42,7 +42,7 @@
   :cmd: jira --action "createProject" --project "MYPROJ" --lead "shuber"
   :cmd_response: Project 'MYPROJ' created with key MYPROJ and id 12345.
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
     :lead: shuber
   :gem_response: Project 'MYPROJ' created with key MYPROJ and id 12345.
 
@@ -75,7 +75,7 @@
   :cmd: jira --action "deleteProject" --project "MYPROJ"
   :cmd_response: Project MYPROJ deleted.
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
   :gem_response: Project MYPROJ deleted.
 
 :delete_screen:
@@ -99,7 +99,7 @@
   :cmd: jira --action "deleteVersion" --project "MYPROJ" --version "123"
   :cmd_response: Version '123' deleted from project MYPROJ.
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
     :version: 123
   :gem_response: Version '123' deleted from project MYPROJ.
 
@@ -109,7 +109,7 @@
     Project MYPROJ"
   :cmd_response: Workflow 'Software Simplified Workflow for Project MYPROJ' deleted.
   :gem_args:
-    :name: Software Simplified Workflow for Project MYPROJ
+    :workflow: Software Simplified Workflow for Project MYPROJ
   :gem_response: Workflow 'Software Simplified Workflow for Project MYPROJ' deleted.
 
 :delete_workflow_scheme:
@@ -446,7 +446,7 @@
     "33","myproj_v3.4.5","3","Yes","2017-03-18"
     "44","myproj_v4.5.6","4","No","2017-08-21"
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
   :gem_response:
     11:
       :name: myproj_v1.2.3
@@ -525,7 +525,7 @@
   :cmd: jira --action "releaseVersion" --project "MYPROJ" --version "123"
   :cmd_response: 123 released. Release date is 8/21/17 12:00 AM.
   :gem_args:
-    :key: MYPROJ
+    :project: MYPROJ
     :version: 123
   :gem_response: 123 released. Release date is 8/21/17 12:00 AM.
 

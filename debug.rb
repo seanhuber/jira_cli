@@ -3,20 +3,20 @@
 require 'jira_cli'
 require 'ap'
 
-jira = JiraCli::Wrapper.new
+jira = JiraCli::Wrapper.instance
 
 ap jira.get_server_info
 
 begin
 
-  ap jira.create_project(key: 'DELETEME', lead: 'shuber')
+  ap jira.create_project(project: 'DELETEME', lead: 'shuber')
 
-  ap jira.add_version(key: 'DELETEME', name: 'deleteme_v1.2.3', description: 'this is a test release', start_date: Date.new(2017, 7, 13), date: Date.new(2017, 8, 21))
-  version_id = jira.get_version_list(key: 'DELETEME').keys[0]
-  ap jira.release_version(key: 'DELETEME', version: version_id)
-  ap jira.delete_version(key: 'DELETEME', version: version_id)
+  ap jira.add_version(project: 'DELETEME', name: 'deleteme_v1.2.3', description: 'this is a test release', start_date: Date.new(2017, 7, 13), date: Date.new(2017, 8, 21))
+  version_id = jira.get_version_list(project: 'DELETEME').keys[0]
+  ap jira.release_version(project: 'DELETEME', version: version_id)
+  ap jira.delete_version(project: 'DELETEME', version: version_id)
 
-  ap jira.create_issue(key: 'DELETEME', type: 'Bug', summary: 'This is a test issue')
+  ap jira.create_issue(project: 'DELETEME', type: 'Bug', summary: 'This is a test issue')
 
   issue_id = jira.get_issue_list(jql: 'project=DELETEME').keys[0]
 
@@ -32,7 +32,7 @@ begin
 
   ap jira.delete_issue(issue: issue_id)
 
-  ap jira.delete_project(key: 'DELETEME')
+  ap jira.delete_project(project: 'DELETEME')
 
   issue_type_scheme_id = jira.get_issue_type_scheme_list(regex: 'DELETEME.*').keys[0]
   ap jira.delete_issue_type_scheme(id: issue_type_scheme_id)
@@ -41,7 +41,7 @@ begin
   ap jira.delete_workflow_scheme(id: workflow_scheme_id)
 
   workflow_name = jira.get_workflow_list(regex: 'Software Simplified Workflow for Project DELETEME.*').keys[0]
-  ap jira.delete_workflow(name: workflow_name)
+  ap jira.delete_workflow(workflow: workflow_name)
 
   issue_type_screen_scheme_id = jira.get_issue_type_screen_scheme_list(regex: 'DELETEME.*').keys[0]
   ap jira.delete_issue_type_screen_scheme(id: issue_type_screen_scheme_id)

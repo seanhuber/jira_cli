@@ -1,6 +1,6 @@
 RSpec.describe JiraCli::Wrapper do
   before(:all) do
-    @jira = JiraCli::Wrapper.new
+    @jira = JiraCli::Wrapper.instance
   end
 
   YAML.load_file('spec/cli_specs.yml').each do |wpr_method, args|
