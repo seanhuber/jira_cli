@@ -1,3 +1,12 @@
+:add_attachment:
+  :desc: adds an attachment to an issue
+  :cmd: jira --action "addAttachment" --issue "123" --file "README.md"
+  :cmd_response: Attachment 'README.md' with id 123 added to issue DELETEME-1.
+  :gem_args:
+    :issue: 123
+    :file: README.md
+  :gem_response: Attachment 'README.md' with id 123 added to issue DELETEME-1.
+
 :add_comment:
   :desc: adds a comment to an issue
   :cmd: jira --action "addComment" --issue "123" --comment "this is a test comment"
@@ -89,6 +98,37 @@
   :gem_args:
     :id: 123
   :gem_response: Workflow scheme 123 deleted.
+
+:get_attachment_list:
+  :desc: gets attachment list for an issue
+  :cmd: jira --action "getAttachmentList" --issue "123"
+  :cmd_response: |-
+    3 attachments for issue: MYPROJ-1
+    "Id","Name","MIME Type","Size","Date Created","Author"
+    "33","README.md","application/octet-stream","1094","8/18/17 9:03 AM","shuber"
+    "44","another_file.pdf","application/octet-stream","1094","8/19/17 9:03 AM","shuber"
+    "55","my_file.txt","application/octet-stream","1094","8/21/17 9:03 AM","shuber"
+  :gem_args:
+    :issue: 123
+  :gem_response:
+    33:
+      :name: README.md
+      :mime_type: application/octet-stream
+      :size: 1094
+      :date_created: 8/18/17 9:03 AM
+      :author: shuber
+    44:
+      :name: another_file.pdf
+      :mime_type: application/octet-stream
+      :size: 1094
+      :date_created: 8/19/17 9:03 AM
+      :author: shuber
+    55:
+      :name: my_file.txt
+      :mime_type: application/octet-stream
+      :size: 1094
+      :date_created: 8/21/17 9:03 AM
+      :author: shuber
 
 :get_comment_list:
   :desc: gets comment list
@@ -424,6 +464,15 @@
       :name: 'PROJ7: Workflow Scheme'
       :delete_enabled: 'No'
       :projects: APPEALSETL
+
+:remove_attachment:
+  :desc: removes an attachment from an issue
+  :cmd: jira --action "removeAttachment" --issue "123" --id "345"
+  :cmd_response: Attachment with id 345 removed from issue MYPROJ-1.
+  :gem_args:
+    :issue: 123
+    :id: 345
+  :gem_response: Attachment with id 345 removed from issue MYPROJ-1.
 
 :remove_comment:
   :desc: removes a comment from an issue

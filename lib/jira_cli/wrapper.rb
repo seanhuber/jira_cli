@@ -1,5 +1,9 @@
 module JiraCli
   class Wrapper
+    def add_attachment issue:, file:, **jira_args
+      jira_cmd 'addAttachment', issue: issue, file: file, **jira_args
+    end
+
     def add_comment issue:, **jira_args
       jira_cmd 'addComment', issue: issue, **jira_args
     end
@@ -44,6 +48,10 @@ module JiraCli
       jira_cmd 'deleteWorkflowScheme', id: id
     end
 
+    def get_attachment_list issue:, **jira_args
+      get_csv_list cmd: 'getAttachmentList', resource_name: 'attachments', **{issue: issue}.merge(jira_args)
+    end
+
     def get_comment_list issue:, **jira_args
       get_csv_list cmd: 'getCommentList', resource_name: 'comments', **{issue: issue}.merge(jira_args)
     end
@@ -78,6 +86,10 @@ module JiraCli
 
     def get_workflow_scheme_list **jira_args
       get_csv_list cmd: 'getWorkflowSchemeList', resource_name: 'workflow schemes', **jira_args
+    end
+
+    def remove_attachment issue:, id:
+      jira_cmd 'removeAttachment', issue: issue, id: id
     end
 
     def remove_comment issue:, id:
