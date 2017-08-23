@@ -18,7 +18,7 @@
 
 :add_version:
   :desc: adds a new version (release) to a project
-  :cmd: jira --action "addVersion" --project "MYPROJ" --name "myproj_v1.2.3" --description "this is a test release" --startDate "7/13/17" --date "8/21/17"
+  :cmd: jira --action "addVersion" --project "MYPROJ" --name "myproj_v1.2.3" --description "this is a test release" --startDate "2017-07-13" --date "2017-08-21"
   :cmd_response: Version 'myproj_v1.2.3' with id 123 added to project MYPROJ as the last version.
   :gem_args:
     :project: MYPROJ

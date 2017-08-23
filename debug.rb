@@ -4,13 +4,14 @@ require 'jira_cli'
 require 'ap'
 
 jira = JiraCli::Wrapper.instance
+jira.override_csv_methods
 
 ap jira.get_server_info
 
 begin
 
   ap jira.create_project(project: 'DELETEME', lead: 'shuber')
-
+  
   ap jira.add_version(project: 'DELETEME', name: 'deleteme_v1.2.3', description: 'this is a test release', start_date: Date.new(2017, 7, 13), date: Date.new(2017, 8, 21))
   version_id = jira.get_version_list(project: 'DELETEME').keys[0]
   ap jira.release_version(project: 'DELETEME', version: version_id)

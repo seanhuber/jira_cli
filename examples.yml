@@ -1,0 +1,4811 @@
+---
+- :cli_example: --action "addAttachment" --issue "ZATTACH-1" --file "-" --name "dataFromStandardInput.txt"
+    --findReplace "xxx:yyy"
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: "-"
+    :name: dataFromStandardInput.txt
+    :find_replace: xxx:yyy
+- :cli_example: --action "addAttachment" --issue "ZATTACH-1" --file "src/itest/resources/binary.bin"
+    --verbose
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: src/itest/resources/binary.bin
+    :verbose: true
+- :cli_example: --action "addAttachment" --issue "ZATTACH-1" --file "src/itest/resources/data.txt"
+    --findReplace "xxx:yyy" --verbose
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: src/itest/resources/data.txt
+    :find_replace: xxx:yyy
+    :verbose: true
+- :cli_example: --action "addAttachment" --issue "ZATTACH-1" --file "src/itest/resources/data.txt"
+    --name "data"
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: src/itest/resources/data.txt
+    :name: data
+- :cli_example: --action "addAttachment" --issue "ZATTACH-1" --file "src/itest/resources/empty.txt"
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: src/itest/resources/empty.txt
+- :cli_example: --action "addAttachment" --issue "ZATTACH-1" --file "src/itest/resources/large.zip"
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: src/itest/resources/large.zip
+- :cli_example: '--action "addAttachment" --issue "ZATTACH-1" --file "src/itest/resources/Special
+    name #&?"'
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZATTACH-1
+    :file: 'src/itest/resources/Special name #&?'
+- :cli_example: --action "addAttachment" --issue "ZJIRACLI-3" --file "src/itest/resources/data.txt"
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZJIRACLI-3
+    :file: src/itest/resources/data.txt
+- :cli_example: --action "addAttachment" --issue "ZRUNNER-1" --file "src/itest/resources/data.txt"
+  :gem_example:
+    :action: :add_attachment
+    :issue: ZRUNNER-1
+    :file: src/itest/resources/data.txt
+- :cli_example: --action "addAttachments" --issue "ZATTACH-1" --file "src/itest/resources"
+    --regex "((data)|(empty)).*" --recursive
+  :gem_example:
+    :action: :add_attachments
+    :issue: ZATTACH-1
+    :file: src/itest/resources
+    :regex: "((data)|(empty)).*"
+    :recursive: true
+- :cli_example: --action "addComment" --issue "ZCLICLONE-1" --comment "my comment" --role
+    "Developers"
+  :gem_example:
+    :action: :add_comment
+    :issue: ZCLICLONE-1
+    :comment: my comment
+    :role: Developers
+- :cli_example: --action "addComment" --issue "ZCLICLONE-4" --comment "my comment"
+  :gem_example:
+    :action: :add_comment
+    :issue: ZCLICLONE-4
+    :comment: my comment
+- :cli_example: --action "addComment" --issue "ZCLICLONE-4" --comment "my group restricted
+    comment" --group "jira-users"
+  :gem_example:
+    :action: :add_comment
+    :issue: ZCLICLONE-4
+    :comment: my group restricted comment
+    :group: jira-users
+- :cli_example: --action "addComment" --issue "ZCLICLONE-4" --comment "my role restricted
+    comment" --role "Developers"
+  :gem_example:
+    :action: :add_comment
+    :issue: ZCLICLONE-4
+    :comment: my role restricted comment
+    :role: Developers
+- :cli_example: --action "addComment" --issue "ZJIRACLI-3" --file "src/itest/resources/data.txt"
+    --findReplace "xxx:yyy"
+  :gem_example:
+    :action: :add_comment
+    :issue: ZJIRACLI-3
+    :file: src/itest/resources/data.txt
+    :find_replace: xxx:yyy
+- :cli_example: |-
+    --action "addComment" --issue "ZSUB-3" --comment "
+                    resolution: %original_resolution%
+                    resolutiondate: %original_resolutiondate%
+                    resolution_date: %original_resolution_date%
+                    resolution_date with format: %original_resolution_date(yyyy-MM-dd HH:mm:ss)%
+                    now with format: %now(yyyy-MM-dd HH:mm:ss)%
+                " --dateFormat "yyyy-MM-dd HH:mm:ss"
+  :gem_example:
+    :action: :add_comment
+    :issue: ZSUB-3
+    :comment: "\n                resolution: %original_resolution%\n                resolutiondate:
+      %original_resolutiondate%\n                resolution_date: %original_resolution_date%\n
+      \               resolution_date with format: %original_resolution_date(yyyy-MM-dd
+      HH:mm:ss)%\n                now with format: %now(yyyy-MM-dd HH:mm:ss)%\n            "
+    :date_format: yyyy-MM-dd HH:mm:ss
+- :cli_example: --action "addComponent" --project "ZCOMP" --name "C1" --lead "automation"
+    --description "C1 description" --defaultAssignee "COMPONENT_LEAD"
+  :gem_example:
+    :action: :add_component
+    :project: ZCOMP
+    :name: C1
+    :lead: automation
+    :description: C1 description
+    :default_assignee: COMPONENT_LEAD
+- :cli_example: --action "addComponent" --project "ZCOMP" --name "C2" --lead "automation"
+    --description "C2 description" --defaultAssignee "COMPONENT_LEAD"
+  :gem_example:
+    :action: :add_component
+    :project: ZCOMP
+    :name: C2
+    :lead: automation
+    :description: C2 description
+    :default_assignee: COMPONENT_LEAD
+- :cli_example: --action "addComponent" --project "ZEXPORT2" --name "C1" --description
+    "C1 description"
+  :gem_example:
+    :action: :add_component
+    :project: ZEXPORT2
+    :name: C1
+    :description: C1 description
+- :cli_example: --action "addComponent" --project "zjiracli" --name "C1" --description
+    "a generic description"
+  :gem_example:
+    :action: :add_component
+    :project: zjiracli
+    :name: C1
+    :description: a generic description
+- :cli_example: --action "addComponent" --project "zjiracli" --name "C1" --description
+    "a generic description" --replace
+  :gem_example:
+    :action: :add_component
+    :project: zjiracli
+    :name: C1
+    :description: a generic description
+    :replace: true
+- :cli_example: --action "addComponent" --project "zjiracli" --name "C2" --lead "developer"
+    --description "a generic description" --defaultAssignee "COMPONENT_LEAD"
+  :gem_example:
+    :action: :add_component
+    :project: zjiracli
+    :name: C2
+    :lead: developer
+    :description: a generic description
+    :default_assignee: COMPONENT_LEAD
+- :cli_example: --action "addComponent" --project "zjiracli" --name "swap2" --description
+    "a generic description"
+  :gem_example:
+    :action: :add_component
+    :project: zjiracli
+    :name: swap2
+    :description: a generic description
+- :cli_example: --action "addCustomField" --field "zzz_Number Field" --type "com.atlassian.jira.plugin.system.customfieldtypes:float"
+    --continue --jql "com.atlassian.jira.plugin.system.customfieldtypes:exactnumber"
+  :gem_example:
+    :action: :add_custom_field
+    :field: zzz_Number Field
+    :type: com.atlassian.jira.plugin.system.customfieldtypes:float
+    :continue: true
+    :jql: com.atlassian.jira.plugin.system.customfieldtypes:exactnumber
+- :cli_example: --action "addCustomField" --field "zzz_Radio Buttons" --type "com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons"
+    --continue
+  :gem_example:
+    :action: :add_custom_field
+    :field: zzz_Radio Buttons
+    :type: com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons
+    :continue: true
+- :cli_example: --action "addCustomField" --field "zzz_Select List (single choice)"
+    --type "com.atlassian.jira.plugin.system.customfieldtypes:multiselect" --continue
+  :gem_example:
+    :action: :add_custom_field
+    :field: zzz_Select List (single choice)
+    :type: com.atlassian.jira.plugin.system.customfieldtypes:multiselect
+    :continue: true
+- :cli_example: --action "addGroup" --group "Testgroup1" --preserveCase
+  :gem_example:
+    :action: :add_group
+    :group: Testgroup1
+    :preserve_case: true
+- :cli_example: --action "addLabels" --issue "ZJIRACLI-8" --labels "addLabel1 addLabel2"
+  :gem_example:
+    :action: :add_labels
+    :issue: ZJIRACLI-8
+    :labels: addLabel1 addLabel2
+- :cli_example: --action "addProjectRoleActors" --project "zjiracli" --role "users"
+    --userId "user, admin"
+  :gem_example:
+    :action: :add_project_role_actors
+    :project: zjiracli
+    :role: users
+    :user_id: user, admin
+- :cli_example: --action "addProjectRoleActors" --project "ZROLES" --role "administrators"
+    --userId "project-admin"
+  :gem_example:
+    :action: :add_project_role_actors
+    :project: ZROLES
+    :role: administrators
+    :user_id: project-admin
+- :cli_example: --action "addProjectRoleActors" --project "ZROLES" --role "users" --userId
+    "user, admin"
+  :gem_example:
+    :action: :add_project_role_actors
+    :project: ZROLES
+    :role: users
+    :user_id: user, admin
+- :cli_example: --action "addProjectRole" --name "zAdd project role test" --description
+    "addProjectRole test"
+  :gem_example:
+    :action: :add_project_role
+    :name: zAdd project role test
+    :description: addProjectRole test
+- :cli_example: --action "addRemoteLink" --issue "ZLINKS-1" --name "addRemoteLinkUrl"
+    --url "https://google.com"
+  :gem_example:
+    :action: :add_remote_link
+    :issue: ZLINKS-1
+    :name: addRemoteLinkUrl
+    :url: https://google.com
+- :cli_example: --action "addTransition" --workflow "zjiracliworkflow_new" --name "test
+    1" --description "Transition for testing" --step "1"
+  :gem_example:
+    :action: :add_transition
+    :workflow: zjiracliworkflow_new
+    :name: test 1
+    :description: Transition for testing
+    :step: '1'
+- :cli_example: --action "addTransition" --workflow "zjiracliworkflow_new" --name "test
+    2" --description "Transition for testing" --step "1" --transition "3" --screen
+    "Default Screen"
+  :gem_example:
+    :action: :add_transition
+    :workflow: zjiracliworkflow_new
+    :name: test 2
+    :description: Transition for testing
+    :step: '1'
+    :transition: '3'
+    :screen: Default Screen
+- :cli_example: --action "addTransition" --workflow "zjiracliworkflow_new" --name "test
+    3" --description "Transition for testing" --step "1" --screen "12326"
+  :gem_example:
+    :action: :add_transition
+    :workflow: zjiracliworkflow_new
+    :name: test 3
+    :description: Transition for testing
+    :step: '1'
+    :screen: '12326'
+- :cli_example: '--action "addTransition" --workflow "zjiracliworkflow_new" --name "test
+    4" --description "Transition for testing" --step "1" --screen "FIELDCONF: Software
+    Development Default Issue Screen"'
+  :gem_example:
+    :action: :add_transition
+    :workflow: zjiracliworkflow_new
+    :name: test 4
+    :description: Transition for testing
+    :step: '1'
+    :screen: 'FIELDCONF: Software Development Default Issue Screen'
+- :cli_example: --action "addTransition" --workflow "zjiracliworkflow_new" --name "test
+    9" --description "Transition for testing" --step "3"
+  :gem_example:
+    :action: :add_transition
+    :workflow: zjiracliworkflow_new
+    :name: test 9
+    :description: Transition for testing
+    :step: '3'
+- :cli_example: --action "addUserToGroup" --userId "Testuser3" --group "testgroup2"
+    --autoGroup
+  :gem_example:
+    :action: :add_user_to_group
+    :user_id: Testuser3
+    :group: testgroup2
+    :auto_group: true
+- :cli_example: --action "addUser" --userId "automation" --userEmail "testuser@x.com"
+  :gem_example:
+    :action: :add_user
+    :user_id: automation
+    :user_email: testuser@x.com
+- :cli_example: --action "addUser" --userId "testuser1" --userFullName "Test User1"
+    --userEmail "testuser1@x.com" --userPassword ""
+  :gem_example:
+    :action: :add_user
+    :user_id: testuser1
+    :user_full_name: Test User1
+    :user_email: testuser1@x.com
+    :user_password: ''
+- :cli_example: --action "addUser" --userId "testuser2" --userFullName "Special User
+    2" --userEmail "testuser2@x.com"
+  :gem_example:
+    :action: :add_user
+    :user_id: testuser2
+    :user_full_name: Special User 2
+    :user_email: testuser2@x.com
+- :cli_example: --action "addUser" --userId "Testuser3" --userEmail "testuser3@x.com"
+    --preserveCase
+  :gem_example:
+    :action: :add_user
+    :user_id: Testuser3
+    :user_email: testuser3@x.com
+    :preserve_case: true
+- :cli_example: --action "addVersion" --project "ZEXPORT2" --name "V1" --description
+    "V1 description"
+  :gem_example:
+    :action: :add_version
+    :project: ZEXPORT2
+    :name: V1
+    :description: V1 description
+- :cli_example: --action "addVersion" --project "zjiracli for automated testing" --name
+    "V2" --date "5/30/15" --startDate "9/30/14" --after "V1" --description "V2 description"
+  :gem_example:
+    :action: :add_version
+    :project: zjiracli for automated testing
+    :name: V2
+    :date: 5/30/15
+    :start_date: 9/30/14
+    :after: V1
+    :description: V2 description
+- :cli_example: --action "addVersion" --project "zjiracli for automated testing" --name
+    "With Blanks"
+  :gem_example:
+    :action: :add_version
+    :project: zjiracli for automated testing
+    :name: With Blanks
+- :cli_example: --action "addVersion" --project "zjiracli" --name "V1"
+  :gem_example:
+    :action: :add_version
+    :project: zjiracli
+    :name: V1
+- :cli_example: --action "addVersion" --project "zjiracli" --version "V2" --date "5/30/15"
+    --description "V2 description" --replace
+  :gem_example:
+    :action: :add_version
+    :project: zjiracli
+    :version: V2
+    :date: 5/30/15
+    :description: V2 description
+    :replace: true
+- :cli_example: --action "addVersion" --project "ZRUNNER" --name "V1"
+  :gem_example:
+    :action: :add_version
+    :project: ZRUNNER
+    :name: V1
+- :cli_example: --action "addVersion" --project "ZRUNNER" --name "V2"
+  :gem_example:
+    :action: :add_version
+    :project: ZRUNNER
+    :name: V2
+- :cli_example: --action "addVote" --issue "ZVOTEWATCH-1" --user "developer" --password
+    "asDeVqeTwsjtr4GnyKwf"
+  :gem_example:
+    :action: :add_vote
+    :issue: ZVOTEWATCH-1
+    :user: developer
+    :password: asDeVqeTwsjtr4GnyKwf
+- :cli_example: --action "addWatchers" --issue "ZCLICLONE-4" --userId "user, developer"
+  :gem_example:
+    :action: :add_watchers
+    :issue: ZCLICLONE-4
+    :user_id: user, developer
+- :cli_example: --action "addWatchers" --issue "ZSUB-1" --userId "admin, developer"
+  :gem_example:
+    :action: :add_watchers
+    :issue: ZSUB-1
+    :user_id: admin, developer
+- :cli_example: --action "addWatchers" --issue "ZVOTEWATCH-1" --userId "invalid1, invalid2"
+    --continue
+  :gem_example:
+    :action: :add_watchers
+    :issue: ZVOTEWATCH-1
+    :user_id: invalid1, invalid2
+    :continue: true
+- :cli_example: --action "addWatchers" --issue "ZVOTEWATCH-1" --userId "user, developer"
+  :gem_example:
+    :action: :add_watchers
+    :issue: ZVOTEWATCH-1
+    :user_id: user, developer
+- :cli_example: --action "addWork" --issue "ZCLICLONE-4" --timeSpent "1h" --autoAdjust
+  :gem_example:
+    :action: :add_work
+    :issue: ZCLICLONE-4
+    :time_spent: 1h
+    :auto_adjust: true
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "1d 1h" --date "1/02/11
+    9:00 a"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: 1d 1h
+    :date: 1/02/11 9:00 a
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "3h 30m" --comment
+    "My work log entry" --role "Developers" --group "jira-users"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: 3h 30m
+    :comment: My work log entry
+    :role: Developers
+    :group: jira-users
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "3h 30m" --date "2011-01-01"
+    --dateFormat "yyyy-MM-dd" --group "jira-users"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: 3h 30m
+    :date: '2011-01-01'
+    :date_format: yyyy-MM-dd
+    :group: jira-users
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "3h 30m" --estimate
+    "3w"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: 3h 30m
+    :estimate: 3w
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "3m" --date "2011-01-01"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: 3m
+    :date: '2011-01-01'
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "3m" --date "2011-01-01
+    22:33:01"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: 3m
+    :date: '2011-01-01 22:33:01'
+- :cli_example: --action "addWork" --issue "ZWORK-1" --timeSpent "5" --userId "developer"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-1
+    :time_spent: '5'
+    :user_id: developer
+- :cli_example: --action "addWork" --issue "ZWORK-2" --timeSpent "2h"
+  :gem_example:
+    :action: :add_work
+    :issue: ZWORK-2
+    :time_spent: 2h
+- :cli_example: --action "archiveVersion" --project "zjiracli" --version "V1"
+  :gem_example:
+    :action: :archive_version
+    :project: zjiracli
+    :version: V1
+- :cli_example: --action "assignIssue" --issue "ZJIRACLI-5" --userId ""
+  :gem_example:
+    :action: :assign_issue
+    :issue: ZJIRACLI-5
+    :user_id: ''
+- :cli_example: --action "assignIssue" --issue "ZJIRACLI-5" --userId "automation"
+  :gem_example:
+    :action: :assign_issue
+    :issue: ZJIRACLI-5
+    :user_id: automation
+- :cli_example: --action "assignIssue" --issue "ZJIRACLI-5" --userId "@default"
+  :gem_example:
+    :action: :assign_issue
+    :issue: ZJIRACLI-5
+    :user_id: "@default"
+- :cli_example: --action "cloneIssue" --issue "ZATTACH-1" --copyAttachments
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZATTACH-1
+    :copy_attachments: true
+- :cli_example: --action "cloneIssue" --issue "ZCLICLONE-3"
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZCLICLONE-3
+- :cli_example: --action "cloneIssue" --issue "ZCLICLONE-4" --parent "ZCLICLONE-2" --copySubtaskEstimates
+    --copyLinks --copyWatchers --copyComments --useParentVersions --fieldExcludes
+    "custom-multi-select,custom three" --quiet
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZCLICLONE-4
+    :parent: ZCLICLONE-2
+    :copy_subtask_estimates: true
+    :copy_links: true
+    :copy_watchers: true
+    :copy_comments: true
+    :use_parent_versions: true
+    :field_excludes: custom-multi-select,custom three
+    :quiet: true
+- :cli_example: --action "cloneIssue" --issue "ZJIRACLI-3" --description "clone description"
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZJIRACLI-3
+    :description: clone description
+- :cli_example: --action "cloneIssue" --issue "ZJIRACLI-3" --summary "clone summary"
+    --comment "comment for cloned issue"
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZJIRACLI-3
+    :summary: clone summary
+    :comment: comment for cloned issue
+- :cli_example: --action "cloneIssue" --issue "ZJIRACLI-3" --summary "clone summary"
+    --date "2013-12-30" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZJIRACLI-3
+    :summary: clone summary
+    :date: '2013-12-30'
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "cloneIssue" --issue "ZLINKS-1" --summary "cloneThis is content."
+    --link "Cloners"
+  :gem_example:
+    :action: :clone_issue
+    :issue: ZLINKS-1
+    :summary: cloneThis is content.
+    :link: Cloners
+- :cli_example: --action "cloneIssue" --project "ZCLICLONE" --issue "ZCLICLONE-1"
+  :gem_example:
+    :action: :clone_issue
+    :project: ZCLICLONE
+    :issue: ZCLICLONE-1
+- :cli_example: --action "cloneIssue" --project "ZCLICLONE" --issue "ZCLICLONE-1" --copyLinks
+  :gem_example:
+    :action: :clone_issue
+    :project: ZCLICLONE
+    :issue: ZCLICLONE-1
+    :copy_links: true
+- :cli_example: --action "cloneIssue" --project "ZCLICLONEX" --issue "ZCLICLONE-1" --copySubtaskEstimates
+    --copyLinks --copyWatchers --copyComments
+  :gem_example:
+    :action: :clone_issue
+    :project: ZCLICLONEX
+    :issue: ZCLICLONE-1
+    :copy_subtask_estimates: true
+    :copy_links: true
+    :copy_watchers: true
+    :copy_comments: true
+- :cli_example: --action "cloneIssues" --copyAttachments --copySubtasks --jql "key =
+    ZATTACH-1"
+  :gem_example:
+    :action: :clone_issues
+    :copy_attachments: true
+    :copy_subtasks: true
+    :jql: key = ZATTACH-1
+- :cli_example: --action "cloneIssues" --jql "issue = ZCLICLONE-1" --copySubtasks
+  :gem_example:
+    :action: :clone_issues
+    :jql: issue = ZCLICLONE-1
+    :copy_subtasks: true
+- :cli_example: --action "cloneIssues" --project "ZCLICLONEX" --jql "project = ZCLICLONE
+    and issuetype = bug" --autoVersion --autoComponent
+  :gem_example:
+    :action: :clone_issues
+    :project: ZCLICLONEX
+    :jql: project = ZCLICLONE and issuetype = bug
+    :auto_version: true
+    :auto_component: true
+- :cli_example: --action "cloneIssues" --project "ZCLICLONEX" --type "improvement" --jql
+    "project = ZCLICLONE and issuetype = bug"
+  :gem_example:
+    :action: :clone_issues
+    :project: ZCLICLONEX
+    :type: improvement
+    :jql: project = ZCLICLONE and issuetype = bug
+- :cli_example: --action "cloneIssues" --project "zjiracliA" --jql "project = zjiracli
+    and issuetype = bug"
+  :gem_example:
+    :action: :clone_issues
+    :project: zjiracliA
+    :jql: project = zjiracli and issuetype = bug
+- :cli_example: --action "cloneIssues" --project "zjiracliA" --type "improvement" --jql
+    "project = zjiracli and issuetype = bug"
+  :gem_example:
+    :action: :clone_issues
+    :project: zjiracliA
+    :type: improvement
+    :jql: project = zjiracli and issuetype = bug
+- :cli_example: --action "cloneIssues" --toProject "ZRUNNERC" --description "Bulk clone
+    example" --search 'project = ZRUNNER and summary ~ "volume-*"'
+  :gem_example:
+    :action: :clone_issues
+    :to_project: ZRUNNERC
+    :description: Bulk clone example
+    :search: project = ZRUNNER and summary ~ "volume-*"
+- :cli_example: --action "cloneIssues" --type "task" --jql "project = ZCLICLONE and
+    issuetype = bug"
+  :gem_example:
+    :action: :clone_issues
+    :type: task
+    :jql: project = ZCLICLONE and issuetype = bug
+- :cli_example: --action "cloneIssues" --type "task" --jql "project = zjiracli and issuetype
+    = bug"
+  :gem_example:
+    :action: :clone_issues
+    :type: task
+    :jql: project = zjiracli and issuetype = bug
+- :cli_example: --action "cloneProject" --project "Template" --toProject "zjiracli"
+    --lead "automation" --name "zjiracli for automated testing" --defaultAssignee
+    "unassigned"
+  :gem_example:
+    :action: :clone_project
+    :project: Template
+    :to_project: zjiracli
+    :lead: automation
+    :name: zjiracli for automated testing
+    :default_assignee: unassigned
+- :cli_example: --action "cloneProject" --project "ZAGILE" --toProject "ZAGILEC" --cloneIssues
+  :gem_example:
+    :action: :clone_project
+    :project: ZAGILE
+    :to_project: ZAGILEC
+    :clone_issues: true
+- :cli_example: --action "cloneProject" --project "ZATTACH" --toProject "ZATTACH2" --cloneIssues
+    --copyAttachments --copySubtasks
+  :gem_example:
+    :action: :clone_project
+    :project: ZATTACH
+    :to_project: ZATTACH2
+    :clone_issues: true
+    :copy_attachments: true
+    :copy_subtasks: true
+- :cli_example: --action "cloneProject" --project "ZCLICLONEB" --issueTypeScheme "Default
+    Issue Type Scheme" --issueTypeScreenScheme "Default Issue Type Screen Scheme"
+    --permissionScheme "Default Permission Scheme" --toProject "ZCLICLONEY"
+  :gem_example:
+    :action: :clone_project
+    :project: ZCLICLONEB
+    :issue_type_scheme: Default Issue Type Scheme
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+    :permission_scheme: Default Permission Scheme
+    :to_project: ZCLICLONEY
+- :cli_example: --action "cloneProject" --project "ZCLICLONE" --issueTypeScheme "Default
+    Issue Type Scheme" --issueTypeScreenScheme "Default Issue Type Screen Scheme"
+    --permissionScheme "Default Permission Scheme" --toProject "ZCLICLONEX"
+  :gem_example:
+    :action: :clone_project
+    :project: ZCLICLONE
+    :issue_type_scheme: Default Issue Type Scheme
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+    :permission_scheme: Default Permission Scheme
+    :to_project: ZCLICLONEX
+- :cli_example: --action "cloneProject" --project "ZCLICLONES" --issueTypeScheme "Default
+    Issue Type Scheme" --issueTypeScreenScheme "Default Issue Type Screen Scheme"
+    --permissionScheme "Default Permission Scheme" --toProject "ZCLICLONET"
+  :gem_example:
+    :action: :clone_project
+    :project: ZCLICLONES
+    :issue_type_scheme: Default Issue Type Scheme
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+    :permission_scheme: Default Permission Scheme
+    :to_project: ZCLICLONET
+- :cli_example: --action "cloneProject" --project "zjiracliC" --toProject "zjiracliD"
+  :gem_example:
+    :action: :clone_project
+    :project: zjiracliC
+    :to_project: zjiracliD
+- :cli_example: --action "cloneProject" --project "zjiracli" --jql "type = 'bug'" --toProject
+    "zjiracliB" --issueSecurityScheme "test restrictions" --copyVersions --copyComponents
+    --copyRoleActors --cloneIssues --copyAttachments --copySubtasks --continue
+  :gem_example:
+    :action: :clone_project
+    :project: zjiracli
+    :jql: type = 'bug'
+    :to_project: zjiracliB
+    :issue_security_scheme: test restrictions
+    :copy_versions: true
+    :copy_components: true
+    :copy_role_actors: true
+    :clone_issues: true
+    :copy_attachments: true
+    :copy_subtasks: true
+    :continue: true
+- :cli_example: --action "cloneProject" --project "zjiracli" --toProject "zjiracliA"
+    --name "ZcloneNameA"
+  :gem_example:
+    :action: :clone_project
+    :project: zjiracli
+    :to_project: zjiracliA
+    :name: ZcloneNameA
+- :cli_example: --action "cloneProject" --project "zjiracli" --toProject "zjiracliC"
+    --cloneIssues --jql "issuetype = bug" --autoVersion --debug
+  :gem_example:
+    :action: :clone_project
+    :project: zjiracli
+    :to_project: zjiracliC
+    :clone_issues: true
+    :jql: issuetype = bug
+    :auto_version: true
+    :debug: true
+- :cli_example: --action "copyAttachments" --issue "ZATTACH-1" --toIssue "ZATTACH-2"
+  :gem_example:
+    :action: :copy_attachments
+    :issue: ZATTACH-1
+    :to_issue: ZATTACH-2
+- :cli_example: --action "copyAttachments" --issue "ZATTACH-1" --toIssue "ZATTACH-3"
+    --name "data.txt"
+  :gem_example:
+    :action: :copy_attachments
+    :issue: ZATTACH-1
+    :to_issue: ZATTACH-3
+    :name: data.txt
+- :cli_example: --action "copyComponent" --project "ZCOMP" --toProject "ZCOMP2" --component
+    "C1"
+  :gem_example:
+    :action: :copy_component
+    :project: ZCOMP
+    :to_project: ZCOMP2
+    :component: C1
+- :cli_example: --action "copyComponent" --project "zjiracli" --component "C1" --name
+    "C3First" --description "override description"
+  :gem_example:
+    :action: :copy_component
+    :project: zjiracli
+    :component: C1
+    :name: C3First
+    :description: override description
+- :cli_example: --action "copyComponents" --project "ZCOMP" --toProject "ZCOMP2" --replace
+  :gem_example:
+    :action: :copy_components
+    :project: ZCOMP
+    :to_project: ZCOMP2
+    :replace: true
+- :cli_example: --action "copyComponents" --project "zjiracli" --toProject "zjiracliX"
+  :gem_example:
+    :action: :copy_components
+    :project: zjiracli
+    :to_project: zjiracliX
+- :cli_example: --action "copyComponents" --project "zjiracli" --toProject "zjiracliX"
+    --components "C1, C2" --replace
+  :gem_example:
+    :action: :copy_components
+    :project: zjiracli
+    :to_project: zjiracliX
+    :components: C1, C2
+    :replace: true
+- :cli_example: --action "copyFieldValue" --issue "ZJIRACLI-10" --field "custom1" --field2
+    "custom-versions" --asVersion --autoVersion
+  :gem_example:
+    :action: :copy_field_value
+    :issue: ZJIRACLI-10
+    :field: custom1
+    :field2: custom-versions
+    :as_version: true
+    :auto_version: true
+- :cli_example: --action "copyFieldValue" --issue "ZJIRACLI-10" --toIssue "ZJIRACLI-11"
+    --field "custom1"
+  :gem_example:
+    :action: :copy_field_value
+    :issue: ZJIRACLI-10
+    :to_issue: ZJIRACLI-11
+    :field: custom1
+- :cli_example: --action "copyFieldValue" --issue "ZJIRACLI-10" --toIssue "ZJIRACLI-11"
+    --field "fixVersions" --field2 "custom-versions" --asVersion
+  :gem_example:
+    :action: :copy_field_value
+    :issue: ZJIRACLI-10
+    :to_issue: ZJIRACLI-11
+    :field: fixVersions
+    :field2: custom-versions
+    :as_version: true
+- :cli_example: --action "copyFieldValue" --issue "ZJIRACLI-10" --toIssue "ZJIRACLI-11"
+    --field "summary" --field2 "custom2"
+  :gem_example:
+    :action: :copy_field_value
+    :issue: ZJIRACLI-10
+    :to_issue: ZJIRACLI-11
+    :field: summary
+    :field2: custom2
+- :cli_example: --action "copyProjectRoleActors" --project "ZROLES" --toProject "ZROLESX"
+  :gem_example:
+    :action: :copy_project_role_actors
+    :project: ZROLES
+    :to_project: ZROLESX
+- :cli_example: --action "copyVersion" --project "zjiracliA" --version "V1" --name "newV1"
+  :gem_example:
+    :action: :copy_version
+    :project: zjiracliA
+    :version: V1
+    :name: newV1
+- :cli_example: --action "copyVersion" --project "zjiracli" --toProject "zjiracliA"
+    --name "V1"
+  :gem_example:
+    :action: :copy_version
+    :project: zjiracli
+    :to_project: zjiracliA
+    :name: V1
+- :cli_example: --action "copyVersion" --project "zjiracli" --toProject "zjiracliA"
+    --name "V2" --after "-1"
+  :gem_example:
+    :action: :copy_version
+    :project: zjiracli
+    :to_project: zjiracliA
+    :name: V2
+    :after: "-1"
+- :cli_example: --action "copyVersion" --project "zjiracli" --toProject "zjiracliA"
+    --version "V1" --description "replaced description" --startDate "9/30/14" --replace
+  :gem_example:
+    :action: :copy_version
+    :project: zjiracli
+    :to_project: zjiracliA
+    :version: V1
+    :description: replaced description
+    :start_date: 9/30/14
+    :replace: true
+- :cli_example: --action "copyVersions" --project "zjiracli" --toProject "zjiracliC"
+    --replace
+  :gem_example:
+    :action: :copy_versions
+    :project: zjiracli
+    :to_project: zjiracliC
+    :replace: true
+- :cli_example: --action "copyWorkflow" --workflow "jira" --name "zjiracliworkflow_new"
+    --description "Copy of jira for jiracliworkflow test"
+  :gem_example:
+    :action: :copy_workflow
+    :workflow: jira
+    :name: zjiracliworkflow_new
+    :description: Copy of jira for jiracliworkflow test
+- :cli_example: --action "createBoard" --name "ZAGILE" --type "kanban" --project "ZAGILE"
+  :gem_example:
+    :action: :create_board
+    :name: ZAGILE
+    :type: kanban
+    :project: ZAGILE
+- :cli_example: --action "createBoard" --name "ZAGILE" --type "scrum" --project "ZAGILE"
+  :gem_example:
+    :action: :create_board
+    :name: ZAGILE
+    :type: scrum
+    :project: ZAGILE
+- :cli_example: --action "createFilter" --name "ZFILTER2" --description "ZFILTER2 description"
+    --jql "project = ZFILTER" --favorite
+  :gem_example:
+    :action: :create_filter
+    :name: ZFILTER2
+    :description: ZFILTER2 description
+    :jql: project = ZFILTER
+    :favorite: true
+- :cli_example: '--action "createIssue" --parent "ZSUB-1" --type "Sub-task" --summary
+    "subtask2: %parent_summary%"'
+  :gem_example:
+    :action: :create_issue
+    :parent: ZSUB-1
+    :type: Sub-task
+    :summary: 'subtask2: %parent_summary%'
+- :cli_example: --action "createIssue" --project "ZAGILE" --type "Epic" --summary "Epic
+    issue" --field "Epic Name" --value "Epic1"
+  :gem_example:
+    :action: :create_issue
+    :project: ZAGILE
+    :type: Epic
+    :summary: Epic issue
+    :field: Epic Name
+    :value: Epic1
+- :cli_example: --action "createIssue" --project "ZAGILE" --type "Story" --summary "Story
+    issue" --field "Epic Link" --value "ZAGILE-1"
+  :gem_example:
+    :action: :create_issue
+    :project: ZAGILE
+    :type: Story
+    :summary: Story issue
+    :field: Epic Link
+    :value: ZAGILE-1
+- :cli_example: --action "createIssue" --project "ZATTACH" --type "bug" --summary "Copy
+    attachments target"
+  :gem_example:
+    :action: :create_issue
+    :project: ZATTACH
+    :type: bug
+    :summary: Copy attachments target
+- :cli_example: --action "createIssue" --project "ZATTACH" --type "bug" --summary "For
+    attachments"
+  :gem_example:
+    :action: :create_issue
+    :project: ZATTACH
+    :type: bug
+    :summary: For attachments
+- :cli_example: --action "createIssue" --project "ZATTACH" --type "Sub-task" --parent
+    "ZATTACH-1" --summary "Subtask with attachments"
+  :gem_example:
+    :action: :create_issue
+    :project: ZATTACH
+    :type: Sub-task
+    :parent: ZATTACH-1
+    :summary: Subtask with attachments
+- :cli_example: --action "createIssue" --project "ZCLICLONE" --parent "ZCLICLONE-1"
+    --summary "Subtask 1" --type "Sub-task"
+  :gem_example:
+    :action: :create_issue
+    :project: ZCLICLONE
+    :parent: ZCLICLONE-1
+    :summary: Subtask 1
+    :type: Sub-task
+- :cli_example: --action "createIssue" --project "ZCLICLONE" --parent "ZCLICLONE-1"
+    --summary "Subtask 2" --type "Sub-task2" --originalEstimate "1d" --custom "testcase1:xxx,custom
+    three:333"
+  :gem_example:
+    :action: :create_issue
+    :project: ZCLICLONE
+    :parent: ZCLICLONE-1
+    :summary: Subtask 2
+    :type: Sub-task2
+    :original_estimate: 1d
+    :custom: testcase1:xxx,custom three:333
+- :cli_example: --action "createIssue" --project "ZCLICLONE" --type "bug" --summary
+    "Summary" --affectsVersions "V1" --fixVersions "V1,V2" --components "C2,C1" --field
+    "custom-versions" --values "V2, V1" --autoVersion --autoComponent --field2 "custom-user-picker"
+    --values2 "automation"
+  :gem_example:
+    :action: :create_issue
+    :project: ZCLICLONE
+    :type: bug
+    :summary: Summary
+    :affects_versions: V1
+    :fix_versions: V1,V2
+    :components: C2,C1
+    :field: custom-versions
+    :values: V2, V1
+    :auto_version: true
+    :auto_component: true
+    :field2: custom-user-picker
+    :values2: automation
+- :cli_example: --action "createIssue" --project "ZCOMP" --type "bug" --summary "test"
+    --components "auto1,auto2" --autoComponent
+  :gem_example:
+    :action: :create_issue
+    :project: ZCOMP
+    :type: bug
+    :summary: test
+    :components: auto1,auto2
+    :auto_component: true
+- :cli_example: --action "createIssue" --project "zcustom" --type "bug" --summary "cascade
+    issue" --custom "custom1:xxxx" --field "custom-cascade-select" --values "1,A"
+    --asCascadeSelect
+  :gem_example:
+    :action: :create_issue
+    :project: zcustom
+    :type: bug
+    :summary: cascade issue
+    :custom: custom1:xxxx
+    :field: custom-cascade-select
+    :values: 1,A
+    :as_cascade_select: true
+- :cli_example: --action "createIssue" --project "zcustom" --type "bug" --summary "cascade
+    issue" --custom "custom1:xxxx" --field "custom-cascade-select" --values "1,A"
+    --field2 "custom-multi-select" --values2 "s1" --asCascadeSelect
+  :gem_example:
+    :action: :create_issue
+    :project: zcustom
+    :type: bug
+    :summary: cascade issue
+    :custom: custom1:xxxx
+    :field: custom-cascade-select
+    :values: 1,A
+    :field2: custom-multi-select
+    :values2: s1
+    :as_cascade_select: true
+- :cli_example: --action "createIssue" --project "zcustom" --type "bug" --summary "cascade
+    issue" --field "custom-cascade-select" --values "1,A" --asCascadeSelect
+  :gem_example:
+    :action: :create_issue
+    :project: zcustom
+    :type: bug
+    :summary: cascade issue
+    :field: custom-cascade-select
+    :values: 1,A
+    :as_cascade_select: true
+- :cli_example: --action "createIssue" --project "zcustom" --type "bug" --summary "checkbox"
+    --field "custom-multi-checkbox" --values "check1,check2"
+  :gem_example:
+    :action: :create_issue
+    :project: zcustom
+    :type: bug
+    :summary: checkbox
+    :field: custom-multi-checkbox
+    :values: check1,check2
+# - :cli_example: --action "createIssue" --project "zcustom" --type "Story" --summary "json" --custom "{\"custom-date\":{\"offset\":\"-30\",\"value\":\"%now%\"},\"Story
+#     Points\":{\"offset\":-4.2,\"value\":\"10.1\"}}" --date "{\"offset\":5,\"value\":\"%now%\"}"
+#     --dateFormat "yyyy-MM-dd"
+#   :gem_example:
+#     :action: :create_issue
+#     :project: zcustom
+#     :type: Story
+#     :summary: json
+#     :custom: "{\"custom-date\":{\"offset\":\"-30\",\"value\":\"%now%\"},\"Story Points\":{\"offset\":-4.2,\"value\":\"10.1\"}}"
+#     :date: "{\"offset\":5,\"value\":\"%now%\"}"
+#     :date_format: yyyy-MM-dd
+# - :cli_example: --action "createIssue" --project "zcustom" --type "Story" --summary
+#     "json" --custom "{\"custom-datetime\":{\"offset\":15,\"value\":\"%now%\"},\"custom-date\":{\"offset\":\"15\",\"value\":\"2015-05-01\"},\"Story
+#     Points\":{\"offset\":\"5\",\"value\":\"10\"}}" --date "%now%" --dateFormat "yyyy-MM-dd
+#     HH:mm:ss"
+#   :gem_example:
+#     :action: :create_issue
+#     :project: zcustom
+#     :type: Story
+#     :summary: json
+#     :custom: '{\"custom-datetime\":{\"offset\":15,\"value\":\"%now%\"},\"custom-date\":{\"offset\":\"15\",\"value\":\"2015-05-01\"},\"Story'
+#     :date: "%now%"
+#     :date_format: yyyy-MM-dd HH:mm:ss
+- :cli_example: --action "createIssue" --project "zcustom" --type "story" --summary
+    "mutli issue" --field "custom-multi-select" --values "s1,s2,s3" --field2 "testcase2"
+    --values2 "No" --custom "testcase1:zzzzzzzzzz,Story Points:99.1"
+  :gem_example:
+    :action: :create_issue
+    :project: zcustom
+    :type: story
+    :summary: mutli issue
+    :field: custom-multi-select
+    :values: s1,s2,s3
+    :field2: testcase2
+    :values2: 'No'
+    :custom: testcase1:zzzzzzzzzz,Story Points:99.1
+- :cli_example: --action "createIssue" --project "ZFIELDS" --file "src/itest/resources/data.txt"
+    --type "Bug" --summary "original summary" --assignee "automation" --environment
+    "original environment" --fixVersions "V1,V2" --components "C1" --autoVersion --autoComponent
+  :gem_example:
+    :action: :create_issue
+    :project: ZFIELDS
+    :file: src/itest/resources/data.txt
+    :type: Bug
+    :summary: original summary
+    :assignee: automation
+    :environment: original environment
+    :fix_versions: V1,V2
+    :components: C1
+    :auto_version: true
+    :auto_component: true
+- :cli_example: --action "createIssue" --project "ZFIELDS" --file "src/itest/resources/data.txt"
+    --type "Bug" --summary "This is content." --assignee "automation" --environment
+    "x12345"
+  :gem_example:
+    :action: :create_issue
+    :project: ZFIELDS
+    :file: src/itest/resources/data.txt
+    :type: Bug
+    :summary: This is content.
+    :assignee: automation
+    :environment: x12345
+- :cli_example: --action "createIssue" --project "ZFIELDS" --type "Sub-task" --summary
+    "This is content." --parent "ZFIELDS-1"
+  :gem_example:
+    :action: :create_issue
+    :project: ZFIELDS
+    :type: Sub-task
+    :summary: This is content.
+    :parent: ZFIELDS-1
+- :cli_example: --action "createIssue" --project "ZHISTORY" --type "task" --summary
+    "Initial summary"
+  :gem_example:
+    :action: :create_issue
+    :project: ZHISTORY
+    :type: task
+    :summary: Initial summary
+- :cli_example: --action "createIssue" --project "zjiracliB" --type "bug" --summary
+    "secured issue" --security "developer-role"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracliB
+    :type: bug
+    :summary: secured issue
+    :security: developer-role
+- :cli_example: --action "createIssue" --project "zjiracli" --file "src/itest/resources/data.txt"
+    --type "Bug" --summary "This is content." --assignee "automation" --lookup --date
+    "" --field "custom-multi-select" --values "s1,s2,s3" --originalEstimate "20m"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :file: src/itest/resources/data.txt
+    :type: Bug
+    :summary: This is content.
+    :assignee: automation
+    :lookup: true
+    :date: ''
+    :field: custom-multi-select
+    :values: s1,s2,s3
+    :original_estimate: 20m
+- :cli_example: --action "createIssue" --project "zjiracli" --file "target/output/jiracli/createIssueLongDescription.txt"
+    --type "task" --summary "Long description"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :file: target/output/jiracli/createIssueLongDescription.txt
+    :type: task
+    :summary: Long description
+- :cli_example: --action "createIssue" --project "zjiracli for automated testing" --type
+    "task" --summary "This is content." --assignee "automation" --comment "Added after
+    create"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli for automated testing
+    :type: task
+    :summary: This is content.
+    :assignee: automation
+    :comment: Added after create
+- :cli_example: --action "createIssue" --project "zjiracli" --type "Bug" --summary "This
+    is content." --labels "label1"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :type: Bug
+    :summary: This is content.
+    :labels: label1
+- :cli_example: --action "createIssue" --project "zjiracli" --type "Bug" --summary "This
+    is content." --labels "xxx"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :type: Bug
+    :summary: This is content.
+    :labels: xxx
+- :cli_example: --action "createIssue" --project "zjiracli" --type "Sub-task" --summary
+    "This is content." --parent "ZJIRACLI-1"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :type: Sub-task
+    :summary: This is content.
+    :parent: ZJIRACLI-1
+- :cli_example: --action "createIssue" --project "zjiracli" --type "task" --summary
+    "This is content."
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :type: task
+    :summary: This is content.
+- :cli_example: --action "createIssue" --project "zjiracli" --type "task" --summary
+    "This is content." --field "custom1" --values "V1copy" --fixVersions "V1"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracli
+    :type: task
+    :summary: This is content.
+    :field: custom1
+    :values: V1copy
+    :fix_versions: V1
+- :cli_example: --action "createIssue" --project "zjiracliX" --type "bug" --summary
+    "This is content."
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracliX
+    :type: bug
+    :summary: This is content.
+- :cli_example: --action "createIssue" --project "zjiracliX" --type "Bug" --summary
+    "This is content." --description "a generic description"
+  :gem_example:
+    :action: :create_issue
+    :project: zjiracliX
+    :type: Bug
+    :summary: This is content.
+    :description: a generic description
+- :cli_example: --action "createIssue" --project "zlinks" --type "Bug" --summary "This
+    is content."
+  :gem_example:
+    :action: :create_issue
+    :project: zlinks
+    :type: Bug
+    :summary: This is content.
+- :cli_example: --action "createIssue" --project "zlinks" --type "Sub-task" --summary
+    "This is content." --parent "ZLINKS-1"
+  :gem_example:
+    :action: :create_issue
+    :project: zlinks
+    :type: Sub-task
+    :summary: This is content.
+    :parent: ZLINKS-1
+- :cli_example: --action "createIssue" --project "ZRUNNER" --type "Bug" --summary "This
+    is content"
+  :gem_example:
+    :action: :create_issue
+    :project: ZRUNNER
+    :type: Bug
+    :summary: This is content
+- :cli_example: --action "createIssue" --project "ZSUB" --type "bug" --summary "Summary"
+  :gem_example:
+    :action: :create_issue
+    :project: ZSUB
+    :type: bug
+    :summary: Summary
+- :cli_example: --action "createIssue" --project "ZSUB" --type "bug" --summary "Summary"
+    --description "Description" --environment "Environment" --affectsVersions "V1"
+    --fixVersions "V1,V2" --components "C1,C2" --autoVersion --autoComponent --assignee
+    "automation" --labels "label1 label2" --security "developer-role" --field "custom1"
+    --value "Custom1" --field2 "custom2" --values2 "Custom2"
+  :gem_example:
+    :action: :create_issue
+    :project: ZSUB
+    :type: bug
+    :summary: Summary
+    :description: Description
+    :environment: Environment
+    :affects_versions: V1
+    :fix_versions: V1,V2
+    :components: C1,C2
+    :auto_version: true
+    :auto_component: true
+    :assignee: automation
+    :labels: label1 label2
+    :security: developer-role
+    :field: custom1
+    :value: Custom1
+    :field2: custom2
+    :values2: Custom2
+- :cli_example: --action "createIssue" --project "ZSUPPORT" --type "bug" --priority
+    "Major" --summary "Summary"
+  :gem_example:
+    :action: :create_issue
+    :project: ZSUPPORT
+    :type: bug
+    :priority: Major
+    :summary: Summary
+- :cli_example: --action "createIssue" --project "zuser" --type "Bug" --summary "This
+    is content" --assignee "automation"
+  :gem_example:
+    :action: :create_issue
+    :project: zuser
+    :type: Bug
+    :summary: This is content
+    :assignee: automation
+- :cli_example: --action "createIssue" --project "zvotewatch" --type "Bug" --summary
+    "summary text"
+  :gem_example:
+    :action: :create_issue
+    :project: zvotewatch
+    :type: Bug
+    :summary: summary text
+- :cli_example: --action "createIssue" --project "zwork" --type "Bug" --summary "This
+    is content"
+  :gem_example:
+    :action: :create_issue
+    :project: zwork
+    :type: Bug
+    :summary: This is content
+- :cli_example: --action "createIssue" --type "Sub-task" --summary "This is content."
+    --parent "249564"
+  :gem_example:
+    :action: :create_issue
+    :type: Sub-task
+    :summary: This is content.
+    :parent: '249564'
+- :cli_example: '--action "createOrUpdateIssue" --project "zjiracli" --type "bug" --summary
+    "CreateOrUpdate - updated" --jql "project = zjiracli and summary ~ ''CreateOrUpdate:
+    1501339484158''"'
+  :gem_example:
+    :action: :create_or_update_issue
+    :project: zjiracli
+    :type: bug
+    :summary: CreateOrUpdate - updated
+    :jql: 'project = zjiracli and summary ~ ''CreateOrUpdate: 1501339484158'''
+- :cli_example: '--action "createOrUpdateIssue" --project "zjiracli" --type "task" --summary
+    "createOrUpdate: 1501339484158" --jql "custom1 ~ UNDEFINED-TEXT-DATA"'
+  :gem_example:
+    :action: :create_or_update_issue
+    :project: zjiracli
+    :type: task
+    :summary: 'createOrUpdate: 1501339484158'
+    :jql: custom1 ~ UNDEFINED-TEXT-DATA
+- :cli_example: '--action "createProject" --project "ZAGILE" --name "zjiracliagile"
+    --description "GINT test: jiracliagile" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZAGILE
+    :name: zjiracliagile
+    :description: 'GINT test: jiracliagile'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZATTACH" --name "zjiracliattachments"
+    --description "GINT test: jiracliattachments" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZATTACH
+    :name: zjiracliattachments
+    :description: 'GINT test: jiracliattachments'
+    :lead: automation
+    :template: Template
+- :cli_example: --action "createProject" --project "ZCLICLONEB" --lead "automation"
+    --type "business" --template "Task management" --issueTypeScheme "Default Issue
+    Type Scheme" --issueTypeScreenScheme "Default Issue Type Screen Scheme" --permissionScheme
+    "Default Permission Scheme"
+  :gem_example:
+    :action: :create_project
+    :project: ZCLICLONEB
+    :lead: automation
+    :type: business
+    :template: Task management
+    :issue_type_scheme: Default Issue Type Scheme
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+    :permission_scheme: Default Permission Scheme
+- :cli_example: --action "createProject" --project "ZCLICLONE" --lead "automation" --template
+    "Template"
+  :gem_example:
+    :action: :create_project
+    :project: ZCLICLONE
+    :lead: automation
+    :template: Template
+- :cli_example: --action "createProject" --project "ZCLICLONES" --lead "automation"
+    --template "Basic" --issueTypeScheme "Default Issue Type Scheme" --issueTypeScreenScheme
+    "Default Issue Type Screen Scheme" --permissionScheme "Default Permission Scheme"
+  :gem_example:
+    :action: :create_project
+    :project: ZCLICLONES
+    :lead: automation
+    :template: Basic
+    :issue_type_scheme: Default Issue Type Scheme
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+    :permission_scheme: Default Permission Scheme
+- :cli_example: '--action "createProject" --project "ZCOMP2" --name "zjiraclicomponents2"
+    --description "GINT test: jiraclicomponents" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZCOMP2
+    :name: zjiraclicomponents2
+    :description: 'GINT test: jiraclicomponents'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZCOMP" --name "zjiraclicomponents"
+    --description "GINT test: jiraclicomponents" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZCOMP
+    :name: zjiraclicomponents
+    :description: 'GINT test: jiraclicomponents'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZCUSTOM" --name "zjiraclicustom"
+    --description "GINT test: jiraclicustom" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZCUSTOM
+    :name: zjiraclicustom
+    :description: 'GINT test: jiraclicustom'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZEXPORT2" --name "zjiracliexport2"
+    --description "GINT test: jiracliexport2" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZEXPORT2
+    :name: zjiracliexport2
+    :description: 'GINT test: jiracliexport2'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZEXPORT" --name "zjiracliexport"
+    --description "GINT test: jiracliexport" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZEXPORT
+    :name: zjiracliexport
+    :description: 'GINT test: jiracliexport'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZFIELDS" --name "zjiraclifields"
+    --description "GINT test: jiraclifields" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZFIELDS
+    :name: zjiraclifields
+    :description: 'GINT test: jiraclifields'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZFILTER" --name "zjiraclifilter"
+    --description "GINT test: jiraclifilter" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZFILTER
+    :name: zjiraclifilter
+    :description: 'GINT test: jiraclifilter'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZHISTORY" --name "zjiraclihistory"
+    --description "GINT test: jiraclihistory" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZHISTORY
+    :name: zjiraclihistory
+    :description: 'GINT test: jiraclihistory'
+    :lead: automation
+    :template: Template
+- :cli_example: --action "createProject" --project "zjiracliX" --template "Template"
+    --workflowScheme "" --issueTypeScheme "Default Issue Type Scheme" --issueTypeScreenScheme
+    "Default Issue Type Screen Scheme" --permissionScheme "Default Permission Scheme"
+    --lead "automation" --name "zjiracliX for automated testing"
+  :gem_example:
+    :action: :create_project
+    :project: zjiracliX
+    :template: Template
+    :workflow_scheme: ''
+    :issue_type_scheme: Default Issue Type Scheme
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+    :permission_scheme: Default Permission Scheme
+    :lead: automation
+    :name: zjiracliX for automated testing
+- :cli_example: '--action "createProject" --project "ZLINKS" --name "zjiraclilinks"
+    --description "GINT test: jiraclilinks" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZLINKS
+    :name: zjiraclilinks
+    :description: 'GINT test: jiraclilinks'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZPROJECT" --name "zjiracliproject"
+    --description "GINT test: jiracliproject" --lead "automation" --template "Template"
+    --category "another"'
+  :gem_example:
+    :action: :create_project
+    :project: ZPROJECT
+    :name: zjiracliproject
+    :description: 'GINT test: jiracliproject'
+    :lead: automation
+    :template: Template
+    :category: another
+- :cli_example: --action "createProject" --project "ZPROJECTX" --template "Template"
+    --lead "developer" --workflowScheme "" --notificationScheme "" --category "another"
+  :gem_example:
+    :action: :create_project
+    :project: ZPROJECTX
+    :template: Template
+    :lead: developer
+    :workflow_scheme: ''
+    :notification_scheme: ''
+    :category: another
+- :cli_example: --action "createProject" --project "ZPROJECTZ" --template "Kanban software
+    development" --lead "admin"
+  :gem_example:
+    :action: :create_project
+    :project: ZPROJECTZ
+    :template: Kanban software development
+    :lead: admin
+- :cli_example: '--action "createProject" --project "ZROLES" --name "zjiracliroles"
+    --description "GINT test: jiracliroles" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZROLES
+    :name: zjiracliroles
+    :description: 'GINT test: jiracliroles'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZROLESX" --name "zjiraclirolesX"
+    --description "GINT test: jiracliroles" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZROLESX
+    :name: zjiraclirolesX
+    :description: 'GINT test: jiracliroles'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZRUNNERC" --name "zjiraclirunnerC"
+    --description "GINT test: jiraclirunner" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZRUNNERC
+    :name: zjiraclirunnerC
+    :description: 'GINT test: jiraclirunner'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZRUNNER" --name "zjiraclirunner"
+    --description "GINT test: jiraclirunner" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZRUNNER
+    :name: zjiraclirunner
+    :description: 'GINT test: jiraclirunner'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZSUB" --name "zjiraclisub" --description
+    "GINT test: jiraclisub" --lead "automation" --template "Template" --issueSecurityScheme
+    "test restrictions" --category "standard"'
+  :gem_example:
+    :action: :create_project
+    :project: ZSUB
+    :name: zjiraclisub
+    :description: 'GINT test: jiraclisub'
+    :lead: automation
+    :template: Template
+    :issue_security_scheme: test restrictions
+    :category: standard
+- :cli_example: '--action "createProject" --project "ZSUPPORT" --name "zjiraclisupport"
+    --description "GINT test: jiraclisupport" --lead "automation" --template "Template"
+    --issueSecurityScheme "test restrictions" --category "standard"'
+  :gem_example:
+    :action: :create_project
+    :project: ZSUPPORT
+    :name: zjiraclisupport
+    :description: 'GINT test: jiraclisupport'
+    :lead: automation
+    :template: Template
+    :issue_security_scheme: test restrictions
+    :category: standard
+- :cli_example: '--action "createProject" --project "ZUSER" --name "zjiracliuser" --description
+    "GINT test: jiracliuser" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZUSER
+    :name: zjiracliuser
+    :description: 'GINT test: jiracliuser'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZVOTEWATCH" --name "zjiraclivotewatch"
+    --description "GINT test: jiraclivotewatch" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZVOTEWATCH
+    :name: zjiraclivotewatch
+    :description: 'GINT test: jiraclivotewatch'
+    :lead: automation
+    :template: Template
+- :cli_example: '--action "createProject" --project "ZWORK" --name "zjiracliwork" --description
+    "GINT test: jiracliwork" --lead "automation" --template "Template"'
+  :gem_example:
+    :action: :create_project
+    :project: ZWORK
+    :name: zjiracliwork
+    :description: 'GINT test: jiracliwork'
+    :lead: automation
+    :template: Template
+- :cli_example: --action "deleteBoard" --board "NOT_FOUND" --continue
+  :gem_example:
+    :action: :delete_board
+    :board: NOT_FOUND
+    :continue: true
+- :cli_example: --action "deleteBoard" --board "ZAGILE" --deleteFilter
+  :gem_example:
+    :action: :delete_board
+    :board: ZAGILE
+    :delete_filter: true
+- :cli_example: --action "deleteBoard" --id "1228" --deleteFilter
+  :gem_example:
+    :action: :delete_board
+    :id: '1228'
+    :delete_filter: true
+- :cli_example: "--action \"deleteBoard\" --id \"1234567890\" --continue"
+  :gem_example:
+    :action: :delete_board
+    :id: '1234567890'
+    :continue: true
+- :cli_example: --action "deleteComponent" --project "zjiracli" --component "71357"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracli
+    :component: '71357'
+- :cli_example: --action "deleteComponent" --project "zjiracli" --component "swap1"
+    --toComponent "swap2"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracli
+    :component: swap1
+    :to_component: swap2
+- :cli_example: --action "deleteComponent" --project "zjiracli" --name "auto1"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracli
+    :name: auto1
+- :cli_example: --action "deleteComponent" --project "zjiracli" --name "auto2"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracli
+    :name: auto2
+- :cli_example: --action "deleteComponent" --project "zjiracliX" --component "C2"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracliX
+    :component: C2
+- :cli_example: --action "deleteComponent" --project "zjiracliX" --component "C3"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracliX
+    :component: C3
+- :cli_example: --action "deleteComponent" --project "zjiracliX" --name "C1"
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracliX
+    :name: C1
+- :cli_example: --action "deleteComponent" --project "zjiracliX" --name "C1" --continue
+  :gem_example:
+    :action: :delete_component
+    :project: zjiracliX
+    :name: C1
+    :continue: true
+- :cli_example: --action "deleteFieldConfiguration" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_field_configuration
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteFieldConfigurationScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_field_configuration_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteFilter" --filter "NOT_FOUND" --continue
+  :gem_example:
+    :action: :delete_filter
+    :filter: NOT_FOUND
+    :continue: true
+- :cli_example: "--action \"deleteFilter\" --id \"1234567890\" --continue"
+  :gem_example:
+    :action: :delete_filter
+    :id: '1234567890'
+    :continue: true
+- :cli_example: --action "deleteFilter" --id "24903"
+  :gem_example:
+    :action: :delete_filter
+    :id: '24903'
+- :cli_example: --action "deleteIssue" --issue "ZJIRACLI-1"
+  :gem_example:
+    :action: :delete_issue
+    :issue: ZJIRACLI-1
+- :cli_example: --action "deleteIssue" --issue "ZJIRACLI-1" --continue
+  :gem_example:
+    :action: :delete_issue
+    :issue: ZJIRACLI-1
+    :continue: true
+- :cli_example: --action "deleteIssueSecurityScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_issue_security_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteIssueTypeScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_issue_type_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteIssueTypeScreenScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_issue_type_screen_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteLink" --issue "249453" --toIssue "249454" --link "10011"
+  :gem_example:
+    :action: :delete_link
+    :issue: '249453'
+    :to_issue: '249454'
+    :link: '10011'
+- :cli_example: --action "deleteLink" --issue "ZLINKS-1" --toIssue "ZLINKS-3" --link
+    "duplicates"
+  :gem_example:
+    :action: :delete_link
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-3
+    :link: duplicates
+- :cli_example: --action "deleteNotificationScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_notification_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deletePermissionScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_permission_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteProject" --project "NOT_FOUND" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: NOT_FOUND
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZAGILEC" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZAGILEC
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZAGILE" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZAGILE
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZATTACH2" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZATTACH2
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZATTACH" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZATTACH
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONEB" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONEB
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONE" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONE
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONES" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONES
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONET" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONET
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONEX" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONEX
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONEY" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONEY
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCLICLONEZ" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCLICLONEZ
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCOMP2" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCOMP2
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCOMP" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCOMP
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZCUSTOM" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZCUSTOM
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZEXPORT2" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZEXPORT2
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZEXPORT2E" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZEXPORT2E
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZEXPORT" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZEXPORT
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZFIELDS" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZFIELDS
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZFILTER" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZFILTER
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZHISTORY" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZHISTORY
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZIMPORT" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZIMPORT
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLIA" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLIA
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLIB" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLIB
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLIC" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLIC
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLI" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLI
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLID" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLID
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLIE" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLIE
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZJIRACLIX" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZJIRACLIX
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZLINKS" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZLINKS
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZPROJECT" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZPROJECT
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZPROJECTE" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZPROJECTE
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZPROJECTX" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZPROJECTX
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZPROJECTZ" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZPROJECTZ
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZROLES" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZROLES
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZROLESX" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZROLESX
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZRUNNERC" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZRUNNERC
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZRUNNER" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZRUNNER
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZSUB" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZSUB
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZSUPPORT" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZSUPPORT
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZUSER" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZUSER
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZVOTEWATCH" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZVOTEWATCH
+    :continue: true
+- :cli_example: --action "deleteProject" --project "ZWORK" --continue
+  :gem_example:
+    :action: :delete_project
+    :project: ZWORK
+    :continue: true
+- :cli_example: --action "deleteScreen" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_screen
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteScreenScheme" --id "1234556780" --continue
+  :gem_example:
+    :action: :delete_screen_scheme
+    :id: '1234556780'
+    :continue: true
+- :cli_example: --action "deleteVersion" --project "zjiracli" --version "auto2" --continue
+  :gem_example:
+    :action: :delete_version
+    :project: zjiracli
+    :version: auto2
+    :continue: true
+- :cli_example: --action "deleteVersion" --project "zjiracli" --version "BAD" --continue
+  :gem_example:
+    :action: :delete_version
+    :project: zjiracli
+    :version: BAD
+    :continue: true
+- :cli_example: --action "deleteVersion" --project "zjiracli" --version "swap1" --affectsVersions
+    "swap2" --fixVersions "swap2"
+  :gem_example:
+    :action: :delete_version
+    :project: zjiracli
+    :version: swap1
+    :affects_versions: swap2
+    :fix_versions: swap2
+- :cli_example: --action "deleteVersion" --project "zjiracli" --version "swap2" --fixVersions
+    "swap3" --autoVersion --verbose
+  :gem_example:
+    :action: :delete_version
+    :project: zjiracli
+    :version: swap2
+    :fix_versions: swap3
+    :auto_version: true
+    :verbose: true
+- :cli_example: --action "deleteVersion" --project "zjiracli" --version "swap3"
+  :gem_example:
+    :action: :delete_version
+    :project: zjiracli
+    :version: swap3
+- :cli_example: --action "deleteVersion" --project "ZRUNNER" --version "auto1csv"
+  :gem_example:
+    :action: :delete_version
+    :project: ZRUNNER
+    :version: auto1csv
+- :cli_example: --action "deleteWorkflow" --name "zjiracliworkflow" --continue
+  :gem_example:
+    :action: :delete_workflow
+    :name: zjiracliworkflow
+    :continue: true
+- :cli_example: --action "deleteWorkflow" --name "zjiracliworkflow_new" --continue
+  :gem_example:
+    :action: :delete_workflow
+    :name: zjiracliworkflow_new
+    :continue: true
+- :cli_example: --action "deleteWorkflowScheme" --name "zjiracliworkflow" --continue
+  :gem_example:
+    :action: :delete_workflow_scheme
+    :name: zjiracliworkflow
+    :continue: true
+- :cli_example: --action "exportData" --project "ZEXPORT2" --exportType "Participants"
+  :gem_example:
+    :action: :export_data
+    :project: ZEXPORT2
+    :export_type: Participants
+- :cli_example: --action "exportData" --project "ZEXPORT2" --file "target/output/jiracliexport2/exportDataProject.txt"
+  :gem_example:
+    :action: :export_data
+    :project: ZEXPORT2
+    :file: target/output/jiracliexport2/exportDataProject.txt
+- :cli_example: "--action \"exportSite\""
+  :gem_example:
+    :action: :export_site
+- :cli_example: --action "exportWorkflow" --file "target/output/jiracliworkflow/exportWorkflow.txt"
+    --workflow "jira"
+  :gem_example:
+    :action: :export_workflow
+    :file: target/output/jiracliworkflow/exportWorkflow.txt
+    :workflow: jira
+- :cli_example: --action "getApplicationLinkList" --regex "(?i)((confluence)|(jira)).*"
+  :gem_example:
+    :action: :get_application_link_list
+    :regex: "(?i)((confluence)|(jira)).*"
+- :cli_example: --action "getAttachment" --issue "ZATTACH-1" --file "target/output/jiracliattachments/binary.bin"
+    --verbose
+  :gem_example:
+    :action: :get_attachment
+    :issue: ZATTACH-1
+    :file: target/output/jiracliattachments/binary.bin
+    :verbose: true
+- :cli_example: --action "getAttachment" --issue "ZATTACH-1" --file "target/output/jiracliattachments/dataFromStandardInput.txt"
+    --findReplace "xxx:yyy" --verbose
+  :gem_example:
+    :action: :get_attachment
+    :issue: ZATTACH-1
+    :file: target/output/jiracliattachments/dataFromStandardInput.txt
+    :find_replace: xxx:yyy
+    :verbose: true
+- :cli_example: --action "getAttachment" --issue "ZATTACH-1" --file "target/output/jiracliattachments/data.txt"
+    --findReplace "xxx:yyy"
+  :gem_example:
+    :action: :get_attachment
+    :issue: ZATTACH-1
+    :file: target/output/jiracliattachments/data.txt
+    :find_replace: xxx:yyy
+- :cli_example: --action "getAttachment" --issue "ZATTACH-1" --file "target/output/jiracliattachments/getAttachment2.txt"
+    --name "data.txt" --findReplace "xxx:yyy"
+  :gem_example:
+    :action: :get_attachment
+    :issue: ZATTACH-1
+    :file: target/output/jiracliattachments/getAttachment2.txt
+    :name: data.txt
+    :find_replace: xxx:yyy
+- :cli_example: --action "getAttachment" --issue "ZATTACH-1" --file "target/output/jiracliattachments/large.zip"
+    --verbose
+  :gem_example:
+    :action: :get_attachment
+    :issue: ZATTACH-1
+    :file: target/output/jiracliattachments/large.zip
+    :verbose: true
+- :cli_example: '--action "getAttachment" --issue "ZATTACH-1" --file "target/output/jiracliattachments/Special
+    name #&?"'
+  :gem_example:
+    :action: :get_attachment
+    :issue: ZATTACH-1
+    :file: 'target/output/jiracliattachments/Special name #&?'
+- :cli_example: --action "getAttachmentList" --issue "ZATTACH-1" --dateFormat "yyyy-MM-dd
+    HH:mm:ss:S"
+  :gem_example:
+    :action: :get_attachment_list
+    :issue: ZATTACH-1
+    :date_format: yyyy-MM-dd HH:mm:ss:S
+- :cli_example: --action "getAttachmentList" --issue "ZATTACH-1" --dateFormat "yyyy-MM-dd
+    'special format' HH:mm:ss:S z"
+  :gem_example:
+    :action: :get_attachment_list
+    :issue: ZATTACH-1
+    :date_format: yyyy-MM-dd 'special format' HH:mm:ss:S z
+- :cli_example: --action "getAvailableSteps" --issue "ZJIRACLI-3"
+  :gem_example:
+    :action: :get_available_steps
+    :issue: ZJIRACLI-3
+- :cli_example: "--action \"getBoardList\""
+  :gem_example:
+    :action: :get_board_list
+- :cli_example: --action "getBoardList" --regex "ZAGILE.*"
+  :gem_example:
+    :action: :get_board_list
+    :regex: ZAGILE.*
+- :cli_example: "--action \"getClientInfo\""
+  :gem_example:
+    :action: :get_client_info
+- :cli_example: --action "getCommentList" --issue "ZCLICLONE-6"
+  :gem_example:
+    :action: :get_comment_list
+    :issue: ZCLICLONE-6
+- :cli_example: --action "getCommentList" --issue "ZJIRACLI-1" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_comment_list
+    :issue: ZJIRACLI-1
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getCommentList" --issue "ZSUB-3" --limit "2"
+  :gem_example:
+    :action: :get_comment_list
+    :issue: ZSUB-3
+    :limit: '2'
+- :cli_example: --action "getComments" --issue "ZJIRACLI-12"
+  :gem_example:
+    :action: :get_comments
+    :issue: ZJIRACLI-12
+- :cli_example: --action "getComments" --issue "ZLINKS-1"
+  :gem_example:
+    :action: :get_comments
+    :issue: ZLINKS-1
+- :cli_example: --action "getComponentList" --project "ZCOMP2" --outputFormat "999"
+  :gem_example:
+    :action: :get_component_list
+    :project: ZCOMP2
+    :output_format: '999'
+- :cli_example: --action "getComponentList" --project "ZCOMP" --outputFormat "999"
+  :gem_example:
+    :action: :get_component_list
+    :project: ZCOMP
+    :output_format: '999'
+- :cli_example: --action "getComponentList" --project "zjiracli" --file "target/output/jiracli/getComponentList.txt"
+  :gem_example:
+    :action: :get_component_list
+    :project: zjiracli
+    :file: target/output/jiracli/getComponentList.txt
+- :cli_example: --action "getComponentList" --project "zjiracli" --outputFormat "999"
+  :gem_example:
+    :action: :get_component_list
+    :project: zjiracli
+    :output_format: '999'
+- :cli_example: --action "getComponent" --project "zjiracli" --component "C2"
+  :gem_example:
+    :action: :get_component
+    :project: zjiracli
+    :component: C2
+- :cli_example: --action "getComponent" --project "zjiracli" --component "C3"
+  :gem_example:
+    :action: :get_component
+    :project: zjiracli
+    :component: C3
+- :cli_example: --action "getComponent" --project "zjiracli" --component "C3First"
+  :gem_example:
+    :action: :get_component
+    :project: zjiracli
+    :component: C3First
+- :cli_example: "--action \"getCustomFieldList\""
+  :gem_example:
+    :action: :get_custom_field_list
+- :cli_example: --action "getCustomFieldList" --regex "zzz_.*"
+  :gem_example:
+    :action: :get_custom_field_list
+    :regex: zzz_.*
+- :cli_example: "--action \"getFieldConfigurationList\""
+  :gem_example:
+    :action: :get_field_configuration_list
+- :cli_example: --action "getFieldConfigurationList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_field_configuration_list
+    :options: deleteEnabled
+- :cli_example: "--action \"getFieldConfigurationSchemeList\""
+  :gem_example:
+    :action: :get_field_configuration_scheme_list
+- :cli_example: --action "getFieldConfigurationSchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_field_configuration_scheme_list
+    :options: deleteEnabled
+- :cli_example: "--action \"getFieldList\""
+  :gem_example:
+    :action: :get_field_list
+- :cli_example: --action "getFieldList" --regex "customfield_.*"
+  :gem_example:
+    :action: :get_field_list
+    :regex: customfield_.*
+- :cli_example: --action "getFieldValue" --issue "ZCUSTOM-1" --field "custom-cascade-select"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZCUSTOM-1
+    :field: custom-cascade-select
+- :cli_example: --action "getFieldValue" --issue "ZCUSTOM-4" --field "custom-multi-select"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZCUSTOM-4
+    :field: custom-multi-select
+- :cli_example: --action "getFieldValue" --issue "ZCUSTOM-5" --field "custom-multi-checkbox"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZCUSTOM-5
+    :field: custom-multi-checkbox
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-1" --field "custom1"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-1
+    :field: custom1
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-1" --field "custom-datetime"
+    --dateFormat "dd/MM/yyyy HH:mm:ss"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-1
+    :field: custom-datetime
+    :date_format: dd/MM/yyyy HH:mm:ss
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-1" --field "description"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-1
+    :field: description
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-1" --field "environment"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-1
+    :field: environment
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-2" --field "custom1"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-2
+    :field: custom1
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-2" --field "custom-multi-select"
+    --suppressId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-2
+    :field: custom-multi-select
+    :suppress_id: true
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-2" --field "custom-multi-select"
+    --withId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-2
+    :field: custom-multi-select
+    :with_id: true
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-3" --field "description" --withId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-3
+    :field: description
+    :with_id: true
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-3" --field "priority" --withId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-3
+    :field: priority
+    :with_id: true
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-3" --field "reporter" --withId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-3
+    :field: reporter
+    :with_id: true
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-3" --field "summary" --withId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-3
+    :field: summary
+    :with_id: true
+- :cli_example: --action "getFieldValue" --issue "ZFIELDS-3" --field "type" --withId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZFIELDS-3
+    :field: type
+    :with_id: true
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-10" --field "custom-versions"
+    --asVersion
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-10
+    :field: custom-versions
+    :as_version: true
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-11" --field "custom1"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-11
+    :field: custom1
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-11" --field "custom2"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-11
+    :field: custom2
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-11" --field "custom-versions"
+    --asVersion
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-11
+    :field: custom-versions
+    :as_version: true
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "affectsVersions"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: affectsVersions
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "assignee" --dateFormat
+    "d/MMM/yy"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: assignee
+    :date_format: d/MMM/yy
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "components"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: components
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "custom-labels"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: custom-labels
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "duedate" --dateFormat
+    "d/MMM/yy"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: duedate
+    :date_format: d/MMM/yy
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "environment"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: environment
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "fixversions"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: fixversions
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "fixVersions"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: fixVersions
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "fixversions"
+    --dateFormat "d/MMM/yy"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: fixversions
+    :date_format: d/MMM/yy
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "parent"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: parent
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "reporter" --dateFormat
+    "d/MMM/yy"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: reporter
+    :date_format: d/MMM/yy
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "resolution"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: resolution
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "resolutionDate"
+    --dateFormat "d/MMM/yy"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: resolutionDate
+    :date_format: d/MMM/yy
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "resolution" --dateFormat
+    "d/MMM/yy"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: resolution
+    :date_format: d/MMM/yy
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-3" --field "summary"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-3
+    :field: summary
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "10010"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: '10010'
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "assignee"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: assignee
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "currentESTIMATE"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: currentESTIMATE
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "custom1"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: custom1
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "customfield_10010"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: customfield_10010
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "custom three"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: custom three
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "custom-versions"
+    --asVersion
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: custom-versions
+    :as_version: true
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "custom-versions"
+    --suppressId
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: custom-versions
+    :suppress_id: true
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "duedate"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: duedate
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "duedate" --dateFormat
+    "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: duedate
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "duedate" --dateFormat
+    "yyyy.MM.dd"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: duedate
+    :date_format: yyyy.MM.dd
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "originalEstimate"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: originalEstimate
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "parent"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: parent
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "TIMEESTIMATE"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: TIMEESTIMATE
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-5" --field "timespent"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-5
+    :field: timespent
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLI-8" --field "labels"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLI-8
+    :field: labels
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLIX-1" --field "assignee"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLIX-1
+    :field: assignee
+- :cli_example: --action "getFieldValue" --issue "ZJIRACLIX-2" --field "assignee"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZJIRACLIX-2
+    :field: assignee
+- :cli_example: --action "getFieldValue" --issue "ZSUB-3" --field "testcase1"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZSUB-3
+    :field: testcase1
+- :cli_example: --action "getFieldValue" --issue "ZSUB-4" --field "environment"
+  :gem_example:
+    :action: :get_field_value
+    :issue: ZSUB-4
+    :field: environment
+- :cli_example: --action "getFilter" --id "24903"
+  :gem_example:
+    :action: :get_filter
+    :id: '24903'
+- :cli_example: "--action \"getFilterList\""
+  :gem_example:
+    :action: :get_filter_list
+- :cli_example: "--action \"getGroupList\""
+  :gem_example:
+    :action: :get_group_list
+- :cli_example: --action "getGroupList" --regex "jira.*"
+  :gem_example:
+    :action: :get_group_list
+    :regex: jira.*
+- :cli_example: --action "getIssueHistoryList" --issue "ZHISTORY-1"
+  :gem_example:
+    :action: :get_issue_history_list
+    :issue: ZHISTORY-1
+- :cli_example: --action "getIssueHistoryList" --issue "ZHISTORY-1" --dateFormat "yyyy-MM-dd
+    HH:mm:ss.SSS"
+  :gem_example:
+    :action: :get_issue_history_list
+    :issue: ZHISTORY-1
+    :date_format: yyyy-MM-dd HH:mm:ss.SSS
+- :cli_example: --action "getIssue" --issue "ZAGILE-2" --dateFormat "yyyy-MM-dd HH:mm:ss.SSS"
+    --outputFormat "2" --suppressId
+  :gem_example:
+    :action: :get_issue
+    :issue: ZAGILE-2
+    :date_format: yyyy-MM-dd HH:mm:ss.SSS
+    :output_format: '2'
+    :suppress_id: true
+- :cli_example: --action "getIssue" --issue "ZCLICLONE-6" --outputFormat "999"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZCLICLONE-6
+    :output_format: '999'
+- :cli_example: --action "getIssue" --issue "ZCUSTOM-2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZCUSTOM-2
+- :cli_example: --action "getIssue" --issue "ZCUSTOM-3"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZCUSTOM-3
+- :cli_example: --action "getIssue" --issue "ZCUSTOM-6" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZCUSTOM-6
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getIssue" --issue "ZCUSTOM-7"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZCUSTOM-7
+- :cli_example: --action "getIssue" --issue "ZCUSTOM-7" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZCUSTOM-7
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getIssue" --issue "ZFIELDS-3"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZFIELDS-3
+- :cli_example: --action "getIssue" --issue "ZFIELDS-4" --suppressId
+  :gem_example:
+    :action: :get_issue
+    :issue: ZFIELDS-4
+    :suppress_id: true
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-12"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-12
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-13"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-13
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-3" --dateFormat "M/dd/yyyy HH:mm:ss"
+    --outputFormat "2" --suppressId
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-3
+    :date_format: M/dd/yyyy HH:mm:ss
+    :output_format: '2'
+    :suppress_id: true
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-3" --dateFormat "yyyy.MM.dd 'special
+    format' HH:mm:ss z""" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-3
+    :date_format: yyyy.MM.dd 'special format' HH:mm:ss z""
+    :output_format: '2'
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-3" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-3
+    :output_format: '2'
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-5" --field "assignee"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-5
+    :field: assignee
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-5" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-5
+    :output_format: '2'
+- :cli_example: --action "getIssue" --issue "ZJIRACLI-8" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLI-8
+    :output_format: '2'
+- :cli_example: --action "getIssue" --issue "ZJIRACLIB-2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLIB-2
+- :cli_example: --action "getIssue" --issue "ZJIRACLIB-2" --dateFormat "yyyy.MM.dd 'special
+    format' HH:mm:ss z"""
+  :gem_example:
+    :action: :get_issue
+    :issue: ZJIRACLIB-2
+    :date_format: yyyy.MM.dd 'special format' HH:mm:ss z""
+- :cli_example: --action "getIssue" --issue "ZLINKS-1" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZLINKS-1
+    :output_format: '2'
+- :cli_example: --action "getIssue" --issue "ZSUB-1" --suppressId
+  :gem_example:
+    :action: :get_issue
+    :issue: ZSUB-1
+    :suppress_id: true
+- :cli_example: --action "getIssue" --issue "ZSUB-2" --suppressId
+  :gem_example:
+    :action: :get_issue
+    :issue: ZSUB-2
+    :suppress_id: true
+- :cli_example: --action "getIssue" --issue "ZUSER-1"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZUSER-1
+- :cli_example: --action "getIssue" --issue "ZWORK-1" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZWORK-1
+    :output_format: '2'
+- :cli_example: --action "getIssue" --issue "ZWORK-2" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue
+    :issue: ZWORK-2
+    :output_format: '2'
+- :cli_example: --action "getIssueList" --file "target/output/jiracliclone/getIssueListChangeType.txt"
+    --jql "project = ZCLICLONEX and type = 'improvement'"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracliclone/getIssueListChangeType.txt
+    :jql: project = ZCLICLONEX and type = 'improvement'
+- :cli_example: --action "getIssueList" --file "target/output/jiracli/getIssueListAllFieldsExceptCustom.txt"
+    --jql "project = 'zjiracli'" --outputFormat "998"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracli/getIssueListAllFieldsExceptCustom.txt
+    :jql: project = 'zjiracli'
+    :output_format: '998'
+- :cli_example: --action "getIssueList" --file "target/output/jiracli/getIssueListAllFields.txt"
+    --jql "project = 'zjiracli'" --outputFormat "999"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracli/getIssueListAllFields.txt
+    :jql: project = 'zjiracli'
+    :output_format: '999'
+- :cli_example: --action "getIssueList" --file "target/output/jiracli/getIssueListChangeType.txt"
+    --jql "project = zjiracliA and type = 'improvement'"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracli/getIssueListChangeType.txt
+    :jql: project = zjiracliA and type = 'improvement'
+- :cli_example: --action "getIssueList" --file "target/output/jiracli/getIssueListOutputFormat200.txt"
+    --jql "project = 'zjiracli'" --outputFormat "200"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracli/getIssueListOutputFormat200.txt
+    :jql: project = 'zjiracli'
+    :output_format: '200'
+- :cli_example: --action "getIssueList" --file "target/output/jiracli/getIssueListSearch.txt"
+    --jql "project = zjiracli or project = zjiracliX"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracli/getIssueListSearch.txt
+    :jql: project = zjiracli or project = zjiracliX
+- :cli_example: --action "getIssueList" --file "target/output/jiracli/getIssueList.txt"
+    --filter "all"
+  :gem_example:
+    :action: :get_issue_list
+    :file: target/output/jiracli/getIssueList.txt
+    :filter: all
+- :cli_example: --action "getIssueList" --filter "all" --outputFormat "2" --limit "75"
+  :gem_example:
+    :action: :get_issue_list
+    :filter: all
+    :output_format: '2'
+    :limit: '75'
+- :cli_example: --action "getIssueList" --jql "issuetype in subTaskIssueTypes() and
+    parent = ZJIRACLI-3"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: issuetype in subTaskIssueTypes() and parent = ZJIRACLI-3
+- :cli_example: --action "getIssueList" --jql "issue = ZJIRACLIB-2" --outputFormat "2"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: issue = ZJIRACLIB-2
+    :output_format: '2'
+- :cli_example: --action "getIssueList" --jql "issue = ZJIRACLIB-2" --outputFormat "3"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: issue = ZJIRACLIB-2
+    :output_format: '3'
+- :cli_example: --action "getIssueList" --jql "issue = ZVOTEWATCH-1 and watcher = 'user'
+    and watcher = 'developer'"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: issue = ZVOTEWATCH-1 and watcher = 'user' and watcher = 'developer'
+- :cli_example: --action "getIssueList" --jql "issue = ZVOTEWATCH-1 and (watcher = 'user'
+    or watcher = 'developer')"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: issue = ZVOTEWATCH-1 and (watcher = 'user' or watcher = 'developer')
+- :cli_example: --action "getIssueList" --jql "issue = ZWORK-1" --outputFormat "5"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: issue = ZWORK-1
+    :output_format: '5'
+- :cli_example: --action "getIssueList" --jql "key = ZCUSTOM-4" --outputFormat "2" --columns
+    "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: key = ZCUSTOM-4
+    :output_format: '2'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --jql "key = ZCUSTOM-4" --outputFormat "4" --columns
+    "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: key = ZCUSTOM-4
+    :output_format: '4'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --jql "key = ZCUSTOM-4" --outputFormat "5" --columns
+    "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: key = ZCUSTOM-4
+    :output_format: '5'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --jql "key = ZCUSTOM-4" --outputFormat "999"
+    --columns "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+    three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: key = ZCUSTOM-4
+    :output_format: '999'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --jql "parent = ZCLICLONE-11 and summary ~ 'Subtask
+    1'"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: parent = ZCLICLONE-11 and summary ~ 'Subtask 1'
+- :cli_example: --action "getIssueList" --jql "project = ZCLICLONEX and type = 'improvement'"
+    --limit "1"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = ZCLICLONEX and type = 'improvement'
+    :limit: '1'
+- :cli_example: --action "getIssueList" --jql "project = ZCLICLONEZ and issuetype in
+    subTaskIssueTypes()"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = ZCLICLONEZ and issuetype in subTaskIssueTypes()
+- :cli_example: --action "getIssueList" --jql "project = 'zcustom'" --outputFormat "999"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = 'zcustom'
+    :output_format: '999'
+- :cli_example: --action "getIssueList" --jql "project = zjiracliA and type = 'improvement'"
+    --limit "2"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = zjiracliA and type = 'improvement'
+    :limit: '2'
+- :cli_example: --action "getIssueList" --jql "project = 'zjiracli' and labels != null"
+    --outputFormat "999"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = 'zjiracli' and labels != null
+    :output_format: '999'
+- :cli_example: --action "getIssueList" --jql "project = 'zjiracli' order by key desc"
+    --outputFormat "4" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = 'zjiracli' order by key desc
+    :output_format: '4'
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getIssueList" --jql "project = 'zjiracli'" --outputFormat "999" --columns "key,2,custom1,custom2,description,"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = 'zjiracli'
+    :output_format: '999'
+    :columns: key,2,custom1,custom2,description,
+- :cli_example: --action "getIssueList" --jql "project = 'zjiracli'" --outputFormat "999" --dateFormat "yyyy.MM.dd" --columns "key,created,last comment user, last comment
+    date, last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = 'zjiracli'
+    :output_format: '999'
+    :date_format: yyyy.MM.dd
+    :columns: key,created,last comment user, last comment date, last comment
+- :cli_example: --action "getIssueList" --jql "project = zlinks and issue in linkedIssues(ZLINKS-1,
+    'duplicates')"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = zlinks and issue in linkedIssues(ZLINKS-1, 'duplicates')
+- :cli_example: --action "getIssueList" --jql "project = zlinks and issue in linkedIssues(ZLINKS-1,
+    'duplicates')" --outputFormat "999"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = zlinks and issue in linkedIssues(ZLINKS-1, 'duplicates')
+    :output_format: '999'
+- :cli_example: --action "getIssueList" --jql "project = 'zlinks'" --outputFormat "998"
+    --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = 'zlinks'
+    :output_format: '998'
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getIssueList" --jql "project = ZRUNNER and labels = 'fieldValues'"
+    --outputFormat "2"
+  :gem_example:
+    :action: :get_issue_list
+    :jql: project = ZRUNNER and labels = 'fieldValues'
+    :output_format: '2'
+- :cli_example: --action "getIssueList" --project "ZAGILEC" --dateFormat "yyyy-MM-dd
+    HH:mm:ss.SSS" --outputFormat "2" --suppressId --columns "Key,Summary,Epic Link"
+  :gem_example:
+    :action: :get_issue_list
+    :project: ZAGILEC
+    :date_format: yyyy-MM-dd HH:mm:ss.SSS
+    :output_format: '2'
+    :suppress_id: true
+    :columns: Key,Summary,Epic Link
+- :cli_example: --action "getIssueList" --project "zjiracli" --file "target/output/jiracli/getIssueListProject.txt"
+    --outputFormat "101"
+  :gem_example:
+    :action: :get_issue_list
+    :project: zjiracli
+    :file: target/output/jiracli/getIssueListProject.txt
+    :output_format: '101'
+- :cli_example: --action "getIssueList" --search "key = ZCUSTOM-4" --outputFormat "2"
+    --columns "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+    three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :search: key = ZCUSTOM-4
+    :output_format: '2'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --search "key = ZCUSTOM-4" --outputFormat "4"
+    --columns "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+    three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :search: key = ZCUSTOM-4
+    :output_format: '4'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --search "key = ZCUSTOM-4" --outputFormat "5"
+    --columns "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+    three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :search: key = ZCUSTOM-4
+    :output_format: '5'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssueList" --search "key = ZCUSTOM-4" --outputFormat "999"
+    --columns "testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+    three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+    Points,testcase1,testcase2,last comment"
+  :gem_example:
+    :action: :get_issue_list
+    :search: key = ZCUSTOM-4
+    :output_format: '999'
+    :columns: testcase1,testcase2,key,summary,labels,Subtasks,Business Value,custom
+      three,custom-group-picker,custom-multi-user-picker,custom-user-picker,custom-versions,custom-multi-select,Story
+      Points,testcase1,testcase2,last comment
+- :cli_example: --action "getIssue" --project "ZCLICLONE" --issue "ZCLICLONE-15"
+  :gem_example:
+    :action: :get_issue
+    :project: ZCLICLONE
+    :issue: ZCLICLONE-15
+- :cli_example: --action "getIssue" --project "ZCLICLONE" --issue "ZCLICLONE-2"
+  :gem_example:
+    :action: :get_issue
+    :project: ZCLICLONE
+    :issue: ZCLICLONE-2
+- :cli_example: "--action \"getIssueSecuritySchemeList\""
+  :gem_example:
+    :action: :get_issue_security_scheme_list
+- :cli_example: --action "getIssueSecuritySchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_issue_security_scheme_list
+    :options: deleteEnabled
+- :cli_example: "--action \"getIssueTypeList\""
+  :gem_example:
+    :action: :get_issue_type_list
+- :cli_example: --action "getIssueTypeList" --project "@all"
+  :gem_example:
+    :action: :get_issue_type_list
+    :project: "@all"
+- :cli_example: --action "getIssueTypeList" --project "ZPROJECT"
+  :gem_example:
+    :action: :get_issue_type_list
+    :project: ZPROJECT
+- :cli_example: "--action \"getIssueTypeSchemeList\""
+  :gem_example:
+    :action: :get_issue_type_scheme_list
+- :cli_example: --action "getIssueTypeSchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_issue_type_scheme_list
+    :options: deleteEnabled
+- :cli_example: "--action \"getIssueTypeScreenSchemeList\""
+  :gem_example:
+    :action: :get_issue_type_screen_scheme_list
+- :cli_example: --action "getIssueTypeScreenSchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_issue_type_screen_scheme_list
+    :options: deleteEnabled
+- :cli_example: --action "getLinkList" --issue "ZLINKS-1"
+  :gem_example:
+    :action: :get_link_list
+    :issue: ZLINKS-1
+- :cli_example: --action "getLinkList" --issue "ZLINKS-1" --regex "duplicate"
+  :gem_example:
+    :action: :get_link_list
+    :issue: ZLINKS-1
+    :regex: duplicate
+- :cli_example: --action "getLinkList" --issue "ZLINKS-2"
+  :gem_example:
+    :action: :get_link_list
+    :issue: ZLINKS-2
+- :cli_example: --action "getLinkList" --jql "parent = ZLINKS-1 or key = ZLINKS-1 order
+    by key"
+  :gem_example:
+    :action: :get_link_list
+    :jql: parent = ZLINKS-1 or key = ZLINKS-1 order by key
+- :cli_example: "--action \"getLinkTypeList\""
+  :gem_example:
+    :action: :get_link_type_list
+- :cli_example: --action "getLoginInfo" --dateFormat "yyyy-MM-dd HH:mm:ss"
+  :gem_example:
+    :action: :get_login_info
+    :date_format: yyyy-MM-dd HH:mm:ss
+- :cli_example: "--action \"getNotificationSchemeList\""
+  :gem_example:
+    :action: :get_notification_scheme_list
+- :cli_example: --action "getNotificationSchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_notification_scheme_list
+    :options: deleteEnabled
+- :cli_example: "--action \"getPermissionSchemeList\""
+  :gem_example:
+    :action: :get_permission_scheme_list
+- :cli_example: --action "getPermissionSchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_permission_scheme_list
+    :options: deleteEnabled
+- :cli_example: "--action \"getProjectCategoryList\""
+  :gem_example:
+    :action: :get_project_category_list
+- :cli_example: --action "getProjectList" --category "" --regex "ZPROJECT.*" --columns
+    "key"
+  :gem_example:
+    :action: :get_project_list
+    :category: ''
+    :regex: ZPROJECT.*
+    :columns: key
+- :cli_example: --action "getProjectList" --file "target/output/jiracli/getProjectListClone.txt"
+    --outputFormat "2"
+  :gem_example:
+    :action: :get_project_list
+    :file: target/output/jiracli/getProjectListClone.txt
+    :output_format: '2'
+- :cli_example: --action "getProjectList" --file "target/output/jiracliproject/getProjectList.txt"
+  :gem_example:
+    :action: :get_project_list
+    :file: target/output/jiracliproject/getProjectList.txt
+- :cli_example: --action "getProjectList" --lead "developer" --lookup --regex "ZPROJECT.*"
+  :gem_example:
+    :action: :get_project_list
+    :lead: developer
+    :lookup: true
+    :regex: ZPROJECT.*
+- :cli_example: --action "getProjectList" --regex "ZPROJECT" --outputFormat "999"
+  :gem_example:
+    :action: :get_project_list
+    :regex: ZPROJECT
+    :output_format: '999'
+- :cli_example: --action "getProject" --project "ZCLICLONET"
+  :gem_example:
+    :action: :get_project
+    :project: ZCLICLONET
+- :cli_example: --action "getProject" --project "ZCLICLONEX"
+  :gem_example:
+    :action: :get_project
+    :project: ZCLICLONEX
+- :cli_example: --action "getProject" --project "ZCLICLONEY"
+  :gem_example:
+    :action: :get_project
+    :project: ZCLICLONEY
+- :cli_example: --action "getProject" --project "zjiracli"
+  :gem_example:
+    :action: :get_project
+    :project: zjiracli
+- :cli_example: --action "getProject" --project "zjiracliD"
+  :gem_example:
+    :action: :get_project
+    :project: zjiracliD
+- :cli_example: --action "getProject" --project "zjiracliX"
+  :gem_example:
+    :action: :get_project
+    :project: zjiracliX
+- :cli_example: --action "getProject" --project "zjiracliX" --suppressId
+  :gem_example:
+    :action: :get_project
+    :project: zjiracliX
+    :suppress_id: true
+- :cli_example: --action "getProject" --project "ZPROJECT"
+  :gem_example:
+    :action: :get_project
+    :project: ZPROJECT
+- :cli_example: --action "getProject" --project "ZPROJECTX"
+  :gem_example:
+    :action: :get_project
+    :project: ZPROJECTX
+- :cli_example: --action "getProjectRoleActorList" --project "zjiracliB" --role "users"
+  :gem_example:
+    :action: :get_project_role_actor_list
+    :project: zjiracliB
+    :role: users
+- :cli_example: --action "getProjectRoleActorList" --project "ZROLES" --role "@all"
+    --outputFormat "2"
+  :gem_example:
+    :action: :get_project_role_actor_list
+    :project: ZROLES
+    :role: "@all"
+    :output_format: '2'
+- :cli_example: --action "getProjectRoleActorList" --project "ZROLES" --role "users"
+  :gem_example:
+    :action: :get_project_role_actor_list
+    :project: ZROLES
+    :role: users
+- :cli_example: --action "getProjectRoleByUserList" --userId "@all" --columns "User,Project,Administrators,Developers,Users,View"
+    --regex "ZROLES"
+  :gem_example:
+    :action: :get_project_role_by_user_list
+    :user_id: "@all"
+    :columns: User,Project,Administrators,Developers,Users,View
+    :regex: ZROLES
+- :cli_example: --action "getProjectRoleByUserList" --userId "automation" --columns
+    "User,Project,Administrators,Developers,Users,View" --regex "ZROLES.*"
+  :gem_example:
+    :action: :get_project_role_by_user_list
+    :user_id: automation
+    :columns: User,Project,Administrators,Developers,Users,View
+    :regex: ZROLES.*
+- :cli_example: "--action \"getProjectRoleList\""
+  :gem_example:
+    :action: :get_project_role_list
+- :cli_example: --action "getProjectRoleList" --regex "zAdd project role test.*"
+  :gem_example:
+    :action: :get_project_role_list
+    :regex: zAdd project role test.*
+- :cli_example: "--action \"getScreenList\""
+  :gem_example:
+    :action: :get_screen_list
+- :cli_example: --action "getScreenList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_screen_list
+    :options: deleteEnabled
+- :cli_example: --action "getScreenList" --regex "(?i).*default.*"
+  :gem_example:
+    :action: :get_screen_list
+    :regex: "(?i).*default.*"
+- :cli_example: "--action \"getScreenSchemeList\""
+  :gem_example:
+    :action: :get_screen_scheme_list
+- :cli_example: --action "getScreenSchemeList" --options "deleteEnabled"
+  :gem_example:
+    :action: :get_screen_scheme_list
+    :options: deleteEnabled
+- :cli_example: --action "getSecurityLevelList" --project "zjiracli"
+  :gem_example:
+    :action: :get_security_level_list
+    :project: zjiracli
+- :cli_example: --action "getSecurityLevelList" --project "zjiracliB"
+  :gem_example:
+    :action: :get_security_level_list
+    :project: zjiracliB
+- :cli_example: --action "getServerInfo" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_server_info
+    :date_format: yyyy-MM-dd
+- :cli_example: "--action \"getServerInfo\" --debug"
+  :gem_example:
+    :action: :get_server_info
+    :debug: true
+- :cli_example: --action "getServerInfo" --outputFormat "2" --dateFormat "yyyy-MM-dd HH:mm"
+  :gem_example:
+    :action: :get_server_info
+    :output_format: '2'
+    :date_format: yyyy-MM-dd HH:mm
+- :cli_example: "--action \"getServerInfo\" --outputFormat \"999\""
+  :gem_example:
+    :action: :get_server_info
+    :output_format: '999'
+- :cli_example: "--action \"getStatusList\""
+  :gem_example:
+    :action: :get_status_list
+- :cli_example: --action "getStatusList" --project "zjiracli"
+  :gem_example:
+    :action: :get_status_list
+    :project: zjiracli
+- :cli_example: --action "getTransitionList" --issue "ZJIRACLI-3"
+  :gem_example:
+    :action: :get_transition_list
+    :issue: ZJIRACLI-3
+- :cli_example: --action "getTransitionList" --issue "ZJIRACLI-3" --outputFormat "2"
+  :gem_example:
+    :action: :get_transition_list
+    :issue: ZJIRACLI-3
+    :output_format: '2'
+- :cli_example: --action "getUserList" --group "jira-users" --regex "testuser1" --outputFormat "999"
+  :gem_example:
+    :action: :get_user_list
+    :group: jira-users
+    :regex: testuser1
+    :output_format: '999'
+- :cli_example: --action "getUserList" --group "testgroup2"
+  :gem_example:
+    :action: :get_user_list
+    :group: testgroup2
+- :cli_example: --action "getUserList" --group "testgroup2" --outputFormat "2"
+  :gem_example:
+    :action: :get_user_list
+    :group: testgroup2
+    :output_format: '2'
+- :cli_example: --action "getUserList" --name "@all"
+  :gem_example:
+    :action: :get_user_list
+    :name: "@all"
+- :cli_example: --action "getUserList" --name "@all" --regex ".*@x.com"
+  :gem_example:
+    :action: :get_user_list
+    :name: "@all"
+    :regex: ".*@x.com"
+- :cli_example: --action "getUserList" --name "testuser" --outputFormat "1"
+  :gem_example:
+    :action: :get_user_list
+    :name: testuser
+    :output_format: '1'
+- :cli_example: --action "getUserList" --name "testuser" --outputFormat "2"
+  :gem_example:
+    :action: :get_user_list
+    :name: testuser
+    :output_format: '2'
+- :cli_example: --action "getUserList" --project "zuser" --role "developers"
+  :gem_example:
+    :action: :get_user_list
+    :project: zuser
+    :role: developers
+- :cli_example: --action "getUser" --userId "Testuser3"
+  :gem_example:
+    :action: :get_user
+    :user_id: Testuser3
+- :cli_example: --action "getUser" --userKey "testuser3"
+  :gem_example:
+    :action: :get_user
+    :user_key: testuser3
+- :cli_example: --action "getVersionList" --project "zjiracli"
+  :gem_example:
+    :action: :get_version_list
+    :project: zjiracli
+- :cli_example: --action "getVersionList" --project "zjiracli" --outputFormat "2"
+  :gem_example:
+    :action: :get_version_list
+    :project: zjiracli
+    :output_format: '2'
+- :cli_example: --action "getVersionList" --project "zjiracli" --outputFormat "999" --dateFormat
+    "yyyy.MM.dd"
+  :gem_example:
+    :action: :get_version_list
+    :project: zjiracli
+    :output_format: '999'
+    :date_format: yyyy.MM.dd
+- :cli_example: --action "getVersion" --project "zjiracliA" --version "V1" --dateFormat
+    "yyyy.MM.dd"
+  :gem_example:
+    :action: :get_version
+    :project: zjiracliA
+    :version: V1
+    :date_format: yyyy.MM.dd
+- :cli_example: --action "getVersion" --project "zjiracliC" --version "V2" --outputFormat "999"
+  :gem_example:
+    :action: :get_version
+    :project: zjiracliC
+    :version: V2
+    :output_format: '999'
+- :cli_example: --action "getVersion" --project "zjiracli" --name "V1" --dateFormat
+    "yyyy MM dd"
+  :gem_example:
+    :action: :get_version
+    :project: zjiracli
+    :name: V1
+    :date_format: yyyy MM dd
+- :cli_example: --action "getVersion" --project "zjiracli" --version "auto2" --dateFormat
+    "yyyy.MM.dd"
+  :gem_example:
+    :action: :get_version
+    :project: zjiracli
+    :version: auto2
+    :date_format: yyyy.MM.dd
+- :cli_example: --action "getVersion" --project "zjiracli" --version "V2" --dateFormat
+    "yyyy.MM.dd"
+  :gem_example:
+    :action: :get_version
+    :project: zjiracli
+    :version: V2
+    :date_format: yyyy.MM.dd
+- :cli_example: --action "getVersion" --project "zjiracli" --version "With Blanks"
+  :gem_example:
+    :action: :get_version
+    :project: zjiracli
+    :version: With Blanks
+- :cli_example: --action "getVoterList" --issue "ZVOTEWATCH-1"
+  :gem_example:
+    :action: :get_voter_list
+    :issue: ZVOTEWATCH-1
+- :cli_example: --action "getVoterList" --issue "ZVOTEWATCH-1" --outputFormat "2"
+  :gem_example:
+    :action: :get_voter_list
+    :issue: ZVOTEWATCH-1
+    :output_format: '2'
+- :cli_example: --action "getVoterList" --issue "ZVOTEWATCH-1" --outputFormat "999"
+  :gem_example:
+    :action: :get_voter_list
+    :issue: ZVOTEWATCH-1
+    :output_format: '999'
+- :cli_example: --action "getWatcherList" --issue "ZVOTEWATCH-1"
+  :gem_example:
+    :action: :get_watcher_list
+    :issue: ZVOTEWATCH-1
+- :cli_example: --action "getWatcherList" --issue "ZVOTEWATCH-1" --outputFormat "2"
+  :gem_example:
+    :action: :get_watcher_list
+    :issue: ZVOTEWATCH-1
+    :output_format: '2'
+- :cli_example: --action "getWatcherList" --issue "ZVOTEWATCH-1" --outputFormat "999"
+  :gem_example:
+    :action: :get_watcher_list
+    :issue: ZVOTEWATCH-1
+    :output_format: '999'
+- :cli_example: --action "getWorkflowList" --dateFormat "yyyy-MM-dd" --regex "(Agile
+    Simplified)|(jira)"
+  :gem_example:
+    :action: :get_workflow_list
+    :date_format: yyyy-MM-dd
+    :regex: "(Agile Simplified)|(jira)"
+- :cli_example: --action "getWorkflow" --workflow "Agile Simplified" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :get_workflow
+    :workflow: Agile Simplified
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "getWorkList" --issue "ZWORK-1"
+  :gem_example:
+    :action: :get_work_list
+    :issue: ZWORK-1
+- :cli_example: --action "getWorkList" --issue "ZWORK-1" --dateFormat "yyyy-MM-dd HH:mm:ss.SSS"
+  :gem_example:
+    :action: :get_work_list
+    :issue: ZWORK-1
+    :date_format: yyyy-MM-dd HH:mm:ss.SSS
+- :cli_example: --action "import" --file "src/itest/resources/importProjects.json" --options
+    "logFile=-"
+  :gem_example:
+    :action: :import
+    :file: src/itest/resources/importProjects.json
+    :options: logFile=-
+- :cli_example: --action "linkIssue" --issue "249453" --toIssue "249454" --link "10011"
+    --comment "Link comment"
+  :gem_example:
+    :action: :link_issue
+    :issue: '249453'
+    :to_issue: '249454'
+    :link: '10011'
+    :comment: Link comment
+- :cli_example: --action "linkIssue" --issue "ZCLICLONE-4" --toIssue "ZCLICLONE-1" --link
+    "relates"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZCLICLONE-4
+    :to_issue: ZCLICLONE-1
+    :link: relates
+- :cli_example: --action "linkIssue" --issue "ZLINKS-1" --toIssue "ZLINKS-2" --link
+    "relates" --comment "Link comment"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-2
+    :link: relates
+    :comment: Link comment
+- :cli_example: --action "linkIssue" --issue "ZLINKS-1" --toIssue "ZLINKS-2" --link
+    "relates" --comment "Link comment with group" --group "jira-users"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-2
+    :link: relates
+    :comment: Link comment with group
+    :group: jira-users
+- :cli_example: --action "linkIssue" --issue "ZLINKS-1" --toIssue "ZLINKS-2" --link
+    "relates" --comment "Link comment with role and group" --role "Developers" --group
+    "jira-users"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-2
+    :link: relates
+    :comment: Link comment with role and group
+    :role: Developers
+    :group: jira-users
+- :cli_example: --action "linkIssue" --issue "ZLINKS-1" --toIssue "ZLINKS-2" --link
+    "relates" --comment "Link comment with role" --role "Developers"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-2
+    :link: relates
+    :comment: Link comment with role
+    :role: Developers
+- :cli_example: --action "linkIssue" --issue "ZLINKS-1" --toIssue "ZLINKS-3" --link
+    "duplicate" --verbose
+  :gem_example:
+    :action: :link_issue
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-3
+    :link: duplicate
+    :verbose: true
+- :cli_example: --action "linkIssue" --issue "ZLINKS-1" --toIssue "ZLINKS-3" --link
+    "relates"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZLINKS-1
+    :to_issue: ZLINKS-3
+    :link: relates
+- :cli_example: --action "linkIssue" --issue "ZSUB-1" --toIssue "ZSUB-2" --link "relates"
+  :gem_example:
+    :action: :link_issue
+    :issue: ZSUB-1
+    :to_issue: ZSUB-2
+    :link: relates
+- :cli_example: --action "login" --outputFormat "2" --dateFormat "yyyy-MM-dd HH:mm:ss"
+  :gem_example:
+    :action: :login
+    :output_format: '2'
+    :date_format: yyyy-MM-dd HH:mm:ss
+# - :cli_example: "--action \"login\" > target/output/jiracliinfo/login.txt"
+#   :gem_example:
+#     :action: :login
+# - :cli_example: "--action \"logout\" -l < target/output/jiracliinfo/login.txt"
+#   :gem_example:
+#     :action: :logout
+- :cli_example: --action "modifyFieldValue" --issue "ZFIELDS-4" --field "fixVersions"
+    --field2 "components" --findReplace "'V2:V3,V4', C1:C2" --autoVersion --autoComponent
+  :gem_example:
+    :action: :modify_field_value
+    :issue: ZFIELDS-4
+    :field: fixVersions
+    :field2: components
+    :find_replace: "'V2:V3,V4', C1:C2"
+    :auto_version: true
+    :auto_component: true
+- :cli_example: --action "modifyFieldValue" --issue "ZFIELDS-4" --field "summary" --field2
+    "environment" --findReplace "original:modified"
+  :gem_example:
+    :action: :modify_field_value
+    :issue: ZFIELDS-4
+    :field: summary
+    :field2: environment
+    :find_replace: original:modified
+- :cli_example: --action "releaseVersion" --project "zjiracli" --name "V1" --continue
+  :gem_example:
+    :action: :release_version
+    :project: zjiracli
+    :name: V1
+    :continue: true
+- :cli_example: --action "releaseVersion" --project "zjiracli" --name "V1" --dateFormat
+    "yyyy.MM.dd" --description "V1 description released"
+  :gem_example:
+    :action: :release_version
+    :project: zjiracli
+    :name: V1
+    :date_format: yyyy.MM.dd
+    :description: V1 description released
+- :cli_example: --action "removeAttachment" --issue "ZATTACH-1" --id "63115"
+  :gem_example:
+    :action: :remove_attachment
+    :issue: ZATTACH-1
+    :id: '63115'
+- :cli_example: --action "removeAttachment" --issue "ZATTACH-1" --name "data.txt"
+  :gem_example:
+    :action: :remove_attachment
+    :issue: ZATTACH-1
+    :name: data.txt
+- :cli_example: --action "removeCustomField" --field "22507" --continue
+  :gem_example:
+    :action: :remove_custom_field
+    :field: '22507'
+    :continue: true
+- :cli_example: --action "removeCustomField" --field "customfield_22509" --continue
+  :gem_example:
+    :action: :remove_custom_field
+    :field: customfield_22509
+    :continue: true
+- :cli_example: --action "removeCustomField" --field "zzimport1" --type "com.atlassian.jira.plugin.system.customfieldtypes:textfield"
+    --continue
+  :gem_example:
+    :action: :remove_custom_field
+    :field: zzimport1
+    :type: com.atlassian.jira.plugin.system.customfieldtypes:textfield
+    :continue: true
+- :cli_example: --action "removeCustomField" --field "zzz_Select List (single choice)"
+    --continue
+  :gem_example:
+    :action: :remove_custom_field
+    :field: zzz_Select List (single choice)
+    :continue: true
+- :cli_example: --action "removeGroup" --group "bad"
+  :gem_example:
+    :action: :remove_group
+    :group: bad
+- :cli_example: --action "removeGroup" --group "Testgroup1"
+  :gem_example:
+    :action: :remove_group
+    :group: Testgroup1
+- :cli_example: --action "removeGroup" --group "testgroup2"
+  :gem_example:
+    :action: :remove_group
+    :group: testgroup2
+- :cli_example: --action "removeLabels" --issue "ZJIRACLI-8" --labels "addLabel1 addLabel2"
+  :gem_example:
+    :action: :remove_labels
+    :issue: ZJIRACLI-8
+    :labels: addLabel1 addLabel2
+- :cli_example: --action "removeLabels" --issue "ZJIRACLI-9" --labels "xxx"
+  :gem_example:
+    :action: :remove_labels
+    :issue: ZJIRACLI-9
+    :labels: xxx
+- :cli_example: --action "removeProjectRoleActors" --project "zjiracli" --role "users"
+    --userId "user, admin"
+  :gem_example:
+    :action: :remove_project_role_actors
+    :project: zjiracli
+    :role: users
+    :user_id: user, admin
+- :cli_example: --action "removeProjectRoleActors" --project "ZROLES" --role "users"
+    --userId "user, admin"
+  :gem_example:
+    :action: :remove_project_role_actors
+    :project: ZROLES
+    :role: users
+    :user_id: user, admin
+- :cli_example: --action "removeProjectRoleActors" --project "ZROLESX" --role "users"
+    --userId "user, admin"
+  :gem_example:
+    :action: :remove_project_role_actors
+    :project: ZROLESX
+    :role: users
+    :user_id: user, admin
+- :cli_example: --action "removeProjectRole" --name "zAdd project role test" --continue
+  :gem_example:
+    :action: :remove_project_role
+    :name: zAdd project role test
+    :continue: true
+- :cli_example: --action "removeProjectRole" --name "zAdd project role test updated"
+    --continue
+  :gem_example:
+    :action: :remove_project_role
+    :name: zAdd project role test updated
+    :continue: true
+- :cli_example: --action "removeUser" --userId "BAD"
+  :gem_example:
+    :action: :remove_user
+    :user_id: BAD
+- :cli_example: --action "removeUser" --userId "testuser1"
+  :gem_example:
+    :action: :remove_user
+    :user_id: testuser1
+- :cli_example: --action "removeUser" --userId "testuser1New"
+  :gem_example:
+    :action: :remove_user
+    :user_id: testuser1New
+- :cli_example: --action "removeUser" --userId "testuser2"
+  :gem_example:
+    :action: :remove_user
+    :user_id: testuser2
+- :cli_example: --action "removeUser" --userId "Testuser3"
+  :gem_example:
+    :action: :remove_user
+    :user_id: Testuser3
+- :cli_example: --action "removeVote" --issue "ZVOTEWATCH-1" --user "developer" --password
+    "asDeVqeTwsjtr4GnyKwf"
+  :gem_example:
+    :action: :remove_vote
+    :issue: ZVOTEWATCH-1
+    :user: developer
+    :password: asDeVqeTwsjtr4GnyKwf
+- :cli_example: --action "removeWatchers" --issue "ZVOTEWATCH-1" --userId "invalid,
+    xxxxxx" --continue
+  :gem_example:
+    :action: :remove_watchers
+    :issue: ZVOTEWATCH-1
+    :user_id: invalid, xxxxxx
+    :continue: true
+- :cli_example: --action "removeWatchers" --issue "ZVOTEWATCH-1" --userId "user, developer"
+  :gem_example:
+    :action: :remove_watchers
+    :issue: ZVOTEWATCH-1
+    :user_id: user, developer
+- :cli_example: --action "removeWork" --issue "ZWORK-1" --id "32811"
+  :gem_example:
+    :action: :remove_work
+    :issue: ZWORK-1
+    :id: '32811'
+- :cli_example: --action "renderRequest" --file "target/output/jiracli/renderRequestInvalidType.txt"
+    --type "INVALID" --verbose
+  :gem_example:
+    :action: :render_request
+    :file: target/output/jiracli/renderRequestInvalidType.txt
+    :type: INVALID
+    :verbose: true
+- :cli_example: --action "renderRequest" --issue "ZJIRACLI-3" --file "target/output/jiracli/renderRequest.txt"
+  :gem_example:
+    :action: :render_request
+    :issue: ZJIRACLI-3
+    :file: target/output/jiracli/renderRequest.txt
+- :cli_example: --action "renderRequest" --project "zjiracli" --file "target/output/jiracli/verifyProjectIssueTypeScreenScheme.txt"
+    --request "plugins/servlet/project-config/ZJIRACLI/summary"
+  :gem_example:
+    :action: :render_request
+    :project: zjiracli
+    :file: target/output/jiracli/verifyProjectIssueTypeScreenScheme.txt
+    :request: plugins/servlet/project-config/ZJIRACLI/summary
+- :cli_example: --action "renderRequest" --project "zjiracli" --file "target/output/jiracli/verifyUpdateProjectIssueTypeScreenSchemeDefault.txt"
+    --request "plugins/servlet/project-config/ZJIRACLI/summary"
+  :gem_example:
+    :action: :render_request
+    :project: zjiracli
+    :file: target/output/jiracli/verifyUpdateProjectIssueTypeScreenSchemeDefault.txt
+    :request: plugins/servlet/project-config/ZJIRACLI/summary
+- :cli_example: --action "renderRequest" --request "/rest/project-templates/1.0/templates"
+    --type "FORM_URL_ENCODED" --acceptType "JSON" --verbose
+  :gem_example:
+    :action: :render_request
+    :request: "/rest/project-templates/1.0/templates"
+    :type: FORM_URL_ENCODED
+    :accept_type: JSON
+    :verbose: true
+- :cli_example: "--action \"run\""
+  :gem_example:
+    :action: :run
+- :cli_example: --action "run" --common "--issue ZSUB-4"
+  :gem_example:
+    :action: :run
+    :common: "--issue ZSUB-4"
+- :cli_example: --action "run" --file "-"
+  :gem_example:
+    :action: :run
+    :file: "-"
+- :cli_example: --action "run" --file "src/itest/resources//renderRequest.txt" --findReplace
+    "@project@:zjiracli"
+  :gem_example:
+    :action: :run
+    :file: src/itest/resources//renderRequest.txt
+    :find_replace: "@project@:zjiracli"
+- :cli_example: --action "run" --file "src/itest/resources/runReplaceMapReference.txt"
+    --common "--project ZRUNNER --labels JCLI528"
+  :gem_example:
+    :action: :run
+    :file: src/itest/resources/runReplaceMapReference.txt
+    :common: "--project ZRUNNER --labels JCLI528"
+- :cli_example: --action "run" --file "src/itest/resources/runReplaceMap.txt" --common
+    "--project ZRUNNER"
+  :gem_example:
+    :action: :run
+    :file: src/itest/resources/runReplaceMap.txt
+    :common: "--project ZRUNNER"
+- :cli_example: --action "run" --file "src/itest/resources/run.txt"
+  :gem_example:
+    :action: :run
+    :file: src/itest/resources/run.txt
+- :cli_example: --action "run" --file "src/itest/resources/runWithFindReplace.txt" --findReplace
+    "##action##:getServerInfo"
+  :gem_example:
+    :action: :run
+    :file: src/itest/resources/runWithFindReplace.txt
+    :find_replace: "##action##:getServerInfo"
+- :cli_example: --action "run" --file "target/output/jiracliexport2/exportDataProject.txt"
+    --findReplace "--project ZEXPORT2:--project ZEXPORT2E" --findReplaceRegex "--name
+    [^-]*:"
+  :gem_example:
+    :action: :run
+    :file: target/output/jiracliexport2/exportDataProject.txt
+    :find_replace: "--project ZEXPORT2:--project ZEXPORT2E"
+    :find_replace_regex: "--name [^-]*:"
+- :cli_example: --action "runFromAttachmentList" --issue "ZRUNNER-1" --common "-a getAttachment
+    --file ""target/output/jiraclirunner/Attachment-@attachment@"" --name @attachmentId@
+    --issue ZRUNNER-1"
+  :gem_example:
+    :action: :run_from_attachment_list
+    :issue: ZRUNNER-1
+    :common: -a getAttachment --file ""target/output/jiraclirunner/Attachment-@attachment@""
+      --name @attachmentId@ --issue ZRUNNER-1
+- :cli_example: --action "runFromAttachmentList" --issue "ZRUNNER-1" --common "-a getAttachment
+    --file ""target/output/jiraclirunner/Attachment-@attachment@"" --name @attachment@
+    --issue ZRUNNER-1"
+  :gem_example:
+    :action: :run_from_attachment_list
+    :issue: ZRUNNER-1
+    :common: -a getAttachment --file ""target/output/jiraclirunner/Attachment-@attachment@""
+      --name @attachment@ --issue ZRUNNER-1
+- :cli_example: --action "runFromComponentList" --project "ZRUNNER" --common "-a getComponent
+    --project ZRUNNER --version ""@component@""" --continue
+  :gem_example:
+    :action: :run_from_component_list
+    :project: ZRUNNER
+    :common: -a getComponent --project ZRUNNER --version ""@component@""
+    :continue: true
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/createUpdate.csv"
+    --common "--project ZRUNNER"
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/createUpdate.csv
+    :common: "--project ZRUNNER"
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/import2.csv" --propertyFile
+    "src/itest/resources/import.properties" --common "--project ZRUNNER --action createIssue"
+    --continue
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/import2.csv
+    :property_file: src/itest/resources/import.properties
+    :common: "--project ZRUNNER --action createIssue"
+    :continue: true
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/import.csv" --propertyFile
+    "src/itest/resources/import.properties" --common "--project ZRUNNER" --continue
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/import.csv
+    :property_file: src/itest/resources/import.properties
+    :common: "--project ZRUNNER"
+    :continue: true
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/run2.csv" --common
+    "-a createIssue --project ZRUNNER"
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/run2.csv
+    :common: "-a createIssue --project ZRUNNER"
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/run.csv" --findReplace
+    "@project@:ZRUNNER"
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/run.csv
+    :find_replace: "@project@:ZRUNNER"
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/runFieldValues.csv"
+    --common "--project ZRUNNER --action createIssue --type bug --summary xxx" --continue
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/runFieldValues.csv
+    :common: "--project ZRUNNER --action createIssue --type bug --summary xxx"
+    :continue: true
+- :cli_example: --action "runFromCsv" --file "src/itest/resources//runIgnoreFields.csv"
+    --propertyFile "src/itest/resources//runIgnoreFields.properties" --common "--project
+    ZRUNNER --action createIssue"
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources//runIgnoreFields.csv
+    :property_file: src/itest/resources//runIgnoreFields.properties
+    :common: "--project ZRUNNER --action createIssue"
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/runsimple.csv" --common
+    "--action getProject"
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/runsimple.csv
+    :common: "--action getProject"
+- :cli_example: --action "runFromCsv" --file "src/itest/resources/runUsingProperties.csv"
+    --propertyFile "src/itest/resources/runUsingProperties.properties" --common "-a createIssue --project ZRUNNER"
+  :gem_example:
+    :action: :run_from_csv
+    :file: src/itest/resources/runUsingProperties.csv
+    :property_file: src/itest/resources/runUsingProperties.properties
+    :common: "-a createIssue --project ZRUNNER"
+- :cli_example: '--action "runFromFieldConfigurationList" --limit "2" --special "    #"
+    --common "--action getClientInfo --reference @: @fieldConfiguration@# "'
+  :gem_example:
+    :action: :run_from_field_configuration_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @fieldConfiguration@# "
+- :cli_example: '--action "runFromFieldConfigurationSchemeList" --limit "2" --special
+    "    #" --common "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_field_configuration_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromFieldConfigurationSchemeList" --regex "ZCOPY" --common
+    "--action deleteFieldConfigurationScheme --id @schemeId@" --options "deleteEnabled"
+    --limit "10"
+  :gem_example:
+    :action: :run_from_field_configuration_scheme_list
+    :regex: ZCOPY
+    :common: "--action deleteFieldConfigurationScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: --action "runFromGroupList" --regex "group number .*" --common "-a removeGroup
+    --group ~@group@~" --special "    ~"
+  :gem_example:
+    :action: :run_from_group_list
+    :regex: group number .*
+    :common: "-a removeGroup --group ~@group@~"
+    :special: "    ~"
+- :cli_example: '--action "runFromGroupList" --regex "jira.*" --limit "1" --common "-a getServerInfo --comment ~group: @group@~" --special "    ~"'
+  :gem_example:
+    :action: :run_from_group_list
+    :regex: jira.*
+    :limit: '1'
+    :common: "-a getServerInfo --comment ~group: @group@~"
+    :special: "    ~"
+- :cli_example: --action "runFromIssueList" --common '--action cloneIssue --issue @issue@ --toProject ZRUNNERC --description "Bulk clone example"' --search 'project = ZRUNNER and summary ~ "volume-*"'
+  :gem_example:
+    :action: :run_from_issue_list
+    :common: --action cloneIssue --issue @issue@ --toProject ZRUNNERC --description "Bulk clone example"
+    :search: project = ZRUNNER and summary ~ "volume-*"
+- :cli_example: --action "runFromIssueList" --common "--action deleteIssue --issue @issue@  "
+    --search 'project = ZRUNNER and summary ~ "volume-*"'
+  :gem_example:
+    :action: :run_from_issue_list
+    :common: "--action deleteIssue --issue @issue@  "
+    :search: project = ZRUNNER and summary ~ "volume-*"
+- :cli_example: --action "runFromIssueList" --file "-" --jql "project = 'zjiracli' and
+    labels != null" --common "--action addLabels"
+  :gem_example:
+    :action: :run_from_issue_list
+    :file: "-"
+    :jql: project = 'zjiracli' and labels != null
+    :common: "--action addLabels"
+- :cli_example: --action "runFromIssueList" --file "-" --jql "project = 'zjiracli' and
+    labels != null" --common "--issue @issue@" --findReplace "##label##:done-by-action"
+  :gem_example:
+    :action: :run_from_issue_list
+    :file: "-"
+    :jql: project = 'zjiracli' and labels != null
+    :common: "--issue @issue@"
+    :find_replace: "##label##:done-by-action"
+- :cli_example: --action "runFromIssueList" --jql "issuetype = Sub-task" --common "-a getIssue --issue @parent@ --comment issue:@issue@,id:@issueId@,project:@project@,projectId:@projectId@,parent:@parent@,parentId:@parentId@"
+    --limit "1"
+  :gem_example:
+    :action: :run_from_issue_list
+    :jql: issuetype = Sub-task
+    :common: "-a getIssue --issue @parent@ --comment issue:@issue@,id:@issueId@,project:@project@,projectId:@projectId@,parent:@parent@,parentId:@parentId@"
+    :limit: '1'
+# - :cli_example: --action "runFromIssueList" --jql "labels in (JCLI528)" --common "-a getIssue --issue @issue@ --outputFormat 999"
+#   :gem_example:
+#     :action: :run_from_issue_list
+#     :jql: labels in (JCLI528)
+#     :common: "-a getIssue --issue @issue@ --outputFormat "999""
+- :cli_example: --action "runFromIssueList" --jql "project in (ZJIRACLI)" --common "-a getAttachmentList --outputFormat "999" --issue ""@issue@"" --file target/output/jiracliproject/attachmentList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_issue_list
+    :jql: project in (ZJIRACLI)
+    :common: -a getAttachmentList --outputFormat "999" --issue ""@issue@"" --file target/output/jiracliproject/attachmentList.csv
+      --append
+    :continue: true
+- :cli_example: --action "runFromIssueList" --jql "project in (ZJIRACLI)" --common "-a getLinkList --issue ""@issue@"" --file target/output/jiracliproject/linkList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_issue_list
+    :jql: project in (ZJIRACLI)
+    :common: -a getLinkList --issue ""@issue@"" --file target/output/jiracliproject/linkList.csv
+      --append
+    :continue: true
+- :cli_example: '--action "runFromIssueList" --jql "project in (ZJIRACLI, ZHISTORY)"
+    --common "-a getIssueHistoryList --issue ""@issue@"" --file target/output/jiracliproject/historyList.csv
+    --dateFormat: yyyy-MM-dd_HH:mm:ss.SSS --append" --continue'
+  :gem_example:
+    :action: :run_from_issue_list
+    :jql: project in (ZJIRACLI, ZHISTORY)
+    :common: '-a getIssueHistoryList --issue ""@issue@"" --file target/output/jiracliproject/historyList.csv
+      --dateFormat: yyyy-MM-dd_HH:mm:ss.SSS --append'
+    :continue: true
+- :cli_example: --action "runFromIssueList" --jql "project in (ZWORK)" --common "-a getWorkList --outputFormat "999" --issue ""@issue@"" --file target/output/jiracliwork/workList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_issue_list
+    :jql: project in (ZWORK)
+    :common: -a getWorkList --outputFormat "999" --issue ""@issue@"" --file target/output/jiracliwork/workList.csv
+      --append
+    :continue: true
+- :cli_example: --action "runFromIssueList" --jql "project = 'zjiracli' and labels !=
+    null" --common "--action addLabels --issue @issue@ --labels done-by-action"
+  :gem_example:
+    :action: :run_from_issue_list
+    :jql: project = 'zjiracli' and labels != null
+    :common: "--action addLabels --issue @issue@ --labels done-by-action"
+- :cli_example: '--action "runFromIssueSecuritySchemeList" --limit "2" --special "    #"
+    --common "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_issue_security_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromIssueSecuritySchemeList" --regex "ZCOPY" --common "--action
+    deleteIssueSecurityScheme --id @schemeId@" --options "deleteEnabled" --limit "10"
+  :gem_example:
+    :action: :run_from_issue_security_scheme_list
+    :regex: ZCOPY
+    :common: "--action deleteIssueSecurityScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: '--action "runFromIssueTypeSchemeList" --limit "2" --special "    #" --common
+    "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_issue_type_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromIssueTypeSchemeList" --regex "ZCOPY" --common "--action
+    deleteIssueTypeScheme --id @schemeId@" --options "deleteEnabled" --limit "10"
+  :gem_example:
+    :action: :run_from_issue_type_scheme_list
+    :regex: ZCOPY
+    :common: "--action deleteIssueTypeScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: '--action "runFromIssueTypeScreenSchemeList" --limit "2" --special "    #"
+    --common "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_issue_type_screen_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromIssueTypeScreenSchemeList" --regex "ZCOPY" --common
+    "--action deleteIssueTypeScreenScheme --id @schemeId@" --options "deleteEnabled"
+    --limit "10"
+  :gem_example:
+    :action: :run_from_issue_type_screen_scheme_list
+    :regex: ZCOPY
+    :common: "--action deleteIssueTypeScreenScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: '--action "runFromLinkList" --jql "parent = ZLINKS-1 or key = ZLINKS-1
+    order by key" --common "-a getClientInfo --options ~from: @fromIssue@, to: @toIssue@,
+    type: @linkType@, typeId: @linkTypeId@, description: @linkDescription@, id: @linkId@~"
+    --special "    ~"'
+  :gem_example:
+    :action: :run_from_link_list
+    :jql: parent = ZLINKS-1 or key = ZLINKS-1 order by key
+    :common: "-a getClientInfo --options ~from: @fromIssue@, to: @toIssue@, type:
+      @linkType@, typeId: @linkTypeId@, description: @linkDescription@, id: @linkId@~"
+    :special: "    ~"
+- :cli_example: '--action "runFromLinkList" --options "outward" --regex "relates" --jql
+    "parent = ZLINKS-1 or key = ZLINKS-1 order by key" --common "-a getClientInfo
+    --options ~from: @fromIssue@, to: @toIssue@, type: @linkType@, typeId: @linkTypeId@,
+    description: @linkDescription@, id: @linkId@~" --special "    ~"'
+  :gem_example:
+    :action: :run_from_link_list
+    :options: outward
+    :regex: relates
+    :jql: parent = ZLINKS-1 or key = ZLINKS-1 order by key
+    :common: "-a getClientInfo --options ~from: @fromIssue@, to: @toIssue@, type:
+      @linkType@, typeId: @linkTypeId@, description: @linkDescription@, id: @linkId@~"
+    :special: "    ~"
+- :cli_example: --action "runFromList" --list "1, 2, 3" --common "--action createIssue
+    --project ZRUNNER --type task --summary volume-@entry@ "
+  :gem_example:
+    :action: :run_from_list
+    :list: 1, 2, 3
+    :common: "--action createIssue --project ZRUNNER --type task --summary volume-@entry@ "
+- :cli_example: --action "runFromList" --list "aaa" --common "--action getServerInfo"
+    --debug
+  :gem_example:
+    :action: :run_from_list
+    :list: aaa
+    :common: "--action getServerInfo"
+    :debug: true
+- :cli_example: --action "runFromList" --list "A,B" --common "-a getProject --project
+    ZRUNNER --cookies target/output/jiraclirunner/cookiesBoth.txt -v" --cookies "target/output/jiraclirunner/parentCookiesBoth.txt"
+    --verbose
+  :gem_example:
+    :action: :run_from_list
+    :list: A,B
+    :common: "-a getProject --project ZRUNNER --cookies target/output/jiraclirunner/cookiesBoth.txt
+      -v"
+    :cookies: target/output/jiraclirunner/parentCookiesBoth.txt
+    :verbose: true
+- :cli_example: --action "runFromList" --list "A,B" --common "-a getProject --project
+    ZRUNNER --cookies target/output/jiraclirunner/cookies.txt -v" --verbose
+  :gem_example:
+    :action: :run_from_list
+    :list: A,B
+    :common: "-a getProject --project ZRUNNER --cookies target/output/jiraclirunner/cookies.txt
+      -v"
+    :verbose: true
+- :cli_example: --action "runFromList" --list "A,B" --common "-a getProject --project
+    ZRUNNER -v" --cookies "target/output/jiraclirunner/parentCookies.txt" --verbose
+  :gem_example:
+    :action: :run_from_list
+    :list: A,B
+    :common: "-a getProject --project ZRUNNER -v"
+    :cookies: target/output/jiraclirunner/parentCookies.txt
+    :verbose: true
+- :cli_example: --action "runFromList" --list "a" --common "--issue ZSUB-4 --action
+    setFieldValue --field environment --value ""%original_description%"""
+  :gem_example:
+    :action: :run_from_list
+    :list: a
+    :common: --issue ZSUB-4 --action setFieldValue --field environment --value ""%original_description%""
+- :cli_example: --action "runFromList" --list "Client, Server" --common "-a get@entry@Info"
+  :gem_example:
+    :action: :run_from_list
+    :list: Client, Server
+    :common: "-a get@entry@Info"
+- :cli_example: --action "runFromList" --list "custom, Default Issue Type Scheme, custom,"
+    --continue --common '-a updateProject --project ZRUNNER --issueTypeScheme "@entry@"'
+  :gem_example:
+    :action: :run_from_list
+    :list: custom, Default Issue Type Scheme, custom,
+    :continue: true
+    :common: -a updateProject --project ZRUNNER --issueTypeScheme "@entry@"
+- :cli_example: --action "runFromList" --list "NOT_FOUND, ZRUNNER" --common "-a getProjectList
+    --regex @entry@ --append -f target/output/jiraclirunner/runFromListAppend.txt"
+    --clearFileBeforeAppend
+  :gem_example:
+    :action: :run_from_list
+    :list: NOT_FOUND, ZRUNNER
+    :common: "-a getProjectList --regex @entry@ --append -f target/output/jiraclirunner/runFromListAppend.txt"
+    :clear_file_before_append: true
+- :cli_example: --action "runFromList" --list "xxx, yyy" --common "--action runFromProjectList
+    --regex ~(?i)jira|ZRUNNER~ --common ~--action getProject --project @project@ --comment
+    @entry@ ~" --special "    ~"
+  :gem_example:
+    :action: :run_from_list
+    :list: xxx, yyy
+    :common: "--action runFromProjectList --regex ~(?i)jira|ZRUNNER~ --common ~--action
+      getProject --project @project@ --comment @entry@ ~"
+    :special: "    ~"
+- :cli_example: '--action "runFromNotificationSchemeList" --limit "2" --special "    #"
+    --common "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_notification_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromNotificationSchemeList" --regex "ZCOPY" --common "--action
+    deleteNotificationScheme --id @schemeId@" --options "deleteEnabled" --limit "10"
+  :gem_example:
+    :action: :run_from_notification_scheme_list
+    :regex: ZCOPY
+    :common: "--action deleteNotificationScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: '--action "runFromPermissionSchemeList" --limit "2" --special "    #"
+    --common "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_permission_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromPermissionSchemeList" --regex "ZCOPY" --common "--action
+    deletePermissionScheme --id @schemeId@" --options "deleteEnabled" --limit "10"
+  :gem_example:
+    :action: :run_from_permission_scheme_list
+    :regex: ZCOPY
+    :common: "--action deletePermissionScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: --action "runFromProjectList" --category "another" --common "-a getProject
+    --project @project@"
+  :gem_example:
+    :action: :run_from_project_list
+    :category: another
+    :common: "-a getProject --project @project@"
+- :cli_example: --action "runFromProjectList" --common "-a getProject --project ""@projectId@"""
+    --continue --regex "ZRUNNER"
+  :gem_example:
+    :action: :run_from_project_list
+    :common: -a getProject --project ""@projectId@""
+    :continue: true
+    :regex: ZRUNNER
+- :cli_example: --action "runFromProjectList" --common "-a getProject --project ""@project@"""
+    --limit "5" --continue
+  :gem_example:
+    :action: :run_from_project_list
+    :common: -a getProject --project ""@project@""
+    :limit: '5'
+    :continue: true
+- :cli_example: --action "runFromProjectList" --lead "developer" --regex "ZPROJECT.*"
+    --common "-a getProject --project @project@"
+  :gem_example:
+    :action: :run_from_project_list
+    :lead: developer
+    :regex: ZPROJECT.*
+    :common: "-a getProject --project @project@"
+- :cli_example: --action "runFromProjectList" --regex "ZJIRACLI.*|ZPROJECT" --common
+    "-a getComponentList --outputFormat "999" --project ""@project@"" --file target/output/jiracliproject/componentList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_project_list
+    :regex: ZJIRACLI.*|ZPROJECT
+    :common: -a getComponentList --outputFormat "999" --project ""@project@"" --file
+      target/output/jiracliproject/componentList.csv --append
+    :continue: true
+- :cli_example: --action "runFromProjectList" --regex "ZJIRACLI.*|ZPROJECT" --common
+    "-a getIssueTypeList --project ""@project@"" --file target/output/jiracliproject/issueTypeList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_project_list
+    :regex: ZJIRACLI.*|ZPROJECT
+    :common: -a getIssueTypeList --project ""@project@"" --file target/output/jiracliproject/issueTypeList.csv
+      --append
+    :continue: true
+- :cli_example: --action "runFromProjectList" --regex "ZJIRACLI.*|ZPROJECT" --common
+    "-a getSecurityLevelList --outputFormat "999" --project ""@project@"" --file target/output/jiracliproject/securityLevelList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_project_list
+    :regex: ZJIRACLI.*|ZPROJECT
+    :common: -a getSecurityLevelList --outputFormat "999" --project ""@project@"" --file
+      target/output/jiracliproject/securityLevelList.csv --append
+    :continue: true
+- :cli_example: --action "runFromProjectList" --regex "ZJIRACLI.*|ZPROJECT" --common
+    "-a getVersionList --outputFormat "999" --project ""@project@"" --file target/output/jiracliproject/versionList.csv
+    --append" --continue
+  :gem_example:
+    :action: :run_from_project_list
+    :regex: ZJIRACLI.*|ZPROJECT
+    :common: -a getVersionList --outputFormat "999" --project ""@project@"" --file target/output/jiracliproject/versionList.csv
+      --append
+    :continue: true
+- :cli_example: '--action "runFromScreenList" --limit "2" --special "    #" --common "--action
+    getClientInfo --reference @: @screen@# "'
+  :gem_example:
+    :action: :run_from_screen_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @screen@# "
+- :cli_example: '--action "runFromScreenSchemeList" --limit "2" --special "    #" --common
+    "--action getClientInfo --reference @: @scheme@# "'
+  :gem_example:
+    :action: :run_from_screen_scheme_list
+    :limit: '2'
+    :special: "    #"
+    :common: "--action getClientInfo --reference @: @scheme@# "
+- :cli_example: --action "runFromScreenSchemeList" --regex "ZCOPY" --common "--action
+    deleteScreenScheme --id @schemeId@" --options "deleteEnabled" --limit "10"
+  :gem_example:
+    :action: :run_from_screen_scheme_list
+    :regex: ZCOPY
+    :common: "--action deleteScreenScheme --id @schemeId@"
+    :options: deleteEnabled
+    :limit: '10'
+- :cli_example: --action "runFromUserList" --name "@all" --limit "2" --regex "((admin)|(automation))"
+    --common "--action getServerInfo --comment @userId@"
+  :gem_example:
+    :action: :run_from_user_list
+    :name: "@all"
+    :limit: '2'
+    :regex: "((admin)|(automation))"
+    :common: "--action getServerInfo --comment @userId@"
+- :cli_example: --action "runFromVersionList" --project "ZRUNNER" --common "-a getVersion
+    --project @projectId@ --version ""@versionId@""" --continue --regex "V1"
+  :gem_example:
+    :action: :run_from_version_list
+    :project: ZRUNNER
+    :common: -a getVersion --project @projectId@ --version ""@versionId@""
+    :continue: true
+    :regex: V1
+- :cli_example: --action "runFromVersionList" --project "ZRUNNER" --common "-a getVersion
+    --project ZRUNNER --version ""@version@""" --continue
+  :gem_example:
+    :action: :run_from_version_list
+    :project: ZRUNNER
+    :common: -a getVersion --project ZRUNNER --version ""@version@""
+    :continue: true
+- :cli_example: --action "runFromWorkflowList" --regex "((jira)|(Agile Simplified))"
+    --limit "2" --file "-"
+  :gem_example:
+    :action: :run_from_workflow_list
+    :regex: "((jira)|(Agile Simplified))"
+    :limit: '2'
+    :file: "-"
+- :cli_example: --action "runFromWorkflowSchemeList" --regex ".*Simplified.*" --limit
+    "2" --file "-"
+  :gem_example:
+    :action: :run_from_workflow_scheme_list
+    :regex: ".*Simplified.*"
+    :limit: '2'
+    :file: "-"
+- :cli_example: --action "runFromWorkflowSchemeList" --regex "ZCLICLONE.*" --common
+    "--action deleteWorkflowScheme --id @schemeId@" --continue
+  :gem_example:
+    :action: :run_from_workflow_scheme_list
+    :regex: ZCLICLONE.*
+    :common: "--action deleteWorkflowScheme --id @schemeId@"
+    :continue: true
+- :cli_example: --action "setFieldValue" --issue "ZCUSTOM-1" --field "custom-cascade-select"
+    --values "1 - A"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZCUSTOM-1
+    :field: custom-cascade-select
+    :values: 1 - A
+- :cli_example: --action "setFieldValue" --issue "ZCUSTOM-1" --field "custom-cascade-select"
+    --values "2,B" --asCascadeSelect
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZCUSTOM-1
+    :field: custom-cascade-select
+    :values: 2,B
+    :as_cascade_select: true
+- :cli_example: --action "setFieldValue" --issue "ZCUSTOM-4" --field "custom-multi-select"
+    --values "s1,s2,s3"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZCUSTOM-4
+    :field: custom-multi-select
+    :values: s1,s2,s3
+- :cli_example: --action "setFieldValue" --issue "ZCUSTOM-7" --field "Story Points"
+    --value ""
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZCUSTOM-7
+    :field: Story Points
+    :value: ''
+- :cli_example: '--action "setFieldValue" --issue "ZFIELDS-1" --field "custom1" --values
+    "The following should be on a new line: \n XXX"'
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: custom1
+    :values: 'The following should be on a new line: \n XXX'
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-1" --field "custom1" --values
+    "'xxx,yyy'"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: custom1
+    :values: "'xxx,yyy'"
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-1" --field "custom1" --values
+    "xxx,yyy"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: custom1
+    :values: xxx,yyy
+- :cli_example: '--action "setFieldValue" --issue "ZFIELDS-1" --field "custom1" --value
+    "The following should be on a new line: \n XXX"'
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: custom1
+    :value: 'The following should be on a new line: \n XXX'
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-1" --field "custom1" --value
+    "xxx,yyy"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: custom1
+    :value: xxx,yyy
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-1" --field "custom-datetime"
+    --value "21/10/1940 11:39:12" --dateFormat "dd/MM/yyyy HH:mm:ss"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: custom-datetime
+    :value: 21/10/1940 11:39:12
+    :date_format: dd/MM/yyyy HH:mm:ss
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-1" --field "environment" --values
+    "" --field2 "custom1" --values2 "xxx"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :field: environment
+    :values: ''
+    :field2: custom1
+    :values2: xxx
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-1" --file "src/itest/resources/data.txt"
+    --field "environment" --appendText
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-1
+    :file: src/itest/resources/data.txt
+    :field: environment
+    :append_text: true
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom1" --values
+    "append text" --appendText
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom1
+    :values: append text
+    :append_text: true
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom-group-picker"
+    --values "jira-users"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom-group-picker
+    :values: jira-users
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom-multi-group-picker"
+    --values "jira-users,jira-administrators"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom-multi-group-picker
+    :values: jira-users,jira-administrators
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom-multi-select"
+    --values "s1,s2"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom-multi-select
+    :values: s1,s2
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom-multi-select"
+    --values "s3" --append
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom-multi-select
+    :values: s3
+    :append: true
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom-multi-user-picker"
+    --values "automation"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom-multi-user-picker
+    :values: automation
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --field "custom-user-picker"
+    --values "automation"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :field: custom-user-picker
+    :values: automation
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-2" --file "src/itest/resources/data.txt"
+    --field "custom1"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-2
+    :file: src/itest/resources/data.txt
+    :field: custom1
+- :cli_example: |-
+    --action "setFieldValue" --issue "ZFIELDS-3" --field "description" --verbose --value "aaa
+     bbb"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-3
+    :field: description
+    :verbose: true
+    :value: |-
+      aaa
+       bbb
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-3" --field "priority" --verbose
+    --value "blocker"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-3
+    :field: priority
+    :verbose: true
+    :value: blocker
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-3" --field "reporter" --verbose
+    --value "automation"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-3
+    :field: reporter
+    :verbose: true
+    :value: automation
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-3" --field "summary" --verbose
+    --value "xxx"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-3
+    :field: summary
+    :verbose: true
+    :value: xxx
+- :cli_example: --action "setFieldValue" --issue "ZFIELDS-3" --field "type" --verbose
+    --value "sub-task2"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZFIELDS-3
+    :field: type
+    :verbose: true
+    :value: sub-task2
+- :cli_example: --action "setFieldValue" --issue "ZHISTORY-1" --field "custom-multi-select"
+    --values "s1,s2"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZHISTORY-1
+    :field: custom-multi-select
+    :values: s1,s2
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-3" --field "custom-labels"
+    --values "aaa,bbb"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-3
+    :field: custom-labels
+    :values: aaa,bbb
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-3" --field "custom-labels"
+    --values "aaa, ccc" --subtract
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-3
+    :field: custom-labels
+    :values: aaa, ccc
+    :subtract: true
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-3" --field "custom-labels"
+    --values "bbb" --subtract
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-3
+    :field: custom-labels
+    :values: bbb
+    :subtract: true
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-3" --field "custom-labels"
+    --values "ccc" --append
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-3
+    :field: custom-labels
+    :values: ccc
+    :append: true
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-5" --field "custom-versions"
+    --values "autoAppend" --asVersion --append --autoVersion
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-5
+    :field: custom-versions
+    :values: autoAppend
+    :as_version: true
+    :append: true
+    :auto_version: true
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-5" --field "custom-versions"
+    --values "V1, V2" --asVersion
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-5
+    :field: custom-versions
+    :values: V1, V2
+    :as_version: true
+- :cli_example: --action "setFieldValue" --issue "ZJIRACLI-5" --field "custom-versions"
+    --values "V1, V2" --asVersion --append
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZJIRACLI-5
+    :field: custom-versions
+    :values: V1, V2
+    :as_version: true
+    :append: true
+- :cli_example: --action "setFieldValue" --issue "ZSUB-1" --field "custom-versions"
+    --value "%original_fixVersions%" --field2 "description" --values2 "%original_description%
+    - %original_fixVersions%"
+  :gem_example:
+    :action: :set_field_value
+    :issue: ZSUB-1
+    :field: custom-versions
+    :value: "%original_fixVersions%"
+    :field2: description
+    :values2: "%original_description% - %original_fixVersions%"
+- :cli_example: --action "setShareScope" --value "global"
+  :gem_example:
+    :action: :set_share_scope
+    :value: global
+- :cli_example: --action "transitionIssue" --issue "ZJIRACLI-3" --transition "5" --resolution
+    "Fixed" --fixVersions "V1,  V2" --comment "I fixed this. \n It will be good now."
+    --type "Bug" --continue --priority "Major" --reporter "automation" --affectsVersions
+    "" --environment "" --components ""
+  :gem_example:
+    :action: :transition_issue
+    :issue: ZJIRACLI-3
+    :transition: '5'
+    :resolution: Fixed
+    :fix_versions: V1,  V2
+    :comment: I fixed this. \n It will be good now.
+    :type: Bug
+    :continue: true
+    :priority: Major
+    :reporter: automation
+    :affects_versions: ''
+    :environment: ''
+    :components: ''
+- :cli_example: --action "transitionIssue" --issue "ZJIRACLI-3" --transition "Start
+    Progress"
+  :gem_example:
+    :action: :transition_issue
+    :issue: ZJIRACLI-3
+    :transition: Start Progress
+- :cli_example: '--action "transitionIssue" --issue "ZSUB-3" --transition "Resolve Issue"
+    --field "testcase1" --values "subtasks: %parent_subtasks%" --comment "subtasks:
+    %parent_subtasks%"'
+  :gem_example:
+    :action: :transition_issue
+    :issue: ZSUB-3
+    :transition: Resolve Issue
+    :field: testcase1
+    :values: 'subtasks: %parent_subtasks%'
+    :comment: 'subtasks: %parent_subtasks%'
+- :cli_example: --action "unarchiveVersion" --project "zjiracli" --name "V1"
+  :gem_example:
+    :action: :unarchive_version
+    :project: zjiracli
+    :name: V1
+- :cli_example: --action "unreleaseVersion" --project "zjiracli" --name "V1" --date
+    "2015.12.31" --dateFormat "yyyy.MM.dd" --description "V1 description"
+  :gem_example:
+    :action: :unrelease_version
+    :project: zjiracli
+    :name: V1
+    :date: 2015.12.31
+    :date_format: yyyy.MM.dd
+    :description: V1 description
+- :cli_example: --action "updateComponent" --project "zjiracli" --component "C3First"
+    --name "C3" --description "a generic description" --lead "automation" --defaultAssignee
+    "project_lead"
+  :gem_example:
+    :action: :update_component
+    :project: zjiracli
+    :component: C3First
+    :name: C3
+    :description: a generic description
+    :lead: automation
+    :default_assignee: project_lead
+- :cli_example: --action "updateComponent" --project "ZSUB" --component "C1" --description
+    "C1 description"
+  :gem_example:
+    :action: :update_component
+    :project: ZSUB
+    :component: C1
+    :description: C1 description
+- :cli_example: --action "updateComponent" --project "ZSUB" --component "C2" --description
+    "C2 description"
+  :gem_example:
+    :action: :update_component
+    :project: ZSUB
+    :component: C2
+    :description: C2 description
+- :cli_example: --action "updateFilter" --id "24903" --jql "project = ZFILTER AND resolution
+    is EMPTY" --favorite
+  :gem_example:
+    :action: :update_filter
+    :id: '24903'
+    :jql: project = ZFILTER AND resolution is EMPTY
+    :favorite: true
+- :cli_example: --action "updateIssue" --issue "249564" --fixVersions "auto2" --autoVersion
+    --append
+  :gem_example:
+    :action: :update_issue
+    :issue: '249564'
+    :fix_versions: auto2
+    :auto_version: true
+    :append: true
+- :cli_example: --action "updateIssue" --issue "ZCUSTOM-1" --field "custom-cascade-select"
+    --values "1,A" --asCascadeSelect
+  :gem_example:
+    :action: :update_issue
+    :issue: ZCUSTOM-1
+    :field: custom-cascade-select
+    :values: 1,A
+    :as_cascade_select: true
+- :cli_example: --action "updateIssue" --issue "ZCUSTOM-4" --field "custom-multi-select"
+    --values "s1,s2,s3"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZCUSTOM-4
+    :field: custom-multi-select
+    :values: s1,s2,s3
+- :cli_example: --action "updateIssue" --issue "ZFIELDS-1" --description "append text"
+    --appendText
+  :gem_example:
+    :action: :update_issue
+    :issue: ZFIELDS-1
+    :description: append text
+    :append_text: true
+- :cli_example: --action "updateIssue" --issue "ZHISTORY-1" --summary "Updated summary"
+    --description "Updated description" --field "custom1" --values "updated value"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZHISTORY-1
+    :summary: Updated summary
+    :description: Updated description
+    :field: custom1
+    :values: updated value
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --affectsVersions "swap1"
+    --fixVersions "swap2" --autoVersion
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :affects_versions: swap1
+    :fix_versions: swap2
+    :auto_version: true
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --components "auto1" --autoComponent
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :components: auto1
+    :auto_component: true
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --components "auto2" --autoComponent
+    --append
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :components: auto2
+    :auto_component: true
+    :append: true
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --components "swap1" --autoComponent
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :components: swap1
+    :auto_component: true
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --custom "custom1:zzz"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :custom: custom1:zzz
+# - :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --custom "{\"custom1\":\"zzz\"}"
+#   :gem_example:
+#     :action: :update_issue
+#     :issue: ZJIRACLI-3
+#     :custom: '{\"custom1\":\"zzz\"}'
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --date "27/Jan/10" --dateFormat
+    "d/MMM/yy"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :date: 27/Jan/10
+    :date_format: d/MMM/yy
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --date "" --components ""
+    --affectsVersions ""
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :date: ''
+    :components: ''
+    :affects_versions: ''
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --date "" --components ""
+    --affectsVersions "" --fixVersions ""
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :date: ''
+    :components: ''
+    :affects_versions: ''
+    :fix_versions: ''
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --environment "x12345" --originalEstimate
+    "3h" --comment "Added on updateIssue"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :environment: x12345
+    :original_estimate: 3h
+    :comment: Added on updateIssue
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-3" --fixVersions "auto1" --autoVersion
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-3
+    :fix_versions: auto1
+    :auto_version: true
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-5" --custom "custom-versions:,"
+    --component ""
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-5
+    :custom: custom-versions:,
+    :component: ''
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-5" --date ""
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-5
+    :date: ''
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-5" --date "2015*01*02" --dateFormat
+    "yyyy*MM*dd"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-5
+    :date: 2015*01*02
+    :date_format: yyyy*MM*dd
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-5" --field "custom1" --values
+    "xxxx"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-5
+    :field: custom1
+    :values: xxxx
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-5" --field "custom2" --values
+    ""
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-5
+    :field: custom2
+    :values: ''
+- :cli_example: --action "updateIssue" --issue "ZJIRACLI-8" --labels "label2 label3
+    label2 label3" --description "labels added"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLI-8
+    :labels: label2 label3 label2 label3
+    :description: labels added
+- :cli_example: --action "updateIssue" --issue "ZJIRACLIB-2" --security ""
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLIB-2
+    :security: ''
+- :cli_example: --action "updateIssue" --issue "ZJIRACLIB-2" --security "developer-role"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZJIRACLIB-2
+    :security: developer-role
+- :cli_example: --action "updateIssue" --issue "ZSUB-1" --environment "%original_description%"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZSUB-1
+    :environment: "%original_description%"
+- :cli_example: --action "updateIssue" --issue "ZUSER-1" --reporter "automation"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZUSER-1
+    :reporter: automation
+- :cli_example: --action "updateIssue" --issue "ZUSER-1" --reporter "testuser2" --lookup
+  :gem_example:
+    :action: :update_issue
+    :issue: ZUSER-1
+    :reporter: testuser2
+    :lookup: true
+- :cli_example: --action "updateIssue" --issue "ZWORK-2" --estimate "2w 1d"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZWORK-2
+    :estimate: 2w 1d
+- :cli_example: --action "updateIssue" --issue "ZWORK-2" --estimate "3w 1d" --summary
+    "Updated"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZWORK-2
+    :estimate: 3w 1d
+    :summary: Updated
+- :cli_example: --action "updateIssue" --issue "ZWORK-2" --originalEstimate "4w 2d"
+  :gem_example:
+    :action: :update_issue
+    :issue: ZWORK-2
+    :original_estimate: 4w 2d
+- :cli_example: --action "updateProject" --project "zjiracliC" --issueSecurityScheme
+    "test restrictions" --notificationScheme "test" --permissionScheme "Restrict create
+    issue"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracliC
+    :issue_security_scheme: test restrictions
+    :notification_scheme: test
+    :permission_scheme: Restrict create issue
+- :cli_example: --action "updateProject" --project "zjiracli" --issueTypeScheme "10000"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :issue_type_scheme: '10000'
+- :cli_example: --action "updateProject" --project "zjiracli" --issueTypeScheme "Default
+    Issue Type Scheme"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :issue_type_scheme: Default Issue Type Scheme
+- :cli_example: --action "updateProject" --project "zjiracli" --issueTypeScheme "zclone"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :issue_type_scheme: zclone
+- :cli_example: --action "updateProject" --project "zjiracli" --issueTypeScreenScheme
+    "1"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :issue_type_screen_scheme: '1'
+- :cli_example: --action "updateProject" --project "zjiracli" --issueTypeScreenScheme
+    "Copy of default"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :issue_type_screen_scheme: Copy of default
+- :cli_example: --action "updateProject" --project "zjiracli" --issueTypeScreenScheme
+    "Default Issue Type Screen Scheme"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :issue_type_screen_scheme: Default Issue Type Screen Scheme
+- :cli_example: --action "updateProject" --project "zjiracli" --workflowScheme "" --issueTypeScheme
+    "" --fieldConfigurationScheme "" --issueTypeScreenScheme ""
+  :gem_example:
+    :action: :update_project
+    :project: zjiracli
+    :workflow_scheme: ''
+    :issue_type_scheme: ''
+    :field_configuration_scheme: ''
+    :issue_type_screen_scheme: ''
+- :cli_example: --action "updateProject" --project "zjiracliX" --defaultAssignee "project_lead"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracliX
+    :default_assignee: project_lead
+- :cli_example: --action "updateProject" --project "zjiracliX" --defaultAssignee "unassigned"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracliX
+    :default_assignee: unassigned
+- :cli_example: --action "updateProject" --project "zjiracliX" --description "Updated
+    description again"
+  :gem_example:
+    :action: :update_project
+    :project: zjiracliX
+    :description: Updated description again
+- :cli_example: --action "updateProject" --project "zjiracliX" --description "Updated
+    description" --issueSecurityScheme "test restrictions" --fieldConfigurationScheme
+    "Description required" --notificationScheme "test" --verbose
+  :gem_example:
+    :action: :update_project
+    :project: zjiracliX
+    :description: Updated description
+    :issue_security_scheme: test restrictions
+    :field_configuration_scheme: Description required
+    :notification_scheme: test
+    :verbose: true
+- :cli_example: --action "updateProject" --project "ZPROJECT" --category ""
+  :gem_example:
+    :action: :update_project
+    :project: ZPROJECT
+    :category: ''
+- :cli_example: --action "updateProject" --project "ZPROJECT" --category "another"
+  :gem_example:
+    :action: :update_project
+    :project: ZPROJECT
+    :category: another
+- :cli_example: --action "updateProject" --project "ZPROJECT" --notificationScheme ""
+  :gem_example:
+    :action: :update_project
+    :project: ZPROJECT
+    :notification_scheme: ''
+- :cli_example: --action "updateProject" --project "ZPROJECT" --notificationScheme "10000"
+  :gem_example:
+    :action: :update_project
+    :project: ZPROJECT
+    :notification_scheme: '10000'
+- :cli_example: --action "updateProject" --project "ZPROJECT" --url "https://bobswift-test.atlassian.net"
+  :gem_example:
+    :action: :update_project
+    :project: ZPROJECT
+    :url: https://bobswift-test.atlassian.net
+- :cli_example: --action "updateProjectRole" --role "zAdd project role test" --name
+    "zAdd project role test updated"
+  :gem_example:
+    :action: :update_project_role
+    :role: zAdd project role test
+    :name: zAdd project role test updated
+- :cli_example: --action "updateUserProperty" --userId "testuser1" --name "a b" --value
+    " xxxx"
+  :gem_example:
+    :action: :update_user_property
+    :user_id: testuser1
+    :name: a b
+    :value: " xxxx"
+- :cli_example: --action "updateUserProperty" --userId "testuser1" --name "testProperty"
+    --value "test property value"
+  :gem_example:
+    :action: :update_user_property
+    :user_id: testuser1
+    :name: testProperty
+    :value: test property value
+- :cli_example: --action "updateVersion" --project "zjiracliC" --version "V2" --description
+    "NEW description" --startDate "2015-01-01" --date "2015-02-01" --dateFormat "yyyy-MM-dd"
+  :gem_example:
+    :action: :update_version
+    :project: zjiracliC
+    :version: V2
+    :description: NEW description
+    :start_date: '2015-01-01'
+    :date: '2015-02-01'
+    :date_format: yyyy-MM-dd
+- :cli_example: --action "updateVersion" --project "zjiracli" --version "auto1" --after
+    "-1"
+  :gem_example:
+    :action: :update_version
+    :project: zjiracli
+    :version: auto1
+    :after: "-1"
+- :cli_example: --action "updateVersion" --project "zjiracli" --version "auto1" --after
+    "auto2"
+  :gem_example:
+    :action: :update_version
+    :project: zjiracli
+    :version: auto1
+    :after: auto2
+- :cli_example: --action "updateVersion" --project "zjiracli" --version "auto2" --after
+    ""
+  :gem_example:
+    :action: :update_version
+    :project: zjiracli
+    :version: auto2
+    :after: ''
+- :cli_example: --action "updateVersion" --project "zjiracli" --version "auto2" --date
+    "" --dateFormat "yyyy/MM/dd"
+  :gem_example:
+    :action: :update_version
+    :project: zjiracli
+    :version: auto2
+    :date: ''
+    :date_format: yyyy/MM/dd
+- :cli_example: --action "updateVersion" --project "zjiracli" --version "auto2" --description
+    "updateVersion description" --startDate "2014/09/30" --date "2015/01/02/" --dateFormat
+    "yyyy/MM/dd"
+  :gem_example:
+    :action: :update_version
+    :project: zjiracli
+    :version: auto2
+    :description: updateVersion description
+    :start_date: 2014/09/30
+    :date: 2015/01/02/
+    :date_format: yyyy/MM/dd
+- :cli_example: --action "updateVersion" --project "zjiracli" --version "V1" --description
+    "V1 description"
+  :gem_example:
+    :action: :update_version
+    :project: zjiracli
+    :version: V1
+    :description: V1 description
+- :cli_example: --action "updateWork" --issue "ZWORK-1" --id "32811" --comment "Updated
+    work log entry"
+  :gem_example:
+    :action: :update_work
+    :issue: ZWORK-1
+    :id: '32811'
+    :comment: Updated work log entry
+- :cli_example: --action "updateWork" --issue "ZWORK-1" --id "32811" --timeSpent "1w"
+    --autoAdjust
+  :gem_example:
+    :action: :update_work
+    :issue: ZWORK-1
+    :id: '32811'
+    :time_spent: 1w
+    :auto_adjust: true
+- :cli_example: --action "updateWork" --issue "ZWORK-1" --id "32811" --userId "developer"
+  :gem_example:
+    :action: :update_work
+    :issue: ZWORK-1
+    :id: '32811'
+    :user_id: developer
+- :cli_example: "--action \"validateLicense\""
+  :gem_example:
+    :action: :validate_license
