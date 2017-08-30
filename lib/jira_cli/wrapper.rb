@@ -19,7 +19,9 @@ module JiraCli
       {
         get_attachment_list:               {label: 'attachments',               id_col: :id},
         get_comment_list:                  {label: 'comments',                  id_col: :id},
+        get_component_list:                {label: 'components',                id_col: :id},
         get_issue_list:                    {label: 'issues',                    id_col: :id},
+        get_issue_type_list:               {label: 'issue types',               id_col: :id},
         get_issue_type_screen_scheme_list: {label: 'issue type screen schemes', id_col: :id},
         get_issue_type_scheme_list:        {label: 'issue type schemes',        id_col: :id},
         get_screen_list:                   {label: 'screens',                   id_col: :id},
