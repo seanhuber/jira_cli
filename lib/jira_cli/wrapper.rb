@@ -24,6 +24,7 @@ module JiraCli
         get_issue_type_list:               {label: 'issue types',               id_col: :id},
         get_issue_type_screen_scheme_list: {label: 'issue type screen schemes', id_col: :id},
         get_issue_type_scheme_list:        {label: 'issue type schemes',        id_col: :id},
+        get_link_list:                     {label: 'links',                     id_col: :link_id},
         get_screen_list:                   {label: 'screens',                   id_col: :id},
         get_screen_scheme_list:            {label: 'screen schemes',            id_col: :id},
         get_version_list:                  {label: 'versions',                  id_col: :id},
