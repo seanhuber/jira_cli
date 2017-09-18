@@ -131,6 +131,7 @@
     "55","my_file.txt","application/octet-stream","1094","8/21/17 9:03 AM","shuber"
   :gem_args:
     :issue: 123
+    :parse_response: true
   :gem_response:
     33:
       :name: README.md
@@ -161,6 +162,7 @@
     "166331","shuber","8/18/17 2:35 PM","","","","second automated comment"
   :gem_args:
     :issue: 123
+    :parse_response: true
   :gem_response:
     166330:
       :author: shuber
@@ -181,6 +183,7 @@
     "MYPROJ-54","159421","MYPROJ","12400","","","Task","3","To Do","10027","Medium","10000","","","","Huber","8/17/17 1:36 PM","8/17/17 1:39 PM","","","Another Issue Summary","Another Issue Description","","","","","","","","","","","","","","0","1","",""
   :gem_args:
     :jql: project=MYPROJ
+    :parse_response: true
   :gem_response:
     159419:
       :key: MYPROJ-37
@@ -228,6 +231,8 @@
     "10905","BPCU: Software Development Issue Type Screen Scheme","","No","BPCU"
     "10908","Change Request","","No","OCM"
     "10300","Client Support","","No","TAS"
+  :gem_args:
+    :parse_response: true
   :gem_response:
     11100:
       :name: 'ADF: Scrum Issue Type Screen Scheme'
@@ -260,6 +265,8 @@
     "10100","Agile Scrum Issue Type Scheme","This issue type scheme is used by GreenHoppers Scrum project template. Projects associated with the Scrum template will be associated to this scheme. You can modify this scheme.","Yes","Epic,Story,Technical task,Bug,Improvement,Uncategorized","CEE,HRE,INFRAPR,OSI"
     "10200","IT Tech Support","","Yes","General Support,Hardware Issue,Select University,Select Education,Virus/Malware,Software Install,Email,Mobile Device,Printer,Hardware Request,Replacement","ITS"
     "10300","Facility Setup Issue Type Scheme","","Yes","New Facility,Contract Maintenance,NF - Request Office Supplies,NF - Hardware Setup,NF - Data Setup,NF - Request Start Up Kits,NF - Request Telecomm,NF - EMR Setup,NF - Request Payroll","NFSP,FMD"
+  :gem_args:
+    :parse_response: true
   :gem_response:
     10000:
       :name: Default Issue Type Scheme
@@ -304,6 +311,8 @@
     "11415","BPCU: Software Development Default Issue Screen","","No","BPCU: Software Development Default Screen Scheme",""
     "11417","BPCU: Software Development Resolve Issue Screen","","No","","BPCU: Software Development Workflow,BPCU: Software Development Workflow,BPCU: Software Development Workflow"
     "11422","Change Request Screen","","No","Change Request Scheme",""
+  :gem_args:
+    :parse_response: true
   :gem_response:
     11601:
       :name: 'ADF: Scrum Bug Screen'
@@ -356,6 +365,8 @@
     "11208","BPCU: Software Development Default Screen Scheme","","No","BPCU: Software Development Issue Type Screen Scheme"
     "11212","Change Request Scheme","","No","Change Request"
     "10701","Contract Maintenance","","No","New Facility Screen Scheme"
+  :gem_args:
+    :parse_response: true
   :gem_response:
     11401:
       :name: 'ADF: Scrum Bug Screen Scheme'
@@ -401,6 +412,8 @@
     "PROJ2: Software Development Workflow","","02/27/2015 11:26 AM","Jane Doe","4","No"
     "PROJ3: Software Development Workflow","","02/27/2015 11:19 AM","Jane Doe","4","No"
     "PROJ4: Software Development Workflow","","02/27/2015 11:37 AM","Jane Doe","4","No"
+  :gem_args:
+    :parse_response: true
   :gem_response:
     jira:
       :description: The default JIRA workflow.
@@ -447,6 +460,7 @@
     "44","myproj_v4.5.6","4","No","2017-08-21"
   :gem_args:
     :project: MYPROJ
+    :parse_response: true
   :gem_response:
     11:
       :name: myproj_v1.2.3
@@ -482,6 +496,8 @@
     "1005","PROJ5: Workflow Scheme","","No","ANA"
     "1006","PROJ6: Workflow Scheme","","No","APPEALS"
     "1007","PROJ7: Workflow Scheme","","No","APPEALSETL"
+  :gem_args:
+    :parse_response: true
   :gem_response:
     1001:
       :name: 'PROJ1: Workflow Scheme'

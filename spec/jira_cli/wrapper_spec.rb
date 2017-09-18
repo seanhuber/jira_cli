@@ -1,7 +1,6 @@
 RSpec.describe JiraCli::Wrapper do
   before(:all) do
     @jira = JiraCli::Wrapper.instance
-    @jira.override_csv_methods
   end
 
   YAML.load_file('spec/cli_specs.yml').each do |wpr_method, args|
