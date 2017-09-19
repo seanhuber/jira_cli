@@ -7,7 +7,7 @@ A ruby wrapper for JIRA Command Line Interface [Bob Swift Atlassian Add-on]
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jira_cli'
+gem 'jira_cli', '~> 1.0'
 ```
 
 And then execute:

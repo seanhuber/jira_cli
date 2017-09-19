@@ -21,6 +21,29 @@ module JiraCli
     }
 
     def initialize
+      @jira_cmd = configure_jira_cmd
+      define_cli_methods
+    end
+
+    private
+
+    def check_first_line output, regex
+      raise OutputError.new("Expected response to begin with \"#{regex}\"", output) unless output =~ Regexp.new(regex)
+    end
+
+    def configure_jira_cmd
+      cli_opts = {
+        server:   :server_url,
+        user:     :user,
+        password: :password
+      }.map do |cli_opt, config_var|
+        JiraCli.send(config_var) ? "--#{cli_opt} \"#{JiraCli.send(config_var)}\"" : nil
+      end.compact
+
+      [JiraCli.cli_jar_path ? "java -jar \"#{JiraCli.cli_jar_path}\"" : 'jira', *cli_opts].join ' '
+    end
+
+    def define_cli_methods
       CLI_METHODS.each do |s_method|
         cli_method = s_method.to_s.camelize(:lower)
 
@@ -32,12 +55,6 @@ module JiraCli
           end
         end
       end
-    end
-
-    private
-
-    def check_first_line output, regex
-      raise OutputError.new("Expected response to begin with \"#{regex}\"", output) unless output =~ Regexp.new(regex)
     end
 
     def get_csv_list cmd:, label:, id_col:, **jira_args
@@ -70,7 +87,8 @@ module JiraCli
         cmd
       end.join(' ')
 
-      stdout, stderr, status = Open3.capture3 "jira #{cmd_args}"
+      stdout, stderr, status = Open3.capture3 "#{@jira_cmd} #{cmd_args}"
+
       # ap "jira #{cmd_args}"
       # puts stdout
       raise stderr.strip if stderr != ''

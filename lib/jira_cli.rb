@@ -10,4 +10,19 @@ require 'jira_cli/wrapper'
 require 'jira_cli/output_error'
 
 module JiraCli
+  mattr_accessor :cli_jar_path
+  @@cli_jar_path = nil
+
+  mattr_accessor :password
+  @@password = nil
+
+  mattr_accessor :server_url
+  @@server_url = nil
+
+  mattr_accessor :user
+  @@user = nil
+
+  def self.setup
+    yield self
+  end
 end
