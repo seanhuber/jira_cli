@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/jira_cli.svg)](https://badge.fury.io/rb/jira_cli)
+
 # jira_cli
 
 A ruby wrapper for JIRA Command Line Interface [Bob Swift Atlassian Add-on](https://bobswift.atlassian.net/wiki/spaces/JCLI)
