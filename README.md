@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/jira_cli.svg)](https://badge.fury.io/rb/jira_cli)
+[![Build Status](https://travis-ci.org/seanhuber/jira_cli.svg?branch=master)](https://travis-ci.org/seanhuber/jira_cli)
 
 # jira_cli
 
