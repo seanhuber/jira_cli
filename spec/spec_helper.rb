@@ -2,6 +2,9 @@ require 'bundler/setup'
 require 'jira_cli'
 require 'ap'
 require 'yaml'
+require 'coveralls'
+
+Coveralls.wear!
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
